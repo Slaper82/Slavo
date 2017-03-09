@@ -26,6 +26,7 @@ namespace SamWypo
         private void button1_Click(object sender, EventArgs e)
         {
             frmKlient nowy = new frmKlient();
+            nowy.Text = "Nowy Klient";
             nowy.ShowDialog();
         }
     }

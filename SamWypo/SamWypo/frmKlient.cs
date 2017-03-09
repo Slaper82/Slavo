@@ -19,7 +19,23 @@ namespace SamWypo
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            this.Close();
+            bool DaneOk = false;
+            Klient nowy = new Klient(txtNazwaF.Text,txtNip.Text,txtUlica.Text,txtMiasto.Text,txtNrDomu.Text,txtNrMieszk.Text,txtKodPoczt.Text,txtTelefon.Text,txtTel2.Text,txtOsobKont.Text);
+            DaneOk = nowy.SprawdzDane();
+            if(DaneOk)
+            try
+                {
+                        nowy.ZapiszNowy();
+                }
+            catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            else
+            {
+                MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
+            }
+            
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e)
