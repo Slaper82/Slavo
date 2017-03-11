@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace SamWypo
 {
+    public delegate void Dodano(object sender, EventArgs e);
     public partial class frmKlient : Form
     {
+        public event Dodano dodano;
         public frmKlient()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace SamWypo
             try
                 {
                         nowy.ZapiszNowe();
+                    if (dodano != null) dodano(this, e);
                 }
             catch(Exception ex)
                 {
@@ -35,6 +38,7 @@ namespace SamWypo
             {
                 MessageBox.Show("Uzupełnij wszystkie wymagane pola!");
             }
+            this.Close();
             
         }
 

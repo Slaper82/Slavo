@@ -85,10 +85,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Klasy\Samochod.cs" />
     <Compile Include="Klasy\Wypo.cs" />
-    <Compile Include="SlaWypoDataSet.Designer.cs">
+    <Compile Include="WypoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SlaWypoDataSet.xsd</DependentUpon>
+      <DependentUpon>WypoDataSet.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="frmDodSamo.resx">
       <DependentUpon>frmDodSamo.cs</DependentUpon>
@@ -123,16 +123,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SlaWypoDataSet.xsc">
-      <DependentUpon>SlaWypoDataSet.xsd</DependentUpon>
+    <None Include="WypoDataSet.xsc">
+      <DependentUpon>WypoDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SlaWypoDataSet.xsd">
+    <None Include="WypoDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SlaWypoDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>WypoDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SlaWypoDataSet.xss">
-      <DependentUpon>SlaWypoDataSet.xsd</DependentUpon>
+    <None Include="WypoDataSet.xss">
+      <DependentUpon>WypoDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
