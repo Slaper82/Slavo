@@ -116,6 +116,51 @@ ELSE
 		ALTER TABLE [dbo].[wypSamochod] CHECK CONSTRAINT [FK_wypMarka_wypSamochod]
 	END
 	GO
+	
+--Klucze CD.
+--IdSamo->wypWypo
+If Exists (select * from dbo.sysobjects where id= object_id(N'FK_wypSamo_wypWypozycz'))
+BEGIN
+	PRINT '!!!POWIĄZANIE ''FK_wypSamo_wypWypozycz'' juz istnieje'
+	END
+ELSE
+	BEGIN
+		ALTER TABLE [dbo].[wypWypozycz]  WITH CHECK ADD  CONSTRAINT [FK_wypSamo_wypWypozycz] FOREIGN KEY([IdSamo])
+		REFERENCES [dbo].[wypSamochod] ([IdSam])
+		ALTER TABLE [dbo].[wypWypozycz] CHECK CONSTRAINT [FK_wypSamo_wypWypozycz]
+	END
+	GO
+
+--IdKlient->wypWypo
+If Exists (select * from dbo.sysobjects where id= object_id(N'FK_wypKlient_wypWypozycz'))
+BEGIN
+	PRINT '!!!POWIĄZANIE ''FK_wypKlient_wypWypozycz'' juz istnieje'
+	END
+ELSE
+	BEGIN
+		ALTER TABLE [dbo].[wypWypozycz]  WITH CHECK ADD  CONSTRAINT [FK_wypKlient_wypWypozycz] FOREIGN KEY([IdKlient])
+		REFERENCES [dbo].[wypKlient] ([IdKlient])
+		ALTER TABLE [dbo].[wypWypozycz] CHECK CONSTRAINT [FK_wypKlient_wypWypozycz]
+	END
+	GO
+
+
+--IdSamo->wypNaprawa
+If Exists (select * from dbo.sysobjects where id= object_id(N'FK_wypSamo_wypNaprawa'))
+BEGIN
+	PRINT '!!!POWIĄZANIE ''FK_wypSamo_wypNaprawa'' juz istnieje'
+	END
+ELSE
+	BEGIN
+		ALTER TABLE [dbo].[wypNaprawa]  WITH CHECK ADD  CONSTRAINT [FK_wypSamo_wypNaprawa] FOREIGN KEY([IdSamo])
+		REFERENCES [dbo].[wypSamochod] ([IdSam])
+		ALTER TABLE [dbo].[wypNaprawa] CHECK CONSTRAINT [FK_wypSamo_wypNaprawa]
+	END
+	GO
+
+
+
+
 
  
 --tablice transakcji
