@@ -45,6 +45,13 @@ namespace SamWypo
         {
 
         }
+
+        public void ZapiszNowe()
+        {
+            throw new NotImplementedException();
+        }
+
+   
     }
     class Model:IObsluga
     {
@@ -76,7 +83,7 @@ namespace SamWypo
             else
                 return true;
         }
-        public void ZapiszNowy()
+        public void ZapiszNowe()
         {
 
         }

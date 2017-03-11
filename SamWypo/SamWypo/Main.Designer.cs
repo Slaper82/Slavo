@@ -30,6 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.samochódToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.markiSamochodówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajMarkęIModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpWypo = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,18 +40,27 @@
             this.btnUsun = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpStop = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.tpSamoch = new System.Windows.Forms.TabPage();
+            this.btnUSamo = new System.Windows.Forms.Button();
+            this.btnESamo = new System.Windows.Forms.Button();
             this.btnDodSam = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tpKlient = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUKlient = new System.Windows.Forms.Button();
+            this.btnEKlient = new System.Windows.Forms.Button();
+            this.btnDklient = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
+            this.tpRaport = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tpNaprawa = new System.Windows.Forms.TabPage();
+            this.btnNNapr = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.btnNEdytuj = new System.Windows.Forms.Button();
+            this.btnNUsun = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpWypo.SuspendLayout();
@@ -58,13 +69,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tpKlient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage1.SuspendLayout();
+            this.tpRaport.SuspendLayout();
+            this.tpNaprawa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.samochódToolStripMenuItem});
+            this.samochódToolStripMenuItem,
+            this.markiSamochodówToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(773, 24);
@@ -77,12 +91,27 @@
             this.samochódToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.samochódToolStripMenuItem.Text = "Administrator";
             // 
+            // markiSamochodówToolStripMenuItem
+            // 
+            this.markiSamochodówToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajMarkęIModelToolStripMenuItem});
+            this.markiSamochodówToolStripMenuItem.Name = "markiSamochodówToolStripMenuItem";
+            this.markiSamochodówToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.markiSamochodówToolStripMenuItem.Text = "Marki samochodów";
+            // 
+            // dodajMarkęIModelToolStripMenuItem
+            // 
+            this.dodajMarkęIModelToolStripMenuItem.Name = "dodajMarkęIModelToolStripMenuItem";
+            this.dodajMarkęIModelToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
+            this.dodajMarkęIModelToolStripMenuItem.Text = "Dodaj markę i model";
+            // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.tpWypo);
             this.tabControl.Controls.Add(this.tpSamoch);
             this.tabControl.Controls.Add(this.tpKlient);
-            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tpRaport);
+            this.tabControl.Controls.Add(this.tpNaprawa);
             this.tabControl.Location = new System.Drawing.Point(12, 27);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
@@ -97,8 +126,8 @@
             this.tpWypo.Controls.Add(this.btnUsun);
             this.tpWypo.Controls.Add(this.label2);
             this.tpWypo.Controls.Add(this.label1);
-            this.tpWypo.Controls.Add(this.dateTimePicker2);
-            this.tpWypo.Controls.Add(this.dateTimePicker1);
+            this.tpWypo.Controls.Add(this.dtpStop);
+            this.tpWypo.Controls.Add(this.dtpStart);
             this.tpWypo.Controls.Add(this.btnDodaj);
             this.tpWypo.Location = new System.Drawing.Point(4, 22);
             this.tpWypo.Name = "tpWypo";
@@ -162,19 +191,19 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Od";
             // 
-            // dateTimePicker2
+            // dtpStop
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(228, 17);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(140, 20);
-            this.dateTimePicker2.TabIndex = 2;
+            this.dtpStop.Location = new System.Drawing.Point(228, 17);
+            this.dtpStop.Name = "dtpStop";
+            this.dtpStop.Size = new System.Drawing.Size(140, 20);
+            this.dtpStop.TabIndex = 2;
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(33, 16);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(141, 20);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dtpStart.Location = new System.Drawing.Point(33, 16);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(141, 20);
+            this.dtpStart.TabIndex = 1;
             // 
             // btnDodaj
             // 
@@ -189,6 +218,8 @@
             // 
             // tpSamoch
             // 
+            this.tpSamoch.Controls.Add(this.btnUSamo);
+            this.tpSamoch.Controls.Add(this.btnESamo);
             this.tpSamoch.Controls.Add(this.btnDodSam);
             this.tpSamoch.Controls.Add(this.dataGridView2);
             this.tpSamoch.Location = new System.Drawing.Point(4, 22);
@@ -198,6 +229,26 @@
             this.tpSamoch.TabIndex = 1;
             this.tpSamoch.Text = "Samochody";
             this.tpSamoch.UseVisualStyleBackColor = true;
+            // 
+            // btnUSamo
+            // 
+            this.btnUSamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUSamo.Location = new System.Drawing.Point(212, 25);
+            this.btnUSamo.Name = "btnUSamo";
+            this.btnUSamo.Size = new System.Drawing.Size(79, 33);
+            this.btnUSamo.TabIndex = 3;
+            this.btnUSamo.Text = "Usuń";
+            this.btnUSamo.UseVisualStyleBackColor = true;
+            // 
+            // btnESamo
+            // 
+            this.btnESamo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnESamo.Location = new System.Drawing.Point(109, 25);
+            this.btnESamo.Name = "btnESamo";
+            this.btnESamo.Size = new System.Drawing.Size(79, 33);
+            this.btnESamo.TabIndex = 2;
+            this.btnESamo.Text = "Edytuj";
+            this.btnESamo.UseVisualStyleBackColor = true;
             // 
             // btnDodSam
             // 
@@ -220,7 +271,9 @@
             // 
             // tpKlient
             // 
-            this.tpKlient.Controls.Add(this.button1);
+            this.tpKlient.Controls.Add(this.btnUKlient);
+            this.tpKlient.Controls.Add(this.btnEKlient);
+            this.tpKlient.Controls.Add(this.btnDklient);
             this.tpKlient.Controls.Add(this.dataGridView3);
             this.tpKlient.Location = new System.Drawing.Point(4, 22);
             this.tpKlient.Name = "tpKlient";
@@ -230,16 +283,36 @@
             this.tpKlient.Text = "Klienci";
             this.tpKlient.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnUKlient
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(6, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 33);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Nowy";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnUKlient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUKlient.Location = new System.Drawing.Point(208, 24);
+            this.btnUKlient.Name = "btnUKlient";
+            this.btnUKlient.Size = new System.Drawing.Size(79, 33);
+            this.btnUKlient.TabIndex = 4;
+            this.btnUKlient.Text = "Usuń";
+            this.btnUKlient.UseVisualStyleBackColor = true;
+            // 
+            // btnEKlient
+            // 
+            this.btnEKlient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEKlient.Location = new System.Drawing.Point(107, 24);
+            this.btnEKlient.Name = "btnEKlient";
+            this.btnEKlient.Size = new System.Drawing.Size(79, 33);
+            this.btnEKlient.TabIndex = 3;
+            this.btnEKlient.Text = "Edytuj";
+            this.btnEKlient.UseVisualStyleBackColor = true;
+            // 
+            // btnDklient
+            // 
+            this.btnDklient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDklient.Location = new System.Drawing.Point(6, 24);
+            this.btnDklient.Name = "btnDklient";
+            this.btnDklient.Size = new System.Drawing.Size(79, 33);
+            this.btnDklient.TabIndex = 2;
+            this.btnDklient.Text = "Nowy";
+            this.btnDklient.UseVisualStyleBackColor = true;
+            this.btnDklient.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView3
             // 
@@ -249,17 +322,26 @@
             this.dataGridView3.Size = new System.Drawing.Size(644, 221);
             this.dataGridView3.TabIndex = 1;
             // 
-            // tabPage1
+            // tpRaport
             // 
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(706, 302);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "Raporty";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tpRaport.Controls.Add(this.label6);
+            this.tpRaport.Controls.Add(this.label5);
+            this.tpRaport.Location = new System.Drawing.Point(4, 22);
+            this.tpRaport.Name = "tpRaport";
+            this.tpRaport.Padding = new System.Windows.Forms.Padding(3);
+            this.tpRaport.Size = new System.Drawing.Size(706, 302);
+            this.tpRaport.TabIndex = 3;
+            this.tpRaport.Text = "Raporty";
+            this.tpRaport.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(206, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Opcje: po kliencie, okresie, samochodzie?";
             // 
             // label5
             // 
@@ -270,14 +352,57 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Tutaj raporty...tylko jakie";
             // 
-            // label6
+            // tpNaprawa
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Opcje: po kliencie, okresie, samochodzie?";
+            this.tpNaprawa.Controls.Add(this.btnNUsun);
+            this.tpNaprawa.Controls.Add(this.btnNEdytuj);
+            this.tpNaprawa.Controls.Add(this.btnNNapr);
+            this.tpNaprawa.Controls.Add(this.dataGridView4);
+            this.tpNaprawa.Location = new System.Drawing.Point(4, 22);
+            this.tpNaprawa.Name = "tpNaprawa";
+            this.tpNaprawa.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNaprawa.Size = new System.Drawing.Size(706, 302);
+            this.tpNaprawa.TabIndex = 4;
+            this.tpNaprawa.Text = "Naprawy";
+            this.tpNaprawa.UseVisualStyleBackColor = true;
+            // 
+            // btnNNapr
+            // 
+            this.btnNNapr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNNapr.Location = new System.Drawing.Point(6, 29);
+            this.btnNNapr.Name = "btnNNapr";
+            this.btnNNapr.Size = new System.Drawing.Size(79, 33);
+            this.btnNNapr.TabIndex = 4;
+            this.btnNNapr.Text = "Nowy";
+            this.btnNNapr.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(6, 68);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(644, 221);
+            this.dataGridView4.TabIndex = 3;
+            // 
+            // btnNEdytuj
+            // 
+            this.btnNEdytuj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNEdytuj.Location = new System.Drawing.Point(107, 29);
+            this.btnNEdytuj.Name = "btnNEdytuj";
+            this.btnNEdytuj.Size = new System.Drawing.Size(79, 33);
+            this.btnNEdytuj.TabIndex = 5;
+            this.btnNEdytuj.Text = "Edytuj";
+            this.btnNEdytuj.UseVisualStyleBackColor = true;
+            // 
+            // btnNUsun
+            // 
+            this.btnNUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNUsun.Location = new System.Drawing.Point(208, 29);
+            this.btnNUsun.Name = "btnNUsun";
+            this.btnNUsun.Size = new System.Drawing.Size(79, 33);
+            this.btnNUsun.TabIndex = 6;
+            this.btnNUsun.Text = "Usuń";
+            this.btnNUsun.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -299,8 +424,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tpKlient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tpRaport.ResumeLayout(false);
+            this.tpRaport.PerformLayout();
+            this.tpNaprawa.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,18 +445,29 @@
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpStop;
+        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.TabPage tpSamoch;
         private System.Windows.Forms.Button btnDodSam;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage tpKlient;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDklient;
         private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tpRaport;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tpNaprawa;
+        private System.Windows.Forms.ToolStripMenuItem markiSamochodówToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajMarkęIModelToolStripMenuItem;
+        private System.Windows.Forms.Button btnUSamo;
+        private System.Windows.Forms.Button btnESamo;
+        private System.Windows.Forms.Button btnUKlient;
+        private System.Windows.Forms.Button btnEKlient;
+        private System.Windows.Forms.Button btnNUsun;
+        private System.Windows.Forms.Button btnNEdytuj;
+        private System.Windows.Forms.Button btnNNapr;
+        private System.Windows.Forms.DataGridView dataGridView4;
     }
 }
 

@@ -64,17 +64,32 @@
     <Compile Include="frmMarka.Designer.cs">
       <DependentUpon>frmMarka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Klient.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="IObsluga.cs" />
+    <Compile Include="frmNaprawa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNaprawa.Designer.cs">
+      <DependentUpon>frmNaprawa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasy\Klient.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Marka.cs" />
+    <Compile Include="Klasy\Marka.cs" />
+    <Compile Include="Klasy\Naprawa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Samochod.cs" />
+    <Compile Include="Klasy\Samochod.cs" />
+    <Compile Include="Klasy\Wypo.cs" />
+    <Compile Include="SlaWypoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SlaWypoDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDodSamo.resx">
       <DependentUpon>frmDodSamo.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMarka.resx">
       <DependentUpon>frmMarka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNaprawa.resx">
+      <DependentUpon>frmNaprawa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -105,6 +123,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SlaWypoDataSet.xsc">
+      <DependentUpon>SlaWypoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SlaWypoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SlaWypoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SlaWypoDataSet.xss">
+      <DependentUpon>SlaWypoDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

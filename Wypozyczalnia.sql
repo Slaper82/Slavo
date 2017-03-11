@@ -13,12 +13,11 @@ create table wypSamochod(
 [Active] bit default(1)
 )
 
-
-
 create table wypMarka(
 [IdMarka] int identity(1,1) Primary key,
 [Nazwa] nvarchar(50) not null
 )
+
 create table wypModel(
 [IdModel] int identity(1,1) Primary key,
 [Nazwa] nvarchar(50) not null,
@@ -38,8 +37,8 @@ create table wypKlient(
 [NrDomu] nvarchar(10) not null,
 [NrMieszkania] nvarchar(8) not null,
 [KodPocz] nvarchar(6) not null,
-[Tel] nvarchar(15) not null default(' '),
-[OsobaKont] nvarchar(100) not null default(' ')
+[Tel] nvarchar(50) not null default(' '),
+[OsobaKont] nvarchar(300) not null default(' ')
 )
 
 create table wypWypozycz(
@@ -59,6 +58,66 @@ create table wypWypozycz(
 [DStop] smalldatetime not null,
 [Kwota] decimal(8,2) not null
  )
+ --Klucze 
+ 
+ --Marka-Model
+If Exists (select * from dbo.sysobjects where id= object_id(N'FK_wypMarka_wypModel'))
+BEGIN
+	PRINT '!!!POWIĄZANIE ''FK_wypMarka_wypModel'' juz istnieje'
+	END
+ELSE
+	BEGIN
+		ALTER TABLE [dbo].[wypModel]  WITH CHECK ADD  CONSTRAINT [FK_wypMarka_wypModel] FOREIGN KEY([IdMarka])
+		REFERENCES [dbo].[wypMarka] ([IdMarka])
+		ALTER TABLE [dbo].[wypModel] CHECK CONSTRAINT [FK_wypMarka_wypModel]
+	END
+	GO
+--Klucze wypPaliwo->wypSamochod
+
+
+If Exists (select * from dbo.sysobjects where id= object_id(N'FK_wypPaliwo_wypSamochod'))
+BEGIN
+	PRINT '!!!POWIĄZANIE ''FK_wypPaliwo_wypSamochod'' juz istnieje'
+	END
+ELSE
+	BEGIN
+		ALTER TABLE [dbo].[wypSamochod]  WITH CHECK ADD  CONSTRAINT [FK_wypPaliwo_wypSamochod] FOREIGN KEY([IdPaliwa])
+		REFERENCES [dbo].[wypPaliwo] ([IdTypSilnik])
+		ALTER TABLE [dbo].[wypSamochod] CHECK CONSTRAINT [FK_wypPaliwo_wypSamochod]
+	END
+	GO
+
+--Klucze wypModel->wypSamochod
+
+	
+If Exists (select * from dbo.sysobjects where id= object_id(N'FK_wypModel_wypSamochod'))
+BEGIN
+	PRINT '!!!POWIĄZANIE ''FK_wypModel_wypSamochod'' juz istnieje'
+	END
+ELSE
+	BEGIN
+		ALTER TABLE [dbo].[wypSamochod]  WITH CHECK ADD  CONSTRAINT [FK_wypModel_wypSamochod] FOREIGN KEY([IdModel])
+		REFERENCES [dbo].[wypModel] ([IdModel])
+		ALTER TABLE [dbo].[wypSamochod] CHECK CONSTRAINT [FK_wypModel_wypSamochod]
+	END
+	GO
+
+--Klucze wypMarka->wypSamochod
+
+	
+If Exists (select * from dbo.sysobjects where id= object_id(N'FK_wypMarka_wypSamochod'))
+BEGIN
+	PRINT '!!!POWIĄZANIE ''FK_wypMarka_wypSamochod'' juz istnieje'
+	END
+ELSE
+	BEGIN
+		ALTER TABLE [dbo].[wypSamochod]  WITH CHECK ADD  CONSTRAINT [FK_wypMarka_wypSamochod] FOREIGN KEY([IdMarka])
+		REFERENCES [dbo].[wypMarka] ([IdMarka])
+		ALTER TABLE [dbo].[wypSamochod] CHECK CONSTRAINT [FK_wypMarka_wypSamochod]
+	END
+	GO
+
+ 
 --tablice transakcji
 --transakcja wypożyczenia(id samochodu, od kiedy do kiedy, stawka,klient)
 --Klienci

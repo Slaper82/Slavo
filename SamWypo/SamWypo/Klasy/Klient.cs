@@ -34,28 +34,31 @@ namespace SamWypo
             this.Tel2 = tel2;
             this.OsobaKont = osoba;
         }
-        public bool SprawdzDane()
+        public bool Sprawdz()
         {
-            if (this.Nazwa == "" ||
-                this.NIP == "" ||
-                this.Ulica == "" ||
-                this.IdMiasto == "" ||
-                this.NrDomu == "" ||
-                this.KodPoczt == "")
+            if (this.Nazwa == ""||this.NIP == ""||this.Ulica == ""||this.IdMiasto == ""||this.NrDomu == ""||this.KodPoczt == "")
             {
                 return false;
             }
             else
                 return true;
         }
-        
-        public void ZapiszNowy()
-        {
 
-        }
         public void ZapiszEdyt()
         {
-
+            throw new NotImplementedException();
         }
+
+        public void ZapiszNowe()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Usun()
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

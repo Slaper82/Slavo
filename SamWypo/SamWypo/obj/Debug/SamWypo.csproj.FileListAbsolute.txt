@@ -34,3 +34,4 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\Sa
 C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Main.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Properties.Resources.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.frmMarka.resources

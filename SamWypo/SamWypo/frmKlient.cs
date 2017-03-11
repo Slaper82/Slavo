@@ -21,11 +21,11 @@ namespace SamWypo
         {
             bool DaneOk = false;
             Klient nowy = new Klient(txtNazwaF.Text,txtNip.Text,txtUlica.Text,txtMiasto.Text,txtNrDomu.Text,txtNrMieszk.Text,txtKodPoczt.Text,txtTelefon.Text,txtTel2.Text,txtOsobKont.Text);
-            DaneOk = nowy.SprawdzDane();
+            DaneOk = nowy.Sprawdz();
             if(DaneOk)
             try
                 {
-                        nowy.ZapiszNowy();
+                        nowy.ZapiszNowe();
                 }
             catch(Exception ex)
                 {

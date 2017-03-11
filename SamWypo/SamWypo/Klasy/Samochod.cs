@@ -5,19 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SamWypo
-{
-//[IdSam]  int identity(1,1) not null primary key,
-//[IdMarka] int not null,
-//[IdModel]    int not null,
-//[TablRej] nvarchar(12) not null,
-//[Status]    bit not null default(0),
-//[RokProd]    int not null,
-//[IdPaliwa]    int not null,
-//[Kolor]nvarchar(30) null,
-//[Active]    bit default(1)
-//)
-
-        
+{      
     class Samochod:IObsluga
     {
         public int IdSam { get; set; }
@@ -47,15 +35,27 @@ namespace SamWypo
             this.Active = active;
         }
 
-    }
-    public interface IObsluga
-    {
-        void ZapiszNowe();
-        void ZapiszEdyt();
-        void Usun();
-        void Sprawdz();
+        public void ZapiszNowe()
+        {
+            throw new NotImplementedException();
+        }
 
+        public void ZapiszEdyt()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Usun()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Sprawdz()
+        {
+            throw new NotImplementedException();
+        }
     }
+  
 }
 
 

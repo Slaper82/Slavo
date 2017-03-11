@@ -12,9 +12,12 @@ namespace SamWypo
 {
     public partial class Main : Form
     {
+        Helper data;
         public Main()
         {
             InitializeComponent();
+            data = new Helper(DateTime.Now,DateTime.Now,dtpStart,dtpStop);
+            data.UstawDate();
         }
 
         private void btnDodSam_Click(object sender, EventArgs e)
