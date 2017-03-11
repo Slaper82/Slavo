@@ -9,6 +9,7 @@ create table wypSamochod(
 [RokProd] int not null,
 [IdPaliwa] int not null,
 [Kolor]nvarchar(30) null,
+[Pojemnosc] decimal(6,2) default(1.6),
 [Active] bit default(1)
 )
 
@@ -41,6 +42,23 @@ create table wypKlient(
 [OsobaKont] nvarchar(100) not null default(' ')
 )
 
+create table wypWypozycz(
+[IdWypo] int identity(1,1)PRIMARY KEY,
+[IdSamo] int not null,
+[IdKlient] int not null,
+[DStart] smalldatetime not null,
+[DStop] smalldatetime not null,
+[Stawka] decimal(8,2) not null,
+[Suma] decimal(8,2) not null
+ )
+ 
+ create table wypNaprawa(
+[IdNapr] int identity(1,1) PRIMARY key,
+[IdSamo] int not null,
+[DStart] smalldatetime not null,
+[DStop] smalldatetime not null,
+[Kwota] decimal(8,2) not null
+ )
 --tablice transakcji
 --transakcja wypożyczenia(id samochodu, od kiedy do kiedy, stawka,klient)
 --Klienci
