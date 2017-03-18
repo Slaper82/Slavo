@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
@@ -51,6 +52,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtOsobKont = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.klientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.klientBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.klientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klientBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,6 +89,7 @@
             // 
             // txtNazwaF
             // 
+            this.txtNazwaF.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "Nazwa", true));
             this.txtNazwaF.Location = new System.Drawing.Point(135, 19);
             this.txtNazwaF.Name = "txtNazwaF";
             this.txtNazwaF.Size = new System.Drawing.Size(248, 20);
@@ -154,6 +160,7 @@
             // 
             // txtNip
             // 
+            this.txtNip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "NIP", true));
             this.txtNip.Location = new System.Drawing.Point(134, 48);
             this.txtNip.Name = "txtNip";
             this.txtNip.Size = new System.Drawing.Size(248, 20);
@@ -161,6 +168,7 @@
             // 
             // txtUlica
             // 
+            this.txtUlica.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "Ulica", true));
             this.txtUlica.Location = new System.Drawing.Point(134, 77);
             this.txtUlica.Name = "txtUlica";
             this.txtUlica.Size = new System.Drawing.Size(248, 20);
@@ -168,6 +176,7 @@
             // 
             // txtMiasto
             // 
+            this.txtMiasto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "Miasto", true));
             this.txtMiasto.Location = new System.Drawing.Point(134, 106);
             this.txtMiasto.Name = "txtMiasto";
             this.txtMiasto.Size = new System.Drawing.Size(248, 20);
@@ -175,6 +184,7 @@
             // 
             // txtNrDomu
             // 
+            this.txtNrDomu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "NrDomu", true));
             this.txtNrDomu.Location = new System.Drawing.Point(134, 135);
             this.txtNrDomu.Name = "txtNrDomu";
             this.txtNrDomu.Size = new System.Drawing.Size(248, 20);
@@ -182,6 +192,7 @@
             // 
             // txtNrMieszk
             // 
+            this.txtNrMieszk.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "NrMieszk", true));
             this.txtNrMieszk.Location = new System.Drawing.Point(134, 164);
             this.txtNrMieszk.Name = "txtNrMieszk";
             this.txtNrMieszk.Size = new System.Drawing.Size(248, 20);
@@ -189,6 +200,7 @@
             // 
             // txtKodPoczt
             // 
+            this.txtKodPoczt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "KodPoczt", true));
             this.txtKodPoczt.Location = new System.Drawing.Point(134, 193);
             this.txtKodPoczt.Name = "txtKodPoczt";
             this.txtKodPoczt.Size = new System.Drawing.Size(248, 20);
@@ -196,6 +208,7 @@
             // 
             // txtTelefon
             // 
+            this.txtTelefon.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "Tel1", true));
             this.txtTelefon.Location = new System.Drawing.Point(134, 222);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(248, 20);
@@ -204,6 +217,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "IdKlient", true));
             this.label9.Location = new System.Drawing.Point(453, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(19, 13);
@@ -212,6 +226,7 @@
             // 
             // txtTel2
             // 
+            this.txtTel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "Tel2", true));
             this.txtTel2.Location = new System.Drawing.Point(134, 251);
             this.txtTel2.Name = "txtTel2";
             this.txtTel2.Size = new System.Drawing.Size(248, 20);
@@ -228,6 +243,7 @@
             // 
             // txtOsobKont
             // 
+            this.txtOsobKont.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.klientBindingSource, "OsobaKont", true));
             this.txtOsobKont.Location = new System.Drawing.Point(134, 281);
             this.txtOsobKont.Name = "txtOsobKont";
             this.txtOsobKont.Size = new System.Drawing.Size(248, 20);
@@ -241,6 +257,14 @@
             this.label11.Size = new System.Drawing.Size(97, 13);
             this.label11.TabIndex = 22;
             this.label11.Text = "Osoba kontaktowa";
+            // 
+            // klientBindingSource
+            // 
+            this.klientBindingSource.DataSource = typeof(SamWypo.Klient);
+            // 
+            // klientBindingSource1
+            // 
+            this.klientBindingSource1.DataSource = typeof(SamWypo.Klient);
             // 
             // frmKlient
             // 
@@ -272,6 +296,8 @@
             this.Controls.Add(this.label1);
             this.Name = "frmKlient";
             this.Text = "Klient";
+            ((System.ComponentModel.ISupportInitialize)(this.klientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.klientBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,5 +328,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtOsobKont;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource klientBindingSource;
+        private System.Windows.Forms.BindingSource klientBindingSource1;
     }
 }

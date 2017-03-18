@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutoMapper;
 
 namespace SamWypo
 {
@@ -42,19 +43,38 @@ namespace SamWypo
             this.wypSamochodTableAdapter.Fill(this.wypoDataSet.wypSamochod);
            
         }
+      
 
         private void btnEKlient_Click(object sender, EventArgs e)
         {
-            Klient edyt = new Klient();
-            if (dgvKlient.SelectedRows.Count > 0)
-            {
-                edyt.Nazwa = dgvKlient.CurrentRow.Cells[1].FormattedValue.ToString();
-                edyt.IdKlient =Convert.ToInt32(dgvKlient.CurrentRow.Cells[0].Value.ToString());
-            }
-            else
-            {
-                MessageBox.Show("Wybierz klienta a nie...:)");
-            }
+
+            //    List<Klient> ed = Mapper.Map<IDataReader, List<Klient>>(dgvKlient.DataSource);
+            //   ItemId = row.Field<long?>(_ItemIdDataName) ?? value_if_null;
+            DataTable g = dgvKlient.DataSource as DataTable;
+          //  DataRow row = g.NewRow();
+         DataRow   row    = ((DataRowView)dgvKlient.SelectedRows[0].DataBoundItem).Row;
+         Klient edyt = new Klient(row);
+            frmKlient Edytowany = new frmKlient(edyt);
+            Edytowany.dodano += Main_Load;
+            Edytowany.ShowDialog();
+         
+               // edyt.IdKlient=dgvKlient.Rows.
+           //     edyt.IdKlient = Convert.ToInt32(dgvKlient.CurrentRow.Cells[0].Value.ToString());
+            //    edyt.Nazwa = dgvKlient.CurrentRow.Cells[1].FormattedValue.ToString();
+             //   edyt.NIP = dgvKlient.CurrentRow.Cells[2].FormattedValue.ToString();
+              ////  edyt.Ulica = dgvKlient.CurrentRow.Cells[3].FormattedValue.ToString();
+              //  edyt.Miasto = dgvKlient.CurrentRow.Cells[4].FormattedValue.ToString();
+              //  edyt.NrDomu = dgvKlient.CurrentRow.Cells[5].FormattedValue.ToString();
+              //  edyt.NrMieszk = dgvKlient.CurrentRow.Cells[6].FormattedValue.ToString();
+              //  edyt.KodPoczt = dgvKlient.CurrentRow.Cells[7].FormattedValue.ToString();
+              //  edyt.Tel1 = dgvKlient.CurrentRow.Cells[8].FormattedValue.ToString();
+              //  edyt.OsobaKont = dgvKlient.CurrentRow.Cells[9].FormattedValue.ToString();
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Wybierz klienta a nie...:)");
+            //}
             //frmKlient stary = new frmKlient();
             
         }

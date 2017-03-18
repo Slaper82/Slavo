@@ -13,10 +13,18 @@ namespace SamWypo
     public delegate void Dodano(object sender, EventArgs e);
     public partial class frmKlient : Form
     {
+        private Klient klient { get; set; }
+
         public event Dodano dodano;
         public frmKlient()
         {
             InitializeComponent();
+        }
+        public frmKlient(Klient klient)
+        {
+            InitializeComponent();
+            this.klient = klient;
+            klientBindingSource.DataSource = this.klient;
         }
 
         private void btnZapisz_Click(object sender, EventArgs e)
@@ -27,7 +35,14 @@ namespace SamWypo
             if(DaneOk)
             try
                 {
+                    if (klient != null)
+                    {
+                        klient.ZapiszEdyt();
+                    }
+                    else
+                    {
                         nowy.ZapiszNowe();
+                    }
                     if (dodano != null) dodano(this, e);
                 }
             catch(Exception ex)

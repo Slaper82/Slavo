@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SamWypo.WypoDataSetTableAdapters;
-
+using System.Data;
 
 namespace SamWypo
 {
-    class Klient:IObsluga
+  public class Klient:IObsluga
     {
         
         public int IdKlient { get; set; }
@@ -25,9 +25,11 @@ namespace SamWypo
         public string OsobaKont { get; set; }
 
         wypKlientTableAdapter nowy;
+        KlientObslTableAdapter edycja;
         public Klient()
         {
             nowy = new wypKlientTableAdapter();
+            edycja = new KlientObslTableAdapter();
         }
 
         public Klient(string Nazwa,string nip,string ulica,string miasto,string nrdom,string nrmieszk,string kodpoczt,string tel1,string tel2,string osoba):this()
@@ -55,10 +57,33 @@ namespace SamWypo
 
         public void ZapiszEdyt()
         {
+            edycja = new KlientObslTableAdapter();
+            try
+            {
+                edycja.ZapKlientEdyt(IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszk, KodPoczt, Tel1, OsobaKont);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Nie można zapisać bo: \n"+ex.ToString());
+            }
             
-            throw new NotImplementedException();
+         //   Dorobic zapis po edycji
         }
+        public Klient(DataRow row)
+        {
 
+            this.IdKlient = row.Field<int>("IdKlient");
+            this.Nazwa = row.Field<string>("Nazwa"); 
+            this.NIP = row.Field<string>("NIP");
+            this.Ulica = row.Field<string>("Ulica");
+            this.Miasto = row.Field<string>("Miasto");
+            this.NrDomu = row.Field<string>("NrDomu");
+            this.NrMieszk = row.Field<string>("NrMieszkania");
+            this.KodPoczt = row.Field<string>("KodPocz");
+            this.Tel1 = row.Field<string>("Tel");
+            this.OsobaKont = row.Field<string>("OsobaKont");
+
+        }
         public  void ZapiszNowe()
         {
             nowy.Insert(Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszk, KodPoczt, Tel1, OsobaKont);
@@ -67,7 +92,7 @@ namespace SamWypo
 
         public void Usun()
         {
-            throw new NotImplementedException();
+         //   throw new NotImplementedException();
         }
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SamWypo
 {
-    interface IObsluga
+  public interface IObsluga
     {
         void ZapiszNowe();
         void ZapiszEdyt();
