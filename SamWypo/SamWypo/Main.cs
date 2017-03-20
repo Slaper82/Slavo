@@ -37,6 +37,8 @@ namespace SamWypo
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wypoDataSet.SamoLista' table. You can move, or remove it, as needed.
+            this.samoListaTableAdapter.Fill(this.wypoDataSet.SamoLista);
             // TODO: This line of code loads data into the 'wypoDataSet.wypKlient' table. You can move, or remove it, as needed.
             this.wypKlientTableAdapter.Fill(this.wypoDataSet.wypKlient);
             // TODO: This line of code loads data into the 'wypoDataSet.wypSamochod' table. You can move, or remove it, as needed.

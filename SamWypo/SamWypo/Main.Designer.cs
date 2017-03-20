@@ -49,34 +49,13 @@
             this.btnESamo = new System.Windows.Forms.Button();
             this.btnDodSam = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.wypSamochodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wypoDataSet = new SamWypo.WypoDataSet();
             this.tpKlient = new System.Windows.Forms.TabPage();
             this.btnUKlient = new System.Windows.Forms.Button();
             this.btnEKlient = new System.Windows.Forms.Button();
             this.btnDklient = new System.Windows.Forms.Button();
             this.dgvKlient = new System.Windows.Forms.DataGridView();
-            this.tpRaport = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tpNaprawa = new System.Windows.Forms.TabPage();
-            this.btnNUsun = new System.Windows.Forms.Button();
-            this.btnNEdytuj = new System.Windows.Forms.Button();
-            this.btnNNapr = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.wypoDataSet = new SamWypo.WypoDataSet();
-            this.wypSamochodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wypSamochodTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypSamochodTableAdapter();
-            this.wypKlientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wypKlientTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypKlientTableAdapter();
-            this.idSamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idMarkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idModelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tablRejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.rokProdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPaliwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pojemnoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.idKlientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,20 +66,40 @@
             this.kodPoczDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.osobaKontDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wypKlientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tpRaport = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tpNaprawa = new System.Windows.Forms.TabPage();
+            this.btnNUsun = new System.Windows.Forms.Button();
+            this.btnNEdytuj = new System.Windows.Forms.Button();
+            this.btnNNapr = new System.Windows.Forms.Button();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.wypSamochodTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypSamochodTableAdapter();
+            this.wypKlientTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypKlientTableAdapter();
+            this.samoListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.samoListaTableAdapter = new SamWypo.WypoDataSetTableAdapters.SamoListaTableAdapter();
+            this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tablRejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rokProdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pojemnoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpWypo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tpSamoch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
             this.tpKlient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).BeginInit();
             this.tpRaport.SuspendLayout();
             this.tpNaprawa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -161,7 +160,7 @@
             this.tpWypo.Location = new System.Drawing.Point(4, 22);
             this.tpWypo.Name = "tpWypo";
             this.tpWypo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWypo.Size = new System.Drawing.Size(706, 302);
+            this.tpWypo.Size = new System.Drawing.Size(891, 302);
             this.tpWypo.TabIndex = 0;
             this.tpWypo.Text = "Wypożyczenia";
             this.tpWypo.UseVisualStyleBackColor = true;
@@ -295,21 +294,27 @@
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idSamDataGridViewTextBoxColumn,
-            this.idMarkaDataGridViewTextBoxColumn,
-            this.idModelDataGridViewTextBoxColumn,
+            this.Marka,
+            this.Nazwa1,
             this.tablRejDataGridViewTextBoxColumn,
-            this.statusDataGridViewCheckBoxColumn,
             this.rokProdDataGridViewTextBoxColumn,
-            this.idPaliwaDataGridViewTextBoxColumn,
-            this.kolorDataGridViewTextBoxColumn,
-            this.pojemnoscDataGridViewTextBoxColumn,
-            this.activeDataGridViewCheckBoxColumn});
-            this.dataGridView2.DataSource = this.wypSamochodBindingSource;
+            this.Nazwa2,
+            this.pojemnoscDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.samoListaBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(6, 64);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(889, 221);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // wypSamochodBindingSource
+            // 
+            this.wypSamochodBindingSource.DataMember = "wypSamochod";
+            this.wypSamochodBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // wypoDataSet
+            // 
+            this.wypoDataSet.DataSetName = "WypoDataSet";
+            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tpKlient
             // 
@@ -383,173 +388,6 @@
             this.dgvKlient.TabIndex = 1;
             this.dgvKlient.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvKlient_DataBindingComplete);
             // 
-            // tpRaport
-            // 
-            this.tpRaport.Controls.Add(this.label6);
-            this.tpRaport.Controls.Add(this.label5);
-            this.tpRaport.Location = new System.Drawing.Point(4, 22);
-            this.tpRaport.Name = "tpRaport";
-            this.tpRaport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRaport.Size = new System.Drawing.Size(706, 302);
-            this.tpRaport.TabIndex = 3;
-            this.tpRaport.Text = "Raporty";
-            this.tpRaport.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 49);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Opcje: po kliencie, okresie, samochodzie?";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 21);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Tutaj raporty...tylko jakie";
-            // 
-            // tpNaprawa
-            // 
-            this.tpNaprawa.Controls.Add(this.btnNUsun);
-            this.tpNaprawa.Controls.Add(this.btnNEdytuj);
-            this.tpNaprawa.Controls.Add(this.btnNNapr);
-            this.tpNaprawa.Controls.Add(this.dataGridView4);
-            this.tpNaprawa.Location = new System.Drawing.Point(4, 22);
-            this.tpNaprawa.Name = "tpNaprawa";
-            this.tpNaprawa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNaprawa.Size = new System.Drawing.Size(706, 302);
-            this.tpNaprawa.TabIndex = 4;
-            this.tpNaprawa.Text = "Naprawy";
-            this.tpNaprawa.UseVisualStyleBackColor = true;
-            // 
-            // btnNUsun
-            // 
-            this.btnNUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNUsun.Location = new System.Drawing.Point(208, 29);
-            this.btnNUsun.Name = "btnNUsun";
-            this.btnNUsun.Size = new System.Drawing.Size(79, 33);
-            this.btnNUsun.TabIndex = 6;
-            this.btnNUsun.Text = "Usuń";
-            this.btnNUsun.UseVisualStyleBackColor = true;
-            // 
-            // btnNEdytuj
-            // 
-            this.btnNEdytuj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNEdytuj.Location = new System.Drawing.Point(107, 29);
-            this.btnNEdytuj.Name = "btnNEdytuj";
-            this.btnNEdytuj.Size = new System.Drawing.Size(79, 33);
-            this.btnNEdytuj.TabIndex = 5;
-            this.btnNEdytuj.Text = "Edytuj";
-            this.btnNEdytuj.UseVisualStyleBackColor = true;
-            // 
-            // btnNNapr
-            // 
-            this.btnNNapr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNNapr.Location = new System.Drawing.Point(6, 29);
-            this.btnNNapr.Name = "btnNNapr";
-            this.btnNNapr.Size = new System.Drawing.Size(79, 33);
-            this.btnNNapr.TabIndex = 4;
-            this.btnNNapr.Text = "Nowy";
-            this.btnNNapr.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 68);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(644, 221);
-            this.dataGridView4.TabIndex = 3;
-            // 
-            // wypoDataSet
-            // 
-            this.wypoDataSet.DataSetName = "WypoDataSet";
-            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // wypSamochodBindingSource
-            // 
-            this.wypSamochodBindingSource.DataMember = "wypSamochod";
-            this.wypSamochodBindingSource.DataSource = this.wypoDataSet;
-            // 
-            // wypSamochodTableAdapter
-            // 
-            this.wypSamochodTableAdapter.ClearBeforeFill = true;
-            // 
-            // wypKlientBindingSource
-            // 
-            this.wypKlientBindingSource.DataMember = "wypKlient";
-            this.wypKlientBindingSource.DataSource = this.wypoDataSet;
-            // 
-            // wypKlientTableAdapter
-            // 
-            this.wypKlientTableAdapter.ClearBeforeFill = true;
-            // 
-            // idSamDataGridViewTextBoxColumn
-            // 
-            this.idSamDataGridViewTextBoxColumn.DataPropertyName = "IdSam";
-            this.idSamDataGridViewTextBoxColumn.HeaderText = "IdSam";
-            this.idSamDataGridViewTextBoxColumn.Name = "idSamDataGridViewTextBoxColumn";
-            this.idSamDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSamDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idMarkaDataGridViewTextBoxColumn
-            // 
-            this.idMarkaDataGridViewTextBoxColumn.DataPropertyName = "IdMarka";
-            this.idMarkaDataGridViewTextBoxColumn.HeaderText = "IdMarka";
-            this.idMarkaDataGridViewTextBoxColumn.Name = "idMarkaDataGridViewTextBoxColumn";
-            // 
-            // idModelDataGridViewTextBoxColumn
-            // 
-            this.idModelDataGridViewTextBoxColumn.DataPropertyName = "IdModel";
-            this.idModelDataGridViewTextBoxColumn.HeaderText = "IdModel";
-            this.idModelDataGridViewTextBoxColumn.Name = "idModelDataGridViewTextBoxColumn";
-            // 
-            // tablRejDataGridViewTextBoxColumn
-            // 
-            this.tablRejDataGridViewTextBoxColumn.DataPropertyName = "TablRej";
-            this.tablRejDataGridViewTextBoxColumn.HeaderText = "TablRej";
-            this.tablRejDataGridViewTextBoxColumn.Name = "tablRejDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewCheckBoxColumn
-            // 
-            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewCheckBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
-            // 
-            // rokProdDataGridViewTextBoxColumn
-            // 
-            this.rokProdDataGridViewTextBoxColumn.DataPropertyName = "RokProd";
-            this.rokProdDataGridViewTextBoxColumn.HeaderText = "RokProd";
-            this.rokProdDataGridViewTextBoxColumn.Name = "rokProdDataGridViewTextBoxColumn";
-            // 
-            // idPaliwaDataGridViewTextBoxColumn
-            // 
-            this.idPaliwaDataGridViewTextBoxColumn.DataPropertyName = "IdPaliwa";
-            this.idPaliwaDataGridViewTextBoxColumn.HeaderText = "IdPaliwa";
-            this.idPaliwaDataGridViewTextBoxColumn.Name = "idPaliwaDataGridViewTextBoxColumn";
-            // 
-            // kolorDataGridViewTextBoxColumn
-            // 
-            this.kolorDataGridViewTextBoxColumn.DataPropertyName = "Kolor";
-            this.kolorDataGridViewTextBoxColumn.HeaderText = "Kolor";
-            this.kolorDataGridViewTextBoxColumn.Name = "kolorDataGridViewTextBoxColumn";
-            // 
-            // pojemnoscDataGridViewTextBoxColumn
-            // 
-            this.pojemnoscDataGridViewTextBoxColumn.DataPropertyName = "Pojemnosc";
-            this.pojemnoscDataGridViewTextBoxColumn.HeaderText = "Pojemnosc";
-            this.pojemnoscDataGridViewTextBoxColumn.Name = "pojemnoscDataGridViewTextBoxColumn";
-            // 
-            // activeDataGridViewCheckBoxColumn
-            // 
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
-            // 
             // idKlientDataGridViewTextBoxColumn
             // 
             this.idKlientDataGridViewTextBoxColumn.DataPropertyName = "IdKlient";
@@ -621,6 +459,146 @@
             this.osobaKontDataGridViewTextBoxColumn.Name = "osobaKontDataGridViewTextBoxColumn";
             this.osobaKontDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // wypKlientBindingSource
+            // 
+            this.wypKlientBindingSource.DataMember = "wypKlient";
+            this.wypKlientBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // tpRaport
+            // 
+            this.tpRaport.Controls.Add(this.label6);
+            this.tpRaport.Controls.Add(this.label5);
+            this.tpRaport.Location = new System.Drawing.Point(4, 22);
+            this.tpRaport.Name = "tpRaport";
+            this.tpRaport.Padding = new System.Windows.Forms.Padding(3);
+            this.tpRaport.Size = new System.Drawing.Size(891, 302);
+            this.tpRaport.TabIndex = 3;
+            this.tpRaport.Text = "Raporty";
+            this.tpRaport.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(20, 49);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(206, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Opcje: po kliencie, okresie, samochodzie?";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Tutaj raporty...tylko jakie";
+            // 
+            // tpNaprawa
+            // 
+            this.tpNaprawa.Controls.Add(this.btnNUsun);
+            this.tpNaprawa.Controls.Add(this.btnNEdytuj);
+            this.tpNaprawa.Controls.Add(this.btnNNapr);
+            this.tpNaprawa.Controls.Add(this.dataGridView4);
+            this.tpNaprawa.Location = new System.Drawing.Point(4, 22);
+            this.tpNaprawa.Name = "tpNaprawa";
+            this.tpNaprawa.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNaprawa.Size = new System.Drawing.Size(891, 302);
+            this.tpNaprawa.TabIndex = 4;
+            this.tpNaprawa.Text = "Naprawy";
+            this.tpNaprawa.UseVisualStyleBackColor = true;
+            // 
+            // btnNUsun
+            // 
+            this.btnNUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNUsun.Location = new System.Drawing.Point(208, 29);
+            this.btnNUsun.Name = "btnNUsun";
+            this.btnNUsun.Size = new System.Drawing.Size(79, 33);
+            this.btnNUsun.TabIndex = 6;
+            this.btnNUsun.Text = "Usuń";
+            this.btnNUsun.UseVisualStyleBackColor = true;
+            // 
+            // btnNEdytuj
+            // 
+            this.btnNEdytuj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNEdytuj.Location = new System.Drawing.Point(107, 29);
+            this.btnNEdytuj.Name = "btnNEdytuj";
+            this.btnNEdytuj.Size = new System.Drawing.Size(79, 33);
+            this.btnNEdytuj.TabIndex = 5;
+            this.btnNEdytuj.Text = "Edytuj";
+            this.btnNEdytuj.UseVisualStyleBackColor = true;
+            // 
+            // btnNNapr
+            // 
+            this.btnNNapr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNNapr.Location = new System.Drawing.Point(6, 29);
+            this.btnNNapr.Name = "btnNNapr";
+            this.btnNNapr.Size = new System.Drawing.Size(79, 33);
+            this.btnNNapr.TabIndex = 4;
+            this.btnNNapr.Text = "Nowy";
+            this.btnNNapr.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(6, 68);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(644, 221);
+            this.dataGridView4.TabIndex = 3;
+            // 
+            // wypSamochodTableAdapter
+            // 
+            this.wypSamochodTableAdapter.ClearBeforeFill = true;
+            // 
+            // wypKlientTableAdapter
+            // 
+            this.wypKlientTableAdapter.ClearBeforeFill = true;
+            // 
+            // samoListaBindingSource
+            // 
+            this.samoListaBindingSource.DataMember = "SamoLista";
+            this.samoListaBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // samoListaTableAdapter
+            // 
+            this.samoListaTableAdapter.ClearBeforeFill = true;
+            // 
+            // Marka
+            // 
+            this.Marka.DataPropertyName = "Nazwa";
+            this.Marka.HeaderText = "Marka";
+            this.Marka.Name = "Marka";
+            // 
+            // Nazwa1
+            // 
+            this.Nazwa1.DataPropertyName = "Nazwa1";
+            this.Nazwa1.HeaderText = "Model";
+            this.Nazwa1.Name = "Nazwa1";
+            // 
+            // tablRejDataGridViewTextBoxColumn
+            // 
+            this.tablRejDataGridViewTextBoxColumn.DataPropertyName = "TablRej";
+            this.tablRejDataGridViewTextBoxColumn.HeaderText = "Rejestracja";
+            this.tablRejDataGridViewTextBoxColumn.Name = "tablRejDataGridViewTextBoxColumn";
+            // 
+            // rokProdDataGridViewTextBoxColumn
+            // 
+            this.rokProdDataGridViewTextBoxColumn.DataPropertyName = "RokProd";
+            this.rokProdDataGridViewTextBoxColumn.HeaderText = "RokProd";
+            this.rokProdDataGridViewTextBoxColumn.Name = "rokProdDataGridViewTextBoxColumn";
+            // 
+            // Nazwa2
+            // 
+            this.Nazwa2.DataPropertyName = "Nazwa2";
+            this.Nazwa2.HeaderText = "Rodzaj paliwa";
+            this.Nazwa2.Name = "Nazwa2";
+            // 
+            // pojemnoscDataGridViewTextBoxColumn
+            // 
+            this.pojemnoscDataGridViewTextBoxColumn.DataPropertyName = "Pojemnosc";
+            this.pojemnoscDataGridViewTextBoxColumn.HeaderText = "Pojemność";
+            this.pojemnoscDataGridViewTextBoxColumn.Name = "pojemnoscDataGridViewTextBoxColumn";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -640,15 +618,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tpSamoch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
             this.tpKlient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).EndInit();
             this.tpRaport.ResumeLayout(false);
             this.tpRaport.PerformLayout();
             this.tpNaprawa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -694,16 +673,6 @@
         private WypoDataSetTableAdapters.wypSamochodTableAdapter wypSamochodTableAdapter;
         private System.Windows.Forms.BindingSource wypKlientBindingSource;
         private WypoDataSetTableAdapters.wypKlientTableAdapter wypKlientTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idMarkaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idModelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tablRejDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rokProdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPaliwaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pojemnoscDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idKlientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nIPDataGridViewTextBoxColumn;
@@ -714,6 +683,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kodPoczDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn osobaKontDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource samoListaBindingSource;
+        private WypoDataSetTableAdapters.SamoListaTableAdapter samoListaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Marka;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tablRejDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rokProdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pojemnoscDataGridViewTextBoxColumn;
     }
 }
 
