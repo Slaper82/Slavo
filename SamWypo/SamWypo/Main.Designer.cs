@@ -48,8 +48,14 @@
             this.btnUSamo = new System.Windows.Forms.Button();
             this.btnESamo = new System.Windows.Forms.Button();
             this.btnDodSam = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.wypSamochodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgvSamo = new System.Windows.Forms.DataGridView();
+            this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tablRejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rokProdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pojemnoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.samoListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypoDataSet = new SamWypo.WypoDataSet();
             this.tpKlient = new System.Windows.Forms.TabPage();
             this.btnUKlient = new System.Windows.Forms.Button();
@@ -75,23 +81,20 @@
             this.btnNEdytuj = new System.Windows.Forms.Button();
             this.btnNNapr = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.wypSamochodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypSamochodTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypSamochodTableAdapter();
             this.wypKlientTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypKlientTableAdapter();
-            this.samoListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.samoListaTableAdapter = new SamWypo.WypoDataSetTableAdapters.SamoListaTableAdapter();
-            this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwa1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tablRejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rokProdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwa2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pojemnoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wypoDataSet1 = new SamWypo.WypoDataSet();
+            this.samoListaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.IdSam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpWypo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tpSamoch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
             this.tpKlient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).BeginInit();
@@ -99,7 +102,9 @@
             this.tpRaport.SuspendLayout();
             this.tpNaprawa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -249,7 +254,7 @@
             this.tpSamoch.Controls.Add(this.btnUSamo);
             this.tpSamoch.Controls.Add(this.btnESamo);
             this.tpSamoch.Controls.Add(this.btnDodSam);
-            this.tpSamoch.Controls.Add(this.dataGridView2);
+            this.tpSamoch.Controls.Add(this.dgvSamo);
             this.tpSamoch.Location = new System.Drawing.Point(4, 22);
             this.tpSamoch.Name = "tpSamoch";
             this.tpSamoch.Padding = new System.Windows.Forms.Padding(3);
@@ -277,6 +282,7 @@
             this.btnESamo.TabIndex = 2;
             this.btnESamo.Text = "Edytuj";
             this.btnESamo.UseVisualStyleBackColor = true;
+            this.btnESamo.Click += new System.EventHandler(this.btnESamo_Click);
             // 
             // btnDodSam
             // 
@@ -289,27 +295,73 @@
             this.btnDodSam.UseVisualStyleBackColor = true;
             this.btnDodSam.Click += new System.EventHandler(this.btnDodSam_Click);
             // 
-            // dataGridView2
+            // dgvSamo
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSamo.AllowUserToAddRows = false;
+            this.dgvSamo.AllowUserToDeleteRows = false;
+            this.dgvSamo.AutoGenerateColumns = false;
+            this.dgvSamo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSamo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Marka,
             this.Nazwa1,
             this.tablRejDataGridViewTextBoxColumn,
             this.rokProdDataGridViewTextBoxColumn,
             this.Nazwa2,
-            this.pojemnoscDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.samoListaBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 64);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(889, 221);
-            this.dataGridView2.TabIndex = 0;
+            this.pojemnoscDataGridViewTextBoxColumn,
+            this.IdSam});
+            this.dgvSamo.DataSource = this.samoListaBindingSource1;
+            this.dgvSamo.Location = new System.Drawing.Point(6, 64);
+            this.dgvSamo.Name = "dgvSamo";
+            this.dgvSamo.ReadOnly = true;
+            this.dgvSamo.Size = new System.Drawing.Size(889, 221);
+            this.dgvSamo.TabIndex = 0;
             // 
-            // wypSamochodBindingSource
+            // Marka
             // 
-            this.wypSamochodBindingSource.DataMember = "wypSamochod";
-            this.wypSamochodBindingSource.DataSource = this.wypoDataSet;
+            this.Marka.DataPropertyName = "Nazwa";
+            this.Marka.HeaderText = "Marka";
+            this.Marka.Name = "Marka";
+            this.Marka.ReadOnly = true;
+            // 
+            // Nazwa1
+            // 
+            this.Nazwa1.DataPropertyName = "Nazwa1";
+            this.Nazwa1.HeaderText = "Model";
+            this.Nazwa1.Name = "Nazwa1";
+            this.Nazwa1.ReadOnly = true;
+            // 
+            // tablRejDataGridViewTextBoxColumn
+            // 
+            this.tablRejDataGridViewTextBoxColumn.DataPropertyName = "TablRej";
+            this.tablRejDataGridViewTextBoxColumn.HeaderText = "Rejestracja";
+            this.tablRejDataGridViewTextBoxColumn.Name = "tablRejDataGridViewTextBoxColumn";
+            this.tablRejDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rokProdDataGridViewTextBoxColumn
+            // 
+            this.rokProdDataGridViewTextBoxColumn.DataPropertyName = "RokProd";
+            this.rokProdDataGridViewTextBoxColumn.HeaderText = "RokProd";
+            this.rokProdDataGridViewTextBoxColumn.Name = "rokProdDataGridViewTextBoxColumn";
+            this.rokProdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Nazwa2
+            // 
+            this.Nazwa2.DataPropertyName = "Nazwa2";
+            this.Nazwa2.HeaderText = "Rodzaj paliwa";
+            this.Nazwa2.Name = "Nazwa2";
+            this.Nazwa2.ReadOnly = true;
+            // 
+            // pojemnoscDataGridViewTextBoxColumn
+            // 
+            this.pojemnoscDataGridViewTextBoxColumn.DataPropertyName = "Pojemnosc";
+            this.pojemnoscDataGridViewTextBoxColumn.HeaderText = "Pojemność";
+            this.pojemnoscDataGridViewTextBoxColumn.Name = "pojemnoscDataGridViewTextBoxColumn";
+            this.pojemnoscDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // samoListaBindingSource
+            // 
+            this.samoListaBindingSource.DataMember = "SamoLista";
+            this.samoListaBindingSource.DataSource = this.wypoDataSet;
             // 
             // wypoDataSet
             // 
@@ -546,6 +598,11 @@
             this.dataGridView4.Size = new System.Drawing.Size(644, 221);
             this.dataGridView4.TabIndex = 3;
             // 
+            // wypSamochodBindingSource
+            // 
+            this.wypSamochodBindingSource.DataMember = "wypSamochod";
+            this.wypSamochodBindingSource.DataSource = this.wypoDataSet;
+            // 
             // wypSamochodTableAdapter
             // 
             this.wypSamochodTableAdapter.ClearBeforeFill = true;
@@ -554,50 +611,26 @@
             // 
             this.wypKlientTableAdapter.ClearBeforeFill = true;
             // 
-            // samoListaBindingSource
-            // 
-            this.samoListaBindingSource.DataMember = "SamoLista";
-            this.samoListaBindingSource.DataSource = this.wypoDataSet;
-            // 
             // samoListaTableAdapter
             // 
             this.samoListaTableAdapter.ClearBeforeFill = true;
             // 
-            // Marka
+            // wypoDataSet1
             // 
-            this.Marka.DataPropertyName = "Nazwa";
-            this.Marka.HeaderText = "Marka";
-            this.Marka.Name = "Marka";
+            this.wypoDataSet1.DataSetName = "WypoDataSet";
+            this.wypoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Nazwa1
+            // samoListaBindingSource1
             // 
-            this.Nazwa1.DataPropertyName = "Nazwa1";
-            this.Nazwa1.HeaderText = "Model";
-            this.Nazwa1.Name = "Nazwa1";
+            this.samoListaBindingSource1.DataMember = "SamoLista";
+            this.samoListaBindingSource1.DataSource = this.wypoDataSet1;
             // 
-            // tablRejDataGridViewTextBoxColumn
+            // IdSam
             // 
-            this.tablRejDataGridViewTextBoxColumn.DataPropertyName = "TablRej";
-            this.tablRejDataGridViewTextBoxColumn.HeaderText = "Rejestracja";
-            this.tablRejDataGridViewTextBoxColumn.Name = "tablRejDataGridViewTextBoxColumn";
-            // 
-            // rokProdDataGridViewTextBoxColumn
-            // 
-            this.rokProdDataGridViewTextBoxColumn.DataPropertyName = "RokProd";
-            this.rokProdDataGridViewTextBoxColumn.HeaderText = "RokProd";
-            this.rokProdDataGridViewTextBoxColumn.Name = "rokProdDataGridViewTextBoxColumn";
-            // 
-            // Nazwa2
-            // 
-            this.Nazwa2.DataPropertyName = "Nazwa2";
-            this.Nazwa2.HeaderText = "Rodzaj paliwa";
-            this.Nazwa2.Name = "Nazwa2";
-            // 
-            // pojemnoscDataGridViewTextBoxColumn
-            // 
-            this.pojemnoscDataGridViewTextBoxColumn.DataPropertyName = "Pojemnosc";
-            this.pojemnoscDataGridViewTextBoxColumn.HeaderText = "Pojemność";
-            this.pojemnoscDataGridViewTextBoxColumn.Name = "pojemnoscDataGridViewTextBoxColumn";
+            this.IdSam.DataPropertyName = "IdSam";
+            this.IdSam.HeaderText = "IdSam";
+            this.IdSam.Name = "IdSam";
+            this.IdSam.ReadOnly = true;
             // 
             // Main
             // 
@@ -617,8 +650,8 @@
             this.tpWypo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tpSamoch.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
             this.tpKlient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).EndInit();
@@ -627,7 +660,9 @@
             this.tpRaport.PerformLayout();
             this.tpNaprawa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,7 +685,7 @@
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.TabPage tpSamoch;
         private System.Windows.Forms.Button btnDodSam;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvSamo;
         private System.Windows.Forms.TabPage tpKlient;
         private System.Windows.Forms.Button btnDklient;
         private System.Windows.Forms.DataGridView dgvKlient;
@@ -691,6 +726,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rokProdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa2;
         private System.Windows.Forms.DataGridViewTextBoxColumn pojemnoscDataGridViewTextBoxColumn;
+        private WypoDataSet wypoDataSet1;
+        private System.Windows.Forms.BindingSource samoListaBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSam;
     }
 }
 

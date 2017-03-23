@@ -1,40 +1,14 @@
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\bin\Debug\SamWypo.exe.config
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\bin\Debug\SamWypo.exe
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\bin\Debug\SamWypo.pdb
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.csprojResolveAssemblyReference.cache
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.Main.resources
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.Properties.Resources.resources
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.csproj.GenerateResource.Cache
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.exe
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.pdb
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.frmDodSamo.resources
-c:\users\admin\documents\visual studio 2015\Projects\SamWypo\SamWypo\obj\Debug\SamWypo.frmKlient.resources
-C:\Users\admin\Documents\Visual Studio 2015\Projects\Slavo\SamWypo\SamWypo\bin\Debug\SamWypo.exe.config
-C:\Users\admin\Documents\Visual Studio 2015\Projects\Slavo\SamWypo\SamWypo\obj\Debug\SamWypo.exe
-C:\Users\admin\Documents\Visual Studio 2015\Projects\Slavo\SamWypo\SamWypo\obj\Debug\SamWypo.pdb
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\bin\Debug\SamWypo.exe.config
+C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.exe
+C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.pdb
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\bin\Debug\SamWypo.exe
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\bin\Debug\SamWypo.pdb
-C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.csprojResolveAssemblyReference.cache
+C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\bin\Debug\AutoMapper.dll
+C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\bin\Debug\AutoMapper.xml
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.frmDodSamo.resources
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.frmKlient.resources
+C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.frmMarka.resources
+C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Klasy.frmNaprawa.resources
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Main.resources
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Properties.Resources.resources
 C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.csproj.GenerateResource.Cache
-C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.exe
-C:\Users\Przemek\Desktop\Slavo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.pdb
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\bin\Debug\SamWypo.exe.config
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.exe
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.pdb
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\bin\Debug\SamWypo.exe
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\bin\Debug\SamWypo.pdb
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.csprojResolveAssemblyReference.cache
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.frmDodSamo.resources
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.frmKlient.resources
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Main.resources
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Properties.Resources.resources
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.csproj.GenerateResource.Cache
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.frmMarka.resources
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\obj\Debug\SamWypo.Klasy.frmNaprawa.resources
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\bin\Debug\AutoMapper.dll
-C:\Users\admin\Documents\Visual Studio 2015\Projects\SlawekWypo\trunk\SamWypo\SamWypo\bin\Debug\AutoMapper.xml

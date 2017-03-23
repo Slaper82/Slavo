@@ -33,12 +33,14 @@
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRej = new System.Windows.Forms.TextBox();
+            this.samochodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtRokProd = new System.Windows.Forms.TextBox();
             this.txtKolor = new System.Windows.Forms.TextBox();
             this.cmbMarka = new System.Windows.Forms.ComboBox();
             this.wypMarkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypoDataSet = new SamWypo.WypoDataSet();
             this.cmbModel = new System.Windows.Forms.ComboBox();
+            this.wypModelMarkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,14 +50,14 @@
             this.cmbPaliwo = new System.Windows.Forms.ComboBox();
             this.wypPaliwoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypPaliwoTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypPaliwoTableAdapter();
-            this.wypModelMarkBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypModelMarkTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypModelMarkTableAdapter();
             this.label7 = new System.Windows.Forms.Label();
             this.txtPoj = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.samochodBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypMarkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypPaliwoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypModelMarkBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypPaliwoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnZapisz
@@ -97,6 +99,7 @@
             // 
             // txtRej
             // 
+            this.txtRej.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.samochodBindingSource, "TabRej", true));
             this.txtRej.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtRej.Location = new System.Drawing.Point(180, 112);
             this.txtRej.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -104,8 +107,13 @@
             this.txtRej.Size = new System.Drawing.Size(180, 29);
             this.txtRej.TabIndex = 2;
             // 
+            // samochodBindingSource
+            // 
+            this.samochodBindingSource.DataSource = typeof(SamWypo.Samochod);
+            // 
             // txtRokProd
             // 
+            this.txtRokProd.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.samochodBindingSource, "RokProd", true));
             this.txtRokProd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtRokProd.Location = new System.Drawing.Point(180, 151);
             this.txtRokProd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -115,6 +123,7 @@
             // 
             // txtKolor
             // 
+            this.txtKolor.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.samochodBindingSource, "Kolor", true));
             this.txtKolor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtKolor.Location = new System.Drawing.Point(180, 267);
             this.txtKolor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -124,6 +133,7 @@
             // 
             // cmbMarka
             // 
+            this.cmbMarka.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.samochodBindingSource, "IdMarka", true));
             this.cmbMarka.DataSource = this.wypMarkaBindingSource;
             this.cmbMarka.DisplayMember = "Nazwa";
             this.cmbMarka.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -134,7 +144,7 @@
             this.cmbMarka.Size = new System.Drawing.Size(180, 29);
             this.cmbMarka.TabIndex = 0;
             this.cmbMarka.ValueMember = "IdMarka";
-            this.cmbMarka.SelectedIndexChanged += new System.EventHandler(this.cmbMarka_SelectedIndexChanged);
+            this.cmbMarka.SelectedValueChanged += new System.EventHandler(this.cmbMarka_SelectedValueChanged);
             // 
             // wypMarkaBindingSource
             // 
@@ -149,6 +159,7 @@
             // 
             // cmbModel
             // 
+            this.cmbModel.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.samochodBindingSource, "IdModel", true));
             this.cmbModel.DataSource = this.wypModelMarkBindingSource;
             this.cmbModel.DisplayMember = "Nazwa";
             this.cmbModel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -159,6 +170,11 @@
             this.cmbModel.Size = new System.Drawing.Size(180, 29);
             this.cmbModel.TabIndex = 1;
             this.cmbModel.ValueMember = "IdModel";
+            // 
+            // wypModelMarkBindingSource
+            // 
+            this.wypModelMarkBindingSource.DataMember = "wypModelMark";
+            this.wypModelMarkBindingSource.DataSource = this.wypoDataSet;
             // 
             // label2
             // 
@@ -200,7 +216,7 @@
             this.label5.Location = new System.Drawing.Point(31, 194);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 21);
+            this.label5.Size = new System.Drawing.Size(83, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = "Typ paliwa";
             // 
@@ -221,6 +237,7 @@
             // 
             // cmbPaliwo
             // 
+            this.cmbPaliwo.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.samochodBindingSource, "IdPaliwa", true));
             this.cmbPaliwo.DataSource = this.wypPaliwoBindingSource;
             this.cmbPaliwo.DisplayMember = "Nazwa";
             this.cmbPaliwo.FormattingEnabled = true;
@@ -239,11 +256,6 @@
             // 
             this.wypPaliwoTableAdapter.ClearBeforeFill = true;
             // 
-            // wypModelMarkBindingSource
-            // 
-            this.wypModelMarkBindingSource.DataMember = "wypModelMark";
-            this.wypModelMarkBindingSource.DataSource = this.wypoDataSet;
-            // 
             // wypModelMarkTableAdapter
             // 
             this.wypModelMarkTableAdapter.ClearBeforeFill = true;
@@ -255,12 +267,13 @@
             this.label7.Location = new System.Drawing.Point(31, 233);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 21);
+            this.label7.Size = new System.Drawing.Size(85, 21);
             this.label7.TabIndex = 16;
             this.label7.Text = "Pojemność";
             // 
             // txtPoj
             // 
+            this.txtPoj.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.samochodBindingSource, "Pojemnosc", true));
             this.txtPoj.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPoj.Location = new System.Drawing.Point(180, 228);
             this.txtPoj.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -290,6 +303,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAnuluj);
             this.Controls.Add(this.btnZapisz);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.samochodBindingSource, "IdSam", true));
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -300,10 +314,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmDodSamo";
             this.Load += new System.EventHandler(this.frmDodSamo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.samochodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypMarkaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypPaliwoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypModelMarkBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypPaliwoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +349,6 @@
         private WypoDataSetTableAdapters.wypModelMarkTableAdapter wypModelMarkTableAdapter;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtPoj;
+        private System.Windows.Forms.BindingSource samochodBindingSource;
     }
 }

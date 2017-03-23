@@ -13,13 +13,18 @@ namespace SamWypo
     public partial class frmDodSamo : Form
     {
         private Samochod samochod { get; set; }
+        public int IdMarka { get; set; }
+        public event Dodano dodano;
         public frmDodSamo()
         {
             InitializeComponent();
+           
         }
         public frmDodSamo(Samochod samochd)
         {
+            InitializeComponent();
             this.samochod = samochd;
+            samochodBindingSource.DataSource = this.samochod;
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e)
@@ -29,6 +34,18 @@ namespace SamWypo
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
+            if (samochod != null)
+            {
+                samochod.ZapiszEdyt();
+                
+            }
+            else
+            {
+                //tutaj zrobić przypisanie kontrolek do edycji
+                this.samochod = new Samochod();              
+                samochodBindingSource.DataSource = this.samochod;
+            }
+            if (dodano != null) dodano(this, e);
             this.Close();
         }
 
@@ -40,20 +57,20 @@ namespace SamWypo
           //  this.wypModelTableAdapter.Fill(this.wypoDataSet.wypModel);
             // TODO: This line of code loads data into the 'wypoDataSet.wypMarka' table. You can move, or remove it, as needed.
             this.wypMarkaTableAdapter.Fill(this.wypoDataSet.wypMarka);
+            
+            
 
-        }
-
-        private void cmbMarka_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //tutaj dopisać aktualizowanie cmb model na podstawie id marki
-            //zapytania porobić do wybierania modeli na podstawie marki
         }
 
         private void wypMarkaBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-            // ((miastaBindingSource.Current as DataRowView).Row as JIPP4_MapaDataSet.MiastaRow).Id;
-            int IdMarki = ((wypMarkaBindingSource.Current as DataRowView).Row as WypoDataSet.wypMarkaRow).IdMarka;
-           wypModelMarkTableAdapter.Fill(wypoDataSet.wypModelMark, IdMarki);
+           this.IdMarka = ((wypMarkaBindingSource.Current as DataRowView).Row as WypoDataSet.wypMarkaRow).IdMarka;
+            this.wypModelMarkTableAdapter.Fill(wypoDataSet.wypModelMark, this.IdMarka);
+        }
+
+        private void cmbMarka_SelectedValueChanged(object sender, EventArgs e)
+        {
+           // frmDodSamo_Load(this, e);
         }
     }
 }
