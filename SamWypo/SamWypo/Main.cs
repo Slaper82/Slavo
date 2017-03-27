@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AutoMapper;
 using SamWypo.WypoDataSetTableAdapters;
+using SamWypo.Klasy;
 
 namespace SamWypo
 {
@@ -40,6 +41,8 @@ namespace SamWypo
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wypoDataSet1.NapListaView' table. You can move, or remove it, as needed.
+            this.napListaViewTableAdapter.Fill(this.wypoDataSet1.NapListaView);
             // TODO: This line of code loads data into the 'wypoDataSet1.SamoLista' table. You can move, or remove it, as needed.
             this.samoListaTableAdapter.Fill(this.wypoDataSet1.SamoLista);
             // TODO: This line of code loads data into the 'wypoDataSet.SamoLista' table. You can move, or remove it, as needed.
@@ -66,6 +69,7 @@ namespace SamWypo
         {
             dgvKlient.Columns[0].Visible = false;
         }
+        
 
         private void btnESamo_Click(object sender, EventArgs e)
         {
@@ -80,6 +84,19 @@ namespace SamWypo
             SamEdyt.dodano += Main_Load;
             SamEdyt.ShowDialog();
 
+        }
+
+        private void dgvNaprawa_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dgvNaprawa.Columns[4].Visible = false;
+            dgvNaprawa.Columns[5].Visible = false;
+        }
+
+        private void btnNNapr_Click(object sender, EventArgs e)
+        {
+            frmNaprawa nowy = new frmNaprawa();
+            nowy.dodano += Main_Load;
+            nowy.ShowDialog();
         }
     }
 }

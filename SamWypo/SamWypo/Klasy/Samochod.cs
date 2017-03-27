@@ -83,11 +83,13 @@ namespace SamWypo
             try
             {
                 samochod.Update(IdMarka, IdModel, TabRej, Status, RokProd, IdPaliwa, Kolor, Pojemnosc, Active, IdSam, IdSam);
+
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
         public void Usun()

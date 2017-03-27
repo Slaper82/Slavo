@@ -45,6 +45,21 @@ namespace SamWypo
             this.Tel2 = tel2;
             this.OsobaKont = osoba;
         }
+        public Klient(DataRow row)
+        {
+
+            this.IdKlient = row.Field<int>("IdKlient");
+            this.Nazwa = row.Field<string>("Nazwa");
+            this.NIP = row.Field<string>("NIP");
+            this.Ulica = row.Field<string>("Ulica");
+            this.Miasto = row.Field<string>("Miasto");
+            this.NrDomu = row.Field<string>("NrDomu");
+            this.NrMieszk = row.Field<string>("NrMieszkania");
+            this.KodPoczt = row.Field<string>("KodPocz");
+            this.Tel1 = row.Field<string>("Tel");
+            this.OsobaKont = row.Field<string>("OsobaKont");
+
+        }
         public bool Sprawdz()
         {
             if (this.Nazwa == ""||this.NIP == ""||this.Ulica == ""||this.Miasto == ""||this.NrDomu == ""||this.KodPoczt == "")
@@ -69,21 +84,7 @@ namespace SamWypo
             
          //   Dorobic zapis po edycji
         }
-        public Klient(DataRow row)
-        {
-
-            this.IdKlient = row.Field<int>("IdKlient");
-            this.Nazwa = row.Field<string>("Nazwa"); 
-            this.NIP = row.Field<string>("NIP");
-            this.Ulica = row.Field<string>("Ulica");
-            this.Miasto = row.Field<string>("Miasto");
-            this.NrDomu = row.Field<string>("NrDomu");
-            this.NrMieszk = row.Field<string>("NrMieszkania");
-            this.KodPoczt = row.Field<string>("KodPocz");
-            this.Tel1 = row.Field<string>("Tel");
-            this.OsobaKont = row.Field<string>("OsobaKont");
-
-        }
+     
         public  void ZapiszNowe()
         {
             nowy.Insert(Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszk, KodPoczt, Tel1, OsobaKont);

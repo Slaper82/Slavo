@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SamWypo
 {
-    class Naprawa : IObsluga
+  public class Naprawa : IObsluga
     {
         public int IdNapr { get; set; }
         public int IdSamo { get; set; }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +39,13 @@
             this.txtKwota = new System.Windows.Forms.TextBox();
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
+            this.wypoDataSet = new SamWypo.WypoDataSet();
+            this.samoWybBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.samoWybTableAdapter = new SamWypo.WypoDataSetTableAdapters.SamoWybTableAdapter();
+            this.naprawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -82,15 +90,20 @@
             // 
             // cmbSamo
             // 
+            this.cmbSamo.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.naprawaBindingSource, "IdSamo", true));
+            this.cmbSamo.DataSource = this.samoWybBindingSource;
+            this.cmbSamo.DisplayMember = "Nazwa";
             this.cmbSamo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbSamo.FormattingEnabled = true;
             this.cmbSamo.Location = new System.Drawing.Point(169, 30);
             this.cmbSamo.Name = "cmbSamo";
             this.cmbSamo.Size = new System.Drawing.Size(150, 29);
             this.cmbSamo.TabIndex = 4;
+            this.cmbSamo.ValueMember = "IdSam";
             // 
             // dtpStart
             // 
+            this.dtpStart.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.naprawaBindingSource, "DStart", true));
             this.dtpStart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStart.Location = new System.Drawing.Point(169, 68);
@@ -100,6 +113,7 @@
             // 
             // dtpStop
             // 
+            this.dtpStop.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.naprawaBindingSource, "DStop", true));
             this.dtpStop.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dtpStop.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStop.Location = new System.Drawing.Point(169, 105);
@@ -109,6 +123,7 @@
             // 
             // txtKwota
             // 
+            this.txtKwota.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.naprawaBindingSource, "Kwota", true));
             this.txtKwota.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtKwota.Location = new System.Drawing.Point(169, 142);
             this.txtKwota.Name = "txtKwota";
@@ -138,6 +153,24 @@
             this.btnAnuluj.UseVisualStyleBackColor = true;
             this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
             // 
+            // wypoDataSet
+            // 
+            this.wypoDataSet.DataSetName = "WypoDataSet";
+            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // samoWybBindingSource
+            // 
+            this.samoWybBindingSource.DataMember = "SamoWyb";
+            this.samoWybBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // samoWybTableAdapter
+            // 
+            this.samoWybTableAdapter.ClearBeforeFill = true;
+            // 
+            // naprawaBindingSource
+            // 
+            this.naprawaBindingSource.DataSource = typeof(SamWypo.Naprawa);
+            // 
             // frmNaprawa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +191,10 @@
             this.Name = "frmNaprawa";
             this.ShowIcon = false;
             this.Text = "Naprawa";
+            this.Load += new System.EventHandler(this.frmNaprawa_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +212,9 @@
         private System.Windows.Forms.TextBox txtKwota;
         private System.Windows.Forms.Button btnZapisz;
         private System.Windows.Forms.Button btnAnuluj;
+        private WypoDataSet wypoDataSet;
+        private System.Windows.Forms.BindingSource samoWybBindingSource;
+        private WypoDataSetTableAdapters.SamoWybTableAdapter samoWybTableAdapter;
+        private System.Windows.Forms.BindingSource naprawaBindingSource;
     }
 }
