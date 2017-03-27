@@ -37,5 +37,35 @@ namespace SamWypo.Klasy
             this.samoWybTableAdapter.Fill(this.wypoDataSet.SamoWyb);
 
         }
+
+        private void btnZapisz_Click(object sender, EventArgs e)
+        {
+            bool DaneOk = false;
+            Naprawa nowa = new Naprawa(Convert.ToInt32(cmbSamo.SelectedIndex), dtpStart.Value, dtpStop.Value, Convert.ToDouble(txtKwota.Text));
+            DaneOk = nowa.Sprawdz();
+            if (DaneOk)
+            {
+                try
+                {
+                    if (naprawa != null)
+                    {
+                        naprawa.ZapiszEdyt();
+                    }
+                    else
+                    {
+                        nowa.ZapiszNowe();
+                    }
+                    if (dodano != null) dodano(this, e);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Wypełnij wszystkie pola!");
+            }
+        }
     }
 }

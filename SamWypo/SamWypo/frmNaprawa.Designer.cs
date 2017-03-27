@@ -34,18 +34,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbSamo = new System.Windows.Forms.ComboBox();
+            this.naprawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.samoWybBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wypoDataSet = new SamWypo.WypoDataSet();
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpStop = new System.Windows.Forms.DateTimePicker();
             this.txtKwota = new System.Windows.Forms.TextBox();
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
-            this.wypoDataSet = new SamWypo.WypoDataSet();
-            this.samoWybBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.samoWybTableAdapter = new SamWypo.WypoDataSetTableAdapters.SamoWybTableAdapter();
-            this.naprawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +84,7 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label4.Location = new System.Drawing.Point(35, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 21);
+            this.label4.Size = new System.Drawing.Size(116, 21);
             this.label4.TabIndex = 3;
             this.label4.Text = "Kwota naprawy";
             // 
@@ -100,6 +100,20 @@
             this.cmbSamo.Size = new System.Drawing.Size(150, 29);
             this.cmbSamo.TabIndex = 4;
             this.cmbSamo.ValueMember = "IdSam";
+            // 
+            // naprawaBindingSource
+            // 
+            this.naprawaBindingSource.DataSource = typeof(SamWypo.Naprawa);
+            // 
+            // samoWybBindingSource
+            // 
+            this.samoWybBindingSource.DataMember = "SamoWyb";
+            this.samoWybBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // wypoDataSet
+            // 
+            this.wypoDataSet.DataSetName = "WypoDataSet";
+            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dtpStart
             // 
@@ -140,6 +154,7 @@
             this.btnZapisz.TabIndex = 8;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
+            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
             // 
             // btnAnuluj
             // 
@@ -153,23 +168,9 @@
             this.btnAnuluj.UseVisualStyleBackColor = true;
             this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
             // 
-            // wypoDataSet
-            // 
-            this.wypoDataSet.DataSetName = "WypoDataSet";
-            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // samoWybBindingSource
-            // 
-            this.samoWybBindingSource.DataMember = "SamoWyb";
-            this.samoWybBindingSource.DataSource = this.wypoDataSet;
-            // 
             // samoWybTableAdapter
             // 
             this.samoWybTableAdapter.ClearBeforeFill = true;
-            // 
-            // naprawaBindingSource
-            // 
-            this.naprawaBindingSource.DataSource = typeof(SamWypo.Naprawa);
             // 
             // frmNaprawa
             // 
@@ -192,9 +193,9 @@
             this.ShowIcon = false;
             this.Text = "Naprawa";
             this.Load += new System.EventHandler(this.frmNaprawa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
