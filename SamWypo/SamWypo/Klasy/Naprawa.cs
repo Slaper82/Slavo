@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SamWypo.WypoDataSetTableAdapters;
+using System.Windows.Forms;
 
 namespace SamWypo
 {
@@ -13,13 +15,18 @@ namespace SamWypo
         public DateTime DStart { get; set; }
         public DateTime DStop { get; set; }
         public double Kwota { get; set; }
+        wypNaprawaTableAdapter nowa;
+        wypNaprawaTableAdapter edyt;
+        
 
         public Naprawa()
         {
-
+            nowa = new wypNaprawaTableAdapter();
+            edyt = new wypNaprawaTableAdapter();
         }
+        
 
-        public Naprawa(int idnapr,int idsamo, DateTime dstart, DateTime dstop, double kwota)
+        public Naprawa(int idnapr,int idsamo, DateTime dstart, DateTime dstop, double kwota):this()
         {
             this.IdNapr = idnapr;
             this.IdSamo = idsamo;
@@ -27,7 +34,7 @@ namespace SamWypo
             this.DStop = dstop;
             this.Kwota = kwota;
         }
-        public Naprawa(int idsamo,DateTime dstart,DateTime dstop,double kwota)
+        public Naprawa(int idsamo,DateTime dstart,DateTime dstop, double kwota):this()
         {
             this.IdSamo = idsamo;
             this.DStart = dstart;
@@ -36,7 +43,9 @@ namespace SamWypo
         }
         public bool Sprawdz()
         {
-            throw new NotImplementedException();
+            if (IdSamo == 0 || DStart == null || DStop == null || Kwota == 0) return false;
+            else return true;
+ 
         }
 
         public void Usun()
@@ -46,12 +55,26 @@ namespace SamWypo
 
         public void ZapiszEdyt()
         {
-            throw new NotImplementedException();
+            try
+            {
+                edyt.UpdateNapr(IdSamo, DStart, DStop, Convert.ToDecimal(Kwota), IdNapr);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         public void ZapiszNowe()
         {
-            throw new NotImplementedException();
-        }
+            try
+            { 
+            nowa.Insert(IdSamo, DStart, DStop, Convert.ToDecimal(Kwota));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+}
     }
 }
