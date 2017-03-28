@@ -98,5 +98,15 @@ namespace SamWypo
             nowy.dodano += Main_Load;
             nowy.ShowDialog();
         }
+
+        private void btnNEdytuj_Click(object sender, EventArgs e)
+        {
+            DataTable g = dgvNaprawa.DataSource as DataTable;
+            DataRow row = ((DataRowView)dgvNaprawa.SelectedRows[0].DataBoundItem).Row;
+            Naprawa napr = new Naprawa(row);
+            frmNaprawa edyt = new frmNaprawa(napr);
+            edyt.dodano += Main_Load;
+            edyt.ShowDialog();
+        }
     }
 }

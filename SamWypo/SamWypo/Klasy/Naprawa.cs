@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SamWypo.WypoDataSetTableAdapters;
 using System.Windows.Forms;
+using System.Data;
 
 namespace SamWypo
 {
@@ -40,6 +41,18 @@ namespace SamWypo
             this.DStart = dstart;
             this.DStop = dstop;
             this.Kwota = kwota; 
+        }
+        public Naprawa(DataRow row)
+        {
+            string tmp = String.Empty;
+            this.IdNapr = row.Field<int>("IdNapr");
+            this.IdSamo = row.Field<int>("IdSamo");
+            this.DStart = row.Field<DateTime>("DStart");
+            this.DStop = row.Field<DateTime>("DStop");
+            tmp = row.Field<decimal>("Kwota").ToString();
+            tmp.Replace(".", ",");
+            this.Kwota = Convert.ToDouble(tmp);
+
         }
         public bool Sprawdz()
         {

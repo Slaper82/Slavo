@@ -41,7 +41,7 @@ namespace SamWypo.Klasy
         private void btnZapisz_Click(object sender, EventArgs e)
         {
             bool DaneOk = false;
-            Naprawa nowa = new Naprawa(Convert.ToInt32(cmbSamo.SelectedIndex), dtpStart.Value, dtpStop.Value, Convert.ToDouble(txtKwota.Text));
+            Naprawa nowa = new Naprawa(Convert.ToInt32(cmbSamo.SelectedValue.ToString()), dtpStart.Value, dtpStop.Value, Convert.ToDouble(txtKwota.Text));
             DaneOk = nowa.Sprawdz();
             if (DaneOk)
             {
@@ -56,6 +56,7 @@ namespace SamWypo.Klasy
                         nowa.ZapiszNowe();
                     }
                     if (dodano != null) dodano(this, e);
+                    
                 }
                 catch(Exception ex)
                 {
@@ -66,6 +67,7 @@ namespace SamWypo.Klasy
             {
                 MessageBox.Show("Wypełnij wszystkie pola!");
             }
+            this.Close();
         }
     }
 }
