@@ -52,7 +52,7 @@ namespace SamWypo
             this.Kolor = kolor;
             this.Active = active;
         }
-        public Samochod(DataTable table)
+        public Samochod(DataTable table):this()
         {
             DataRow row = table.Rows[0];
             this.IdSam = row.Field<int>("IdSam");
@@ -82,7 +82,7 @@ namespace SamWypo
         {
             try
             {
-                samochod.Update(IdMarka, IdModel, TabRej, Status, RokProd, IdPaliwa, Kolor, Pojemnosc, Active, IdSam, IdSam);
+                samochod.Update(IdMarka, IdModel, TabRej, Status, RokProd, IdPaliwa, Kolor, Pojemnosc, Active, IdSam);
 
             }
             catch(Exception ex)

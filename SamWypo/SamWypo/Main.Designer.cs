@@ -35,9 +35,11 @@
             this.dodajMarkęIModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpWypo = new System.Windows.Forms.TabPage();
+            this.btnEdycja = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvWypo = new System.Windows.Forms.DataGridView();
+            this.wypoDataSet1 = new SamWypo.WypoDataSet();
             this.btnUsun = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,7 +59,6 @@
             this.pojemnoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdSam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.samoListaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.wypoDataSet1 = new SamWypo.WypoDataSet();
             this.tpKlient = new System.Windows.Forms.TabPage();
             this.btnUKlient = new System.Windows.Forms.Button();
             this.btnEKlient = new System.Windows.Forms.Button();
@@ -96,14 +97,27 @@
             this.wypKlientTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypKlientTableAdapter();
             this.samoListaTableAdapter = new SamWypo.WypoDataSetTableAdapters.SamoListaTableAdapter();
             this.napListaViewTableAdapter = new SamWypo.WypoDataSetTableAdapters.NapListaViewTableAdapter();
+            this.wypWypoFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wypWypoFullTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypWypoFullTableAdapter();
+            this.idWypoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Samochód = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSamoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKlientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStartDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStopDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stawkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wypWypozyczTableAdapter1 = new SamWypo.WypoDataSetTableAdapters.wypWypozyczTableAdapter();
+            this.btnFiltruj = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpWypo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWypo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).BeginInit();
             this.tpSamoch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).BeginInit();
             this.tpKlient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).BeginInit();
@@ -114,6 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -162,9 +177,11 @@
             // 
             // tpWypo
             // 
+            this.tpWypo.Controls.Add(this.btnFiltruj);
+            this.tpWypo.Controls.Add(this.btnEdycja);
             this.tpWypo.Controls.Add(this.label4);
             this.tpWypo.Controls.Add(this.label3);
-            this.tpWypo.Controls.Add(this.dataGridView1);
+            this.tpWypo.Controls.Add(this.dgvWypo);
             this.tpWypo.Controls.Add(this.btnUsun);
             this.tpWypo.Controls.Add(this.label2);
             this.tpWypo.Controls.Add(this.label1);
@@ -179,10 +196,22 @@
             this.tpWypo.Text = "Wypożyczenia";
             this.tpWypo.UseVisualStyleBackColor = true;
             // 
+            // btnEdycja
+            // 
+            this.btnEdycja.BackColor = System.Drawing.Color.White;
+            this.btnEdycja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdycja.Location = new System.Drawing.Point(586, 117);
+            this.btnEdycja.Name = "btnEdycja";
+            this.btnEdycja.Size = new System.Drawing.Size(83, 39);
+            this.btnEdycja.TabIndex = 9;
+            this.btnEdycja.Text = "Edycja";
+            this.btnEdycja.UseVisualStyleBackColor = false;
+            this.btnEdycja.Click += new System.EventHandler(this.btnEdycja_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(639, 167);
+            this.label4.Location = new System.Drawing.Point(639, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 8;
@@ -191,24 +220,44 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(589, 167);
+            this.label3.Location = new System.Drawing.Point(589, 219);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Wartość:";
             // 
-            // dataGridView1
+            // dgvWypo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(561, 226);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvWypo.AllowUserToAddRows = false;
+            this.dgvWypo.AllowUserToDeleteRows = false;
+            this.dgvWypo.AutoGenerateColumns = false;
+            this.dgvWypo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWypo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idWypoDataGridViewTextBoxColumn,
+            this.Samochód,
+            this.Nazwa,
+            this.idSamoDataGridViewTextBoxColumn1,
+            this.idKlientDataGridViewTextBoxColumn1,
+            this.dStartDataGridViewTextBoxColumn1,
+            this.dStopDataGridViewTextBoxColumn1,
+            this.stawkaDataGridViewTextBoxColumn,
+            this.sumaDataGridViewTextBoxColumn});
+            this.dgvWypo.DataSource = this.wypWypoFullBindingSource;
+            this.dgvWypo.Location = new System.Drawing.Point(9, 70);
+            this.dgvWypo.Name = "dgvWypo";
+            this.dgvWypo.ReadOnly = true;
+            this.dgvWypo.Size = new System.Drawing.Size(571, 226);
+            this.dgvWypo.TabIndex = 6;
+            // 
+            // wypoDataSet1
+            // 
+            this.wypoDataSet1.DataSetName = "WypoDataSet";
+            this.wypoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnUsun
             // 
             this.btnUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsun.Location = new System.Drawing.Point(586, 113);
+            this.btnUsun.Location = new System.Drawing.Point(586, 165);
             this.btnUsun.Name = "btnUsun";
             this.btnUsun.Size = new System.Drawing.Size(83, 39);
             this.btnUsun.TabIndex = 5;
@@ -257,6 +306,7 @@
             this.btnDodaj.TabIndex = 0;
             this.btnDodaj.Text = "Dodaj Wypo";
             this.btnDodaj.UseVisualStyleBackColor = false;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // tpSamoch
             // 
@@ -378,11 +428,6 @@
             // 
             this.samoListaBindingSource1.DataMember = "SamoLista";
             this.samoListaBindingSource1.DataSource = this.wypoDataSet1;
-            // 
-            // wypoDataSet1
-            // 
-            this.wypoDataSet1.DataSetName = "WypoDataSet";
-            this.wypoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tpKlient
             // 
@@ -709,6 +754,95 @@
             // 
             this.napListaViewTableAdapter.ClearBeforeFill = true;
             // 
+            // wypWypoFullBindingSource
+            // 
+            this.wypWypoFullBindingSource.DataMember = "wypWypoFull";
+            this.wypWypoFullBindingSource.DataSource = this.wypoDataSet1;
+            // 
+            // wypWypoFullTableAdapter
+            // 
+            this.wypWypoFullTableAdapter.ClearBeforeFill = true;
+            // 
+            // idWypoDataGridViewTextBoxColumn
+            // 
+            this.idWypoDataGridViewTextBoxColumn.DataPropertyName = "IdWypo";
+            this.idWypoDataGridViewTextBoxColumn.HeaderText = "Lp.";
+            this.idWypoDataGridViewTextBoxColumn.Name = "idWypoDataGridViewTextBoxColumn";
+            this.idWypoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idWypoDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // Samochód
+            // 
+            this.Samochód.DataPropertyName = "Samochód";
+            this.Samochód.HeaderText = "Samochód";
+            this.Samochód.Name = "Samochód";
+            this.Samochód.ReadOnly = true;
+            // 
+            // Nazwa
+            // 
+            this.Nazwa.DataPropertyName = "Nazwa";
+            this.Nazwa.HeaderText = "Klient";
+            this.Nazwa.Name = "Nazwa";
+            this.Nazwa.ReadOnly = true;
+            // 
+            // idSamoDataGridViewTextBoxColumn1
+            // 
+            this.idSamoDataGridViewTextBoxColumn1.DataPropertyName = "IdSamo";
+            this.idSamoDataGridViewTextBoxColumn1.HeaderText = "IdSamo";
+            this.idSamoDataGridViewTextBoxColumn1.Name = "idSamoDataGridViewTextBoxColumn1";
+            this.idSamoDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idSamoDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // idKlientDataGridViewTextBoxColumn1
+            // 
+            this.idKlientDataGridViewTextBoxColumn1.DataPropertyName = "IdKlient";
+            this.idKlientDataGridViewTextBoxColumn1.HeaderText = "IdKlient";
+            this.idKlientDataGridViewTextBoxColumn1.Name = "idKlientDataGridViewTextBoxColumn1";
+            this.idKlientDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.idKlientDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dStartDataGridViewTextBoxColumn1
+            // 
+            this.dStartDataGridViewTextBoxColumn1.DataPropertyName = "DStart";
+            this.dStartDataGridViewTextBoxColumn1.HeaderText = "Od";
+            this.dStartDataGridViewTextBoxColumn1.Name = "dStartDataGridViewTextBoxColumn1";
+            this.dStartDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dStopDataGridViewTextBoxColumn1
+            // 
+            this.dStopDataGridViewTextBoxColumn1.DataPropertyName = "DStop";
+            this.dStopDataGridViewTextBoxColumn1.HeaderText = "Do";
+            this.dStopDataGridViewTextBoxColumn1.Name = "dStopDataGridViewTextBoxColumn1";
+            this.dStopDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // stawkaDataGridViewTextBoxColumn
+            // 
+            this.stawkaDataGridViewTextBoxColumn.DataPropertyName = "Stawka";
+            this.stawkaDataGridViewTextBoxColumn.HeaderText = "Stawka";
+            this.stawkaDataGridViewTextBoxColumn.Name = "stawkaDataGridViewTextBoxColumn";
+            this.stawkaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sumaDataGridViewTextBoxColumn
+            // 
+            this.sumaDataGridViewTextBoxColumn.DataPropertyName = "Suma";
+            this.sumaDataGridViewTextBoxColumn.HeaderText = "Suma";
+            this.sumaDataGridViewTextBoxColumn.Name = "sumaDataGridViewTextBoxColumn";
+            this.sumaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wypWypozyczTableAdapter1
+            // 
+            this.wypWypozyczTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnFiltruj
+            // 
+            this.btnFiltruj.Location = new System.Drawing.Point(400, 16);
+            this.btnFiltruj.Name = "btnFiltruj";
+            this.btnFiltruj.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltruj.TabIndex = 10;
+            this.btnFiltruj.Text = "Filtruj";
+            this.btnFiltruj.UseVisualStyleBackColor = true;
+            this.btnFiltruj.Click += new System.EventHandler(this.btnFiltruj_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,11 +859,11 @@
             this.tabControl.ResumeLayout(false);
             this.tpWypo.ResumeLayout(false);
             this.tpWypo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWypo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).EndInit();
             this.tpSamoch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).EndInit();
             this.tpKlient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).EndInit();
@@ -741,6 +875,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -754,7 +889,7 @@
         private System.Windows.Forms.TabPage tpWypo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvWypo;
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -815,6 +950,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn kwotaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idNaprDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSamoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnEdycja;
+        private System.Windows.Forms.BindingSource wypWypoFullBindingSource;
+        private WypoDataSetTableAdapters.wypWypoFullTableAdapter wypWypoFullTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idWypoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Samochód;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nazwa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSamoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idKlientDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dStartDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dStopDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stawkaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sumaDataGridViewTextBoxColumn;
+        private WypoDataSetTableAdapters.wypWypozyczTableAdapter wypWypozyczTableAdapter1;
+        private System.Windows.Forms.Button btnFiltruj;
     }
 }
 

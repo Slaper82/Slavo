@@ -16,6 +16,7 @@ namespace SamWypo
     public partial class Main : Form
     {
         Helper data;
+        List<Wypo> filtr = new List<Wypo>();
         
         public Main()
         {
@@ -41,6 +42,8 @@ namespace SamWypo
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'wypoDataSet1.wypWypoFull' table. You can move, or remove it, as needed.
+            this.wypWypoFullTableAdapter.Fill(this.wypoDataSet1.wypWypoFull);
             // TODO: This line of code loads data into the 'wypoDataSet1.NapListaView' table. You can move, or remove it, as needed.
             this.napListaViewTableAdapter.Fill(this.wypoDataSet1.NapListaView);
             // TODO: This line of code loads data into the 'wypoDataSet1.SamoLista' table. You can move, or remove it, as needed.
@@ -107,6 +110,49 @@ namespace SamWypo
             frmNaprawa edyt = new frmNaprawa(napr);
             edyt.dodano += Main_Load;
             edyt.ShowDialog();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            frmWypo nowy = new frmWypo();
+            nowy.dodano += Main_Load;
+            nowy.ShowDialog();
+        }
+
+        private void btnEdycja_Click(object sender, EventArgs e)
+        {
+            int Id = 0;
+            DataTable g =dgvWypo.DataSource as DataTable;
+            DataRow row = ((DataRowView)dgvWypo.SelectedRows[0].DataBoundItem).Row;
+            Id = row.Field<int>("IdWypo");
+            DataTable wyp = wypWypozyczTableAdapter1.GetDataBy(Id);
+            Wypo WypoEdyt = new Wypo(wyp);
+            frmWypo Wyp = new frmWypo(WypoEdyt);
+            Wyp.dodano += Main_Load;
+            Wyp.ShowDialog();
+        }
+
+        private void btnFiltruj_Click(object sender, EventArgs e)
+        {
+            Main_Load(this, e);
+            Mapper();
+        }
+        private void Mapper()
+        {
+            Wypo lista = new Wypo();
+            foreach(DataGridViewRow row in dgvWypo.Rows)
+            {
+               DateTime Strt= Convert.ToDateTime(row.Cells[5].Value.ToString());
+                DateTime Stop = Convert.ToDateTime(row.Cells[6].Value.ToString());
+
+                if (Strt < dtpStart.Value || Stop > dtpStop.Value)
+                {
+                  dgvWypo.Rows[row.Index].Visible = false;
+                }
+                //testuję filtry
+                //lista.IdKlient =Convert.ToInt32( row.Cells[0].Value.ToString());
+                //filtr.Add(lista);
+            }
         }
     }
 }

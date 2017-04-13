@@ -23,7 +23,12 @@ namespace SamWypo.Klasy
         {
             InitializeComponent();
             this.naprawa = Enapr;
-            samoWybBindingSource.DataSource = this.naprawa;
+            this.cmbSamo.SelectedValue = naprawa.IdSamo;
+            this.txtKwota.Text = naprawa.Kwota.ToString();
+            this.dtpStart.Text = naprawa.DStart.ToString();
+            this.dtpStop.Text = naprawa.DStop.ToString();
+
+            // samoWybBindingSource.DataSource = this.naprawa;
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e)
@@ -35,6 +40,7 @@ namespace SamWypo.Klasy
         {
             // TODO: This line of code loads data into the 'wypoDataSet.SamoWyb' table. You can move, or remove it, as needed.
             this.samoWybTableAdapter.Fill(this.wypoDataSet.SamoWyb);
+            this.cmbSamo.SelectedValue = naprawa.IdSamo;
 
         }
 

@@ -41,9 +41,15 @@ namespace SamWypo
             }
             else
             {
+                int Marka = Convert.ToInt32(cmbMarka.SelectedValue.ToString());
+                int Model = Convert.ToInt32(cmbModel.SelectedValue.ToString());
+                int Paliwo = Convert.ToInt32(cmbPaliwo.SelectedValue.ToString());
+                int RokPRod = Convert.ToInt32(txtRokProd.Text);
+                decimal Poj = Convert.ToDecimal(txtPoj.Text);
                 //tutaj zrobić przypisanie kontrolek do edycji
-                this.samochod = new Samochod();              
-                samochodBindingSource.DataSource = this.samochod;
+                this.samochod = new Samochod(Marka,Model,txtRej.Text,false,RokPRod,Paliwo,Poj,txtKolor.Text,true);
+                samochod.ZapiszNowe();              
+                //samochodBindingSource.DataSource = this.samochod;
             }
             if (dodano != null) dodano(this, e);
             this.Close();

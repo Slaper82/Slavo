@@ -26,8 +26,8 @@ namespace SamWypo.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=pf001.database.windows.net;Initial Catalog=SlaWypo;Persist Security I" +
-            "nfo=True;User ID=przefoltyn;Password=Alamakota1!@")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=SlaWypo;Persist Security Info=True;User ID=" +
+            "przefoltyn")]
         public string SlaWypoConnectionString {
             get {
                 return ((string)(this["SlaWypoConnectionString"]));

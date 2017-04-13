@@ -216,7 +216,7 @@
             this.label5.Location = new System.Drawing.Point(31, 194);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 21);
+            this.label5.Size = new System.Drawing.Size(84, 21);
             this.label5.TabIndex = 13;
             this.label5.Text = "Typ paliwa";
             // 
@@ -267,7 +267,7 @@
             this.label7.Location = new System.Drawing.Point(31, 233);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 21);
+            this.label7.Size = new System.Drawing.Size(86, 21);
             this.label7.TabIndex = 16;
             this.label7.Text = "Pojemność";
             // 
@@ -303,7 +303,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAnuluj);
             this.Controls.Add(this.btnZapisz);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.samochodBindingSource, "IdSam", true));
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

@@ -260,11 +260,11 @@
             // 
             // klientBindingSource
             // 
-            this.klientBindingSource.DataSource = typeof(SamWypo.Klient);
+//            this.klientBindingSource.DataSource = typeof(SamWypo.Klient);
             // 
             // klientBindingSource1
             // 
-            this.klientBindingSource1.DataSource = typeof(SamWypo.Klient);
+  //          this.klientBindingSource1.DataSource = typeof(SamWypo.Klient);
             // 
             // frmKlient
             // 
