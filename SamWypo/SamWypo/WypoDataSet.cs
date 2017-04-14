@@ -19,3 +19,4 @@ namespace SamWypo {
     public partial class WypoDataSet {
     }
 }
+

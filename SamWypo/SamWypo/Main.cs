@@ -154,5 +154,11 @@ namespace SamWypo
                 //filtr.Add(lista);
             }
         }
+
+        private void btnPokaz_Click(object sender, EventArgs e)
+        {
+            RaportKlient n = new RaportKlient(dgvRaport);
+            n.RaportKlientPokaz();
+        }
     }
 }

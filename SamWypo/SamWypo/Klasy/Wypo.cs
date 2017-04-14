@@ -19,12 +19,13 @@ namespace SamWypo
         public decimal Stawka { get; set; }
         public decimal Suma { get; set; }
         wypWypozyczTableAdapter wypozycz;
-
+        wypWypoDniTableAdapter wypodni;
         
 
         public Wypo()
         {
             wypozycz = new wypWypozyczTableAdapter();
+            wypodni = new wypWypoDniTableAdapter();
         }
         public Wypo(int idsamo,int idklient,DateTime dstart,DateTime dstop,decimal stawka, decimal suma):this()
         {
@@ -89,6 +90,38 @@ namespace SamWypo
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString(),"Błąd zapisu",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+        public void ZapiszTransakcje(DateTime Start,DateTime Stop)
+        {
+            while ((Start - Stop).TotalDays!=0)
+            {
+                try
+                {
+                    wypodni.InsertWyp(IdSamo, IdKlient, Start.Date, Stawka);
+                 Start= Start.AddDays(1);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+        public bool UsunTrans(DateTime Start, DateTime Stop)
+        {
+            try
+            {
+                while ((Start - Stop).TotalDays != 0)
+                {
+                    wypodni.DeleteWyp(IdSamo, IdKlient, Start.Date);
+                    Start = Start.AddDays(1);
+                }
+                return true;
+
+            }
+            catch
+            {
+                return false; 
             }
         }
     }

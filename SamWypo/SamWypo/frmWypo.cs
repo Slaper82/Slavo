@@ -61,12 +61,18 @@ namespace SamWypo.Klasy
                 wypozycz.DStart = dtpStart.Value;
                 wypozycz.DStop = dtpStop.Value;
                 wypozycz.Stawka = Convert.ToInt32(txtStawka.Text);
-                wypozycz.ZapiszEdyt();
+                if (wypozycz.UsunTrans(dtpStart.Value, dtpStop.Value))
+                {
+                    wypozycz.ZapiszTransakcje(dtpStart.Value, dtpStop.Value);
+                    wypozycz.ZapiszEdyt();
+                }
+                else MessageBox.Show("Wystąpiły błędy podczas edycji");
             }
             else
             {
                 Wypo nowy = new Wypo((int)cmbSamo.SelectedValue,(int)cmbKlient.SelectedValue,dtpStart.Value,dtpStop.Value,Convert.ToDecimal(txtStawka.Text),0);
                 nowy.ZapiszNowe();
+                nowy.ZapiszTransakcje(dtpStart.Value, dtpStop.Value);
             }
             if (dodano != null) dodano(this, e);
             this.Close();

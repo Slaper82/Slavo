@@ -83,6 +83,7 @@
       <DependentUpon>frmWypo.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Klient.cs" />
+    <Compile Include="Klasy\RaportKlient.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
