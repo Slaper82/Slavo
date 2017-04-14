@@ -58,6 +58,15 @@ create table wypWypozycz(
 [DStop] smalldatetime not null,
 [Kwota] decimal(8,2) not null
  )
+ 
+-Create table wypWypoDni(
+[IdTran][int] Identity(1,1),
+[IdSamo][int] not null,
+[IdKlient][int] not null,
+[DataWyp][Date] not null,
+[Stawka][decimal] not null
+)
+ 
  --Klucze 
  
  --Marka-Model

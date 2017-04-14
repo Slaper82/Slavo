@@ -157,8 +157,10 @@ namespace SamWypo
 
         private void btnPokaz_Click(object sender, EventArgs e)
         {
-            RaportKlient n = new RaportKlient(dgvRaport);
-            n.RaportKlientPokaz();
+            dgvRaport.DataSource = null;
+            Mapowanie.WyczyscListy();
+            RaportKlient nowy = new RaportKlient();  
+            nowy.PokazDane(dgvRaport, dtpRaportStr.Value, dtpRaportStp.Value);
         }
     }
 }

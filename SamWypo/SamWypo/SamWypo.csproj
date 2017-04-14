@@ -83,7 +83,12 @@
       <DependentUpon>frmWypo.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Klient.cs" />
-    <Compile Include="Klasy\RaportKlient.cs" />
+    <Compile Include="Klasy\Mapowanie.cs" />
+    <Compile Include="Klasy\SqlQuery.cs" />
+    <Compile Include="Raporty\DgvConfig.cs" />
+    <Compile Include="Raporty\RaportKlient.cs" />
+    <Compile Include="Raporty\RaportNaprawa.cs" />
+    <Compile Include="Raporty\RaportSamochod.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +101,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Klasy\Samochod.cs" />
     <Compile Include="Klasy\Wypo.cs" />
+    <Compile Include="Raporty\RaportWypo.cs" />
     <Compile Include="WypoDataSet.cs">
       <DependentUpon>WypoDataSet.xsd</DependentUpon>
     </Compile>
