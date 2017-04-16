@@ -3399,17 +3399,17 @@ namespace SamWypo {
             
             private global::System.Data.DataColumn columnNazwa;
             
-            private global::System.Data.DataColumn columnNazwa1;
-            
             private global::System.Data.DataColumn columnTablRej;
             
             private global::System.Data.DataColumn columnRokProd;
             
             private global::System.Data.DataColumn columnPojemnosc;
             
-            private global::System.Data.DataColumn columnNazwa2;
-            
             private global::System.Data.DataColumn columnIdSam;
+            
+            private global::System.Data.DataColumn columnNazwa1;
+            
+            private global::System.Data.DataColumn columnNazwa2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3454,14 +3454,6 @@ namespace SamWypo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Nazwa1Column {
-                get {
-                    return this.columnNazwa1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn TablRejColumn {
                 get {
                     return this.columnTablRej;
@@ -3486,17 +3478,25 @@ namespace SamWypo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Nazwa2Column {
+            public global::System.Data.DataColumn IdSamColumn {
                 get {
-                    return this.columnNazwa2;
+                    return this.columnIdSam;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdSamColumn {
+            public global::System.Data.DataColumn Nazwa1Column {
                 get {
-                    return this.columnIdSam;
+                    return this.columnNazwa1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Nazwa2Column {
+                get {
+                    return this.columnNazwa2;
                 }
             }
             
@@ -3537,16 +3537,16 @@ namespace SamWypo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SamoListaRow AddSamoListaRow(string Nazwa, string Nazwa1, string TablRej, int RokProd, decimal Pojemnosc, string Nazwa2) {
+            public SamoListaRow AddSamoListaRow(string Nazwa, string TablRej, int RokProd, decimal Pojemnosc, string Nazwa1, string Nazwa2) {
                 SamoListaRow rowSamoListaRow = ((SamoListaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Nazwa,
-                        Nazwa1,
                         TablRej,
                         RokProd,
                         Pojemnosc,
-                        Nazwa2,
-                        null};
+                        null,
+                        Nazwa1,
+                        Nazwa2};
                 rowSamoListaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSamoListaRow);
                 return rowSamoListaRow;
@@ -3577,12 +3577,12 @@ namespace SamWypo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnNazwa = base.Columns["Nazwa"];
-                this.columnNazwa1 = base.Columns["Nazwa1"];
                 this.columnTablRej = base.Columns["TablRej"];
                 this.columnRokProd = base.Columns["RokProd"];
                 this.columnPojemnosc = base.Columns["Pojemnosc"];
-                this.columnNazwa2 = base.Columns["Nazwa2"];
                 this.columnIdSam = base.Columns["IdSam"];
+                this.columnNazwa1 = base.Columns["Nazwa1"];
+                this.columnNazwa2 = base.Columns["Nazwa2"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3590,35 +3590,35 @@ namespace SamWypo {
             private void InitClass() {
                 this.columnNazwa = new global::System.Data.DataColumn("Nazwa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNazwa);
-                this.columnNazwa1 = new global::System.Data.DataColumn("Nazwa1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNazwa1);
                 this.columnTablRej = new global::System.Data.DataColumn("TablRej", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTablRej);
                 this.columnRokProd = new global::System.Data.DataColumn("RokProd", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRokProd);
                 this.columnPojemnosc = new global::System.Data.DataColumn("Pojemnosc", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPojemnosc);
-                this.columnNazwa2 = new global::System.Data.DataColumn("Nazwa2", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNazwa2);
                 this.columnIdSam = new global::System.Data.DataColumn("IdSam", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdSam);
+                this.columnNazwa1 = new global::System.Data.DataColumn("Nazwa1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNazwa1);
+                this.columnNazwa2 = new global::System.Data.DataColumn("Nazwa2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNazwa2);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdSam}, true));
                 this.columnNazwa.AllowDBNull = false;
                 this.columnNazwa.MaxLength = 50;
-                this.columnNazwa1.AllowDBNull = false;
-                this.columnNazwa1.MaxLength = 50;
                 this.columnTablRej.AllowDBNull = false;
                 this.columnTablRej.MaxLength = 12;
                 this.columnRokProd.AllowDBNull = false;
-                this.columnNazwa2.AllowDBNull = false;
-                this.columnNazwa2.MaxLength = 10;
                 this.columnIdSam.AutoIncrement = true;
                 this.columnIdSam.AutoIncrementSeed = -1;
                 this.columnIdSam.AutoIncrementStep = -1;
                 this.columnIdSam.AllowDBNull = false;
                 this.columnIdSam.ReadOnly = true;
                 this.columnIdSam.Unique = true;
+                this.columnNazwa1.AllowDBNull = false;
+                this.columnNazwa1.MaxLength = 50;
+                this.columnNazwa2.AllowDBNull = false;
+                this.columnNazwa2.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5964,17 +5964,6 @@ namespace SamWypo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nazwa1 {
-                get {
-                    return ((string)(this[this.tableSamoLista.Nazwa1Column]));
-                }
-                set {
-                    this[this.tableSamoLista.Nazwa1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string TablRej {
                 get {
                     return ((string)(this[this.tableSamoLista.TablRejColumn]));
@@ -6013,23 +6002,34 @@ namespace SamWypo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nazwa2 {
-                get {
-                    return ((string)(this[this.tableSamoLista.Nazwa2Column]));
-                }
-                set {
-                    this[this.tableSamoLista.Nazwa2Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int IdSam {
                 get {
                     return ((int)(this[this.tableSamoLista.IdSamColumn]));
                 }
                 set {
                     this[this.tableSamoLista.IdSamColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nazwa1 {
+                get {
+                    return ((string)(this[this.tableSamoLista.Nazwa1Column]));
+                }
+                set {
+                    this[this.tableSamoLista.Nazwa1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Nazwa2 {
+                get {
+                    return ((string)(this[this.tableSamoLista.Nazwa2Column]));
+                }
+                set {
+                    this[this.tableSamoLista.Nazwa2Column] = value;
                 }
             }
             
@@ -8270,15 +8270,9 @@ SELECT IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszkania, KodPocz, Tel, 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [wypNaprawa] WHERE (([IdNapr] = @Original_IdNapr) AND ([IdSamo] = @Original_IdSamo) AND ([DStart] = @Original_DStart) AND ([DStop] = @Original_DStop) AND ([Kwota] = @Original_Kwota) AND ((@IsNull_Opis = 1 AND [Opis] IS NULL) OR ([Opis] = @Original_Opis)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM wypNaprawa\r\nWHERE        (IdNapr = @IdNapr)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdNapr", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdNapr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSamo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSamo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DStart", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DStart", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DStop", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DStop", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kwota", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 8, 2, "Kwota", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Opis", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Opis", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Opis", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdNapr", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdNapr", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [wypNaprawa] ([IdSamo], [DStart], [DStop], [Kwota], [Opis]) VALUES (@" +
@@ -8328,8 +8322,8 @@ SELECT IdNapr, IdSamo, DStart, DStop, Kwota, Opis FROM wypNaprawa WHERE (IdNapr 
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE [dbo].[wypNaprawa]\r\nSET [IdSamo] = @IdSamo, [DStart] = @DStart, [DStop] = " +
-                "@DStop, [Kwota] = @Kwota ,[Opis]=@Opis\r\nWHERE  (IdNapr = @IdNapr)";
+            this._commandCollection[1].CommandText = "UPDATE       wypNaprawa\r\nSET                IdSamo = @IdSamo, DStart = @DStart, D" +
+                "Stop = @DStop, Kwota = @Kwota, Opis = @Opis\r\nWHERE        (IdNapr = @IdNapr)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSamo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSamo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DStart", global::System.Data.SqlDbType.SmallDateTime, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DStart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -8396,20 +8390,8 @@ SELECT IdNapr, IdSamo, DStart, DStop, Kwota, Opis FROM wypNaprawa WHERE (IdNapr 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdNapr, int Original_IdSamo, System.DateTime Original_DStart, System.DateTime Original_DStop, decimal Original_Kwota, string Original_Opis) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdNapr));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_IdSamo));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_DStart));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_DStop));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((decimal)(Original_Kwota));
-            if ((Original_Opis == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Opis));
-            }
+        public virtual int Delete(int IdNapr) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(IdNapr));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9000,21 +8982,10 @@ SELECT IdNapr, IdSamo, DStart, DStop, Kwota, Opis FROM wypNaprawa WHERE (IdNapr 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[wypSamochod] WHERE (([IdSam] = @Original_IdSam) AND ([IdMarka] = @Original_IdMarka) AND ([IdModel] = @Original_IdModel) AND ([TablRej] = @Original_TablRej) AND ([Status] = @Original_Status) AND ([RokProd] = @Original_RokProd) AND ([IdPaliwa] = @Original_IdPaliwa) AND ((@IsNull_Kolor = 1 AND [Kolor] IS NULL) OR ([Kolor] = @Original_Kolor)) AND ((@IsNull_Pojemnosc = 1 AND [Pojemnosc] IS NULL) OR ([Pojemnosc] = @Original_Pojemnosc)) AND ((@IsNull_Active = 1 AND [Active] IS NULL) OR ([Active] = @Original_Active)))";
+            this._adapter.DeleteCommand.CommandText = "UPDATE       wypSamochod\r\nSET                Active = 0\r\nWHERE        (IdSam = @I" +
+                "dSam)";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdSam", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdSam", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdMarka", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdMarka", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdModel", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdModel", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TablRej", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TablRej", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RokProd", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RokProd", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdPaliwa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdPaliwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Kolor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kolor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Kolor", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Kolor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pojemnosc", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pojemnosc", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pojemnosc", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 6, 2, "Pojemnosc", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Active", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Active", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Active", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdSam", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdSam", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[wypSamochod] ([IdMarka], [IdModel], [TablRej], [Status], [RokProd], [IdPaliwa], [Kolor], [Pojemnosc], [Active]) VALUES (@IdMarka, @IdModel, @TablRej, @Status, @RokProd, @IdPaliwa, @Kolor, @Pojemnosc, @Active);
@@ -9166,43 +9137,8 @@ SELECT IdSam, IdMarka, IdModel, TablRej, Status, RokProd, IdPaliwa, Kolor, Pojem
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdSam, int Original_IdMarka, int Original_IdModel, string Original_TablRej, bool Original_Status, int Original_RokProd, int Original_IdPaliwa, string Original_Kolor, global::System.Nullable<decimal> Original_Pojemnosc, global::System.Nullable<bool> Original_Active) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdSam));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_IdMarka));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_IdModel));
-            if ((Original_TablRej == null)) {
-                throw new global::System.ArgumentNullException("Original_TablRej");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_TablRej));
-            }
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((bool)(Original_Status));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_RokProd));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_IdPaliwa));
-            if ((Original_Kolor == null)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Kolor));
-            }
-            if ((Original_Pojemnosc.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Pojemnosc.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Active.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((bool)(Original_Active.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
+        public virtual int Delete(int IdSam) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(IdSam));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -9492,7 +9428,7 @@ SELECT IdWypo, IdSamo, IdKlient, DStart, DStop, Stawka, Suma FROM wypWypozycz WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdWypo, IdSamo, IdKlient, DStart, DStop, Stawka, Suma FROM dbo.wypWypozycz" +
@@ -9523,6 +9459,13 @@ FROM            wypWypozycz AS w INNER JOIN
                          wypKlient AS k ON w.IdKlient = k.IdKlient INNER JOIN
                          wypModel AS m ON s.IdModel = m.IdModel";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "dbo.WypoSum";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Stop", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9735,6 +9678,46 @@ FROM            wypWypozycz AS w INNER JOIN
             }
             else {
                 return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object WypoSum(global::System.Nullable<global::System.DateTime> Start, global::System.Nullable<global::System.DateTime> Stop) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((Start.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(Start.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Stop.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(Stop.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
             }
         }
     }
@@ -10150,12 +10133,12 @@ FROM            wypWypozycz AS w INNER JOIN
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SamoLista";
             tableMapping.ColumnMappings.Add("Nazwa", "Nazwa");
-            tableMapping.ColumnMappings.Add("Nazwa1", "Nazwa1");
             tableMapping.ColumnMappings.Add("TablRej", "TablRej");
             tableMapping.ColumnMappings.Add("RokProd", "RokProd");
             tableMapping.ColumnMappings.Add("Pojemnosc", "Pojemnosc");
-            tableMapping.ColumnMappings.Add("Nazwa2", "Nazwa2");
             tableMapping.ColumnMappings.Add("IdSam", "IdSam");
+            tableMapping.ColumnMappings.Add("Nazwa1", "Nazwa1");
+            tableMapping.ColumnMappings.Add("Nazwa2", "Nazwa2");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -10172,10 +10155,12 @@ FROM            wypWypozycz AS w INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select s.IdSam, m.Nazwa,md.Nazwa,s.TablRej,s.RokProd,s.Pojemnosc,p.Nazwa from wyp" +
-                "Samochod as s\r\ninner join wypMarka as m on s.IdMarka=m.IdMarka\r\ninner join wypMo" +
-                "del as md on s.IdModel=md.IdModel\r\ninner join wypPaliwo as p on s.IdPaliwa = p.I" +
-                "dTypSilnik";
+            this._commandCollection[0].CommandText = @"SELECT        s.IdSam, m.Nazwa, md.Nazwa AS Nazwa1, s.TablRej, s.RokProd, s.Pojemnosc, p.Nazwa AS Nazwa2
+FROM            wypSamochod AS s INNER JOIN
+                         wypMarka AS m ON s.IdMarka = m.IdMarka INNER JOIN
+                         wypModel AS md ON s.IdModel = md.IdModel INNER JOIN
+                         wypPaliwo AS p ON s.IdPaliwa = p.IdTypSilnik
+WHERE        (s.Active = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

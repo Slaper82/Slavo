@@ -24,6 +24,7 @@ namespace SamWypo
             InitializeComponent();
             data = new Helper(DateTime.Now,DateTime.Now,dtpStart,dtpStop);
             data.UstawDate();
+            lblWart.Text= data.WartoscWypo(dtpStart.Value, dtpStop.Value).ToString();
         }
 
         private void btnDodSam_Click(object sender, EventArgs e)
@@ -55,6 +56,8 @@ namespace SamWypo
             this.wypKlientTableAdapter.Fill(this.wypoDataSet.wypKlient);
             // TODO: This line of code loads data into the 'wypoDataSet.wypSamochod' table. You can move, or remove it, as needed.
             this.wypSamochodTableAdapter.Fill(this.wypoDataSet.wypSamochod);
+            //
+            lblWart.Text=data.WartoscWypo(dtpStart.Value, dtpStop.Value).ToString()+" zł";
            
         }
       
@@ -77,7 +80,7 @@ namespace SamWypo
         private void btnESamo_Click(object sender, EventArgs e)
         {
             int Id = 0;
-            DataTable g = dgvKlient.DataSource as DataTable;
+            DataTable g = dgvSamo.DataSource as DataTable;
             DataRow row = ((DataRowView)dgvSamo.SelectedRows[0].DataBoundItem).Row;
             Id = row.Field<int>("IdSam");
             DataTable rr = wypSamochodTableAdapter.GetDataBy(Id);
@@ -91,8 +94,8 @@ namespace SamWypo
 
         private void dgvNaprawa_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            dgvNaprawa.Columns[4].Visible = false;
             dgvNaprawa.Columns[5].Visible = false;
+            dgvNaprawa.Columns[6].Visible = false;
         }
 
         private void btnNNapr_Click(object sender, EventArgs e)
@@ -144,7 +147,19 @@ namespace SamWypo
         }
         private void btnUSamo_Click(object sender, EventArgs e)
         {
-
+            DataTable g = dgvSamo.DataSource as DataTable;
+            DataRow row = ((DataRowView)dgvSamo.SelectedRows[0].DataBoundItem).Row;
+           int Id = row.Field<int>("IdSam");
+            DataTable rr = wypSamochodTableAdapter.GetDataBy(Id);
+            Samochod samo = new Samochod(rr);
+            DialogResult wynik = MessageBox.Show("Czy na pewno usunąć ten samochód?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (wynik)
+            {
+                case DialogResult.Yes:
+                    samo.Usun();
+                    Main_Load(this, e);
+                    break;
+            }
         }
         private void btnFiltruj_Click(object sender, EventArgs e)
         {
@@ -209,6 +224,20 @@ namespace SamWypo
             //}
         }
 
-   
+        private void btnNUsun_Click(object sender, EventArgs e)
+        {
+            DataTable g = dgvNaprawa.DataSource as DataTable;
+            DataRow row = ((DataRowView)dgvNaprawa.SelectedRows[0].DataBoundItem).Row;
+            int Id = row.Field<int>("IdNapr");
+            Naprawa napr = new Naprawa(row);
+            DialogResult wynik = MessageBox.Show("Czy na pewno usunąć tą naprawę?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (wynik) 
+            {
+                case DialogResult.Yes:
+                     napr.Usun();
+                     Main_Load(this, e);
+                     break;
+            }
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace SamWypo
             this.Kwota = kwota;
             this.Opis = opis;
         }
-        public Naprawa(DataRow row)
+        public Naprawa(DataRow row):this()
         {
             string tmp = String.Empty;
             this.IdNapr = row.Field<int>("IdNapr");
@@ -67,7 +67,7 @@ namespace SamWypo
 
         public void Usun()
         {
-            throw new NotImplementedException();
+            edyt.Delete(IdNapr);
         }
 
         public void ZapiszEdyt()

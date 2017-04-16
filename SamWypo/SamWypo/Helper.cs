@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SamWypo.WypoDataSetTableAdapters;
 
 namespace SamWypo
 {
@@ -30,6 +31,20 @@ namespace SamWypo
         {
            MStart.Value = new DateTime(Start.Year, Start.Month, 1);
            MStop.Value = new DateTime(Stop.Year, Stop.Month, DateTime.DaysInMonth(Stop.Year, Stop.Month));
+        }
+        public decimal WartoscWypo(DateTime Start,DateTime Stop)
+        {
+            try
+            {
+                wypWypozyczTableAdapter wypo = new wypWypozyczTableAdapter();
+                decimal wynik;
+                Decimal.TryParse(wypo.WypoSum(Start.Date, Stop.Date).ToString(), out wynik);
+                return wynik;
+            }
+            catch
+            {
+                return 0;
+            }
         }
     }
 

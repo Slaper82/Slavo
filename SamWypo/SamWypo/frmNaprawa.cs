@@ -23,11 +23,12 @@ namespace SamWypo.Klasy
         {
             InitializeComponent();
             this.naprawa = Enapr;
+
             this.cmbSamo.SelectedValue = naprawa.IdSamo;
             this.txtKwota.Text = naprawa.Kwota.ToString();
             this.dtpStart.Text = naprawa.DStart.ToString();
             this.dtpStop.Text = naprawa.DStop.ToString();
-
+            this.txtOpis.Text=naprawa.Opis;
             // samoWybBindingSource.DataSource = this.naprawa;
         }
 
@@ -55,6 +56,11 @@ namespace SamWypo.Klasy
                 {
                     if (naprawa != null)
                     {
+                        naprawa.IdSamo = Convert.ToInt32(cmbSamo.SelectedValue.ToString());
+                        naprawa.DStart = dtpStart.Value;
+                        naprawa.DStop = dtpStop.Value;
+                        naprawa.Kwota = Convert.ToDouble(txtKwota.Text);
+                        naprawa.Opis = txtOpis.Text;
                         naprawa.ZapiszEdyt();
                     }
                     else

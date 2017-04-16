@@ -94,7 +94,7 @@ namespace SamWypo
 
         public void Usun()
         {
-            throw new NotImplementedException();
+            samochod.Delete(IdSam);
         }
 
         public bool Sprawdz()

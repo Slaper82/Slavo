@@ -287,7 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Wheat;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(553, 319);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtPoj);
@@ -313,7 +313,7 @@
             this.Name = "frmDodSamo";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmDodSamo";
+            this.Text = "Samochód";
             this.Load += new System.EventHandler(this.frmDodSamo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.samochodBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypMarkaBindingSource)).EndInit();
