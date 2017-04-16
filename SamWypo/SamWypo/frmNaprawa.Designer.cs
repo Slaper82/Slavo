@@ -34,18 +34,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbSamo = new System.Windows.Forms.ComboBox();
+            this.naprawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.samoWybBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypoDataSet = new SamWypo.WypoDataSet();
-            this.naprawaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpStop = new System.Windows.Forms.DateTimePicker();
             this.txtKwota = new System.Windows.Forms.TextBox();
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.samoWybTableAdapter = new SamWypo.WypoDataSetTableAdapters.SamoWybTableAdapter();
+            this.txtOpis = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,6 +103,10 @@
             this.cmbSamo.TabIndex = 4;
             this.cmbSamo.ValueMember = "IdSam";
             // 
+            // naprawaBindingSource
+            // 
+            this.naprawaBindingSource.DataSource = typeof(SamWypo.Naprawa);
+            // 
             // samoWybBindingSource
             // 
             this.samoWybBindingSource.DataMember = "SamoWyb";
@@ -110,10 +116,6 @@
             // 
             this.wypoDataSet.DataSetName = "WypoDataSet";
             this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // naprawaBindingSource
-            // 
-            this.naprawaBindingSource.DataSource = typeof(SamWypo.Naprawa);
             // 
             // dtpStart
             // 
@@ -143,12 +145,13 @@
             this.txtKwota.Name = "txtKwota";
             this.txtKwota.Size = new System.Drawing.Size(150, 29);
             this.txtKwota.TabIndex = 7;
+            this.txtKwota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKwota_KeyPress);
             // 
             // btnZapisz
             // 
             this.btnZapisz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnZapisz.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnZapisz.Location = new System.Drawing.Point(235, 196);
+            this.btnZapisz.Location = new System.Drawing.Point(235, 264);
             this.btnZapisz.Name = "btnZapisz";
             this.btnZapisz.Size = new System.Drawing.Size(85, 34);
             this.btnZapisz.TabIndex = 8;
@@ -160,7 +163,7 @@
             // 
             this.btnAnuluj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnuluj.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAnuluj.Location = new System.Drawing.Point(131, 196);
+            this.btnAnuluj.Location = new System.Drawing.Point(131, 264);
             this.btnAnuluj.Name = "btnAnuluj";
             this.btnAnuluj.Size = new System.Drawing.Size(85, 34);
             this.btnAnuluj.TabIndex = 9;
@@ -172,11 +175,30 @@
             // 
             this.samoWybTableAdapter.ClearBeforeFill = true;
             // 
+            // txtOpis
+            // 
+            this.txtOpis.Location = new System.Drawing.Point(172, 195);
+            this.txtOpis.Multiline = true;
+            this.txtOpis.Name = "txtOpis";
+            this.txtOpis.Size = new System.Drawing.Size(147, 46);
+            this.txtOpis.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(36, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Opis naprawy";
+            // 
             // frmNaprawa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 259);
+            this.ClientSize = new System.Drawing.Size(367, 313);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.btnAnuluj);
             this.Controls.Add(this.btnZapisz);
             this.Controls.Add(this.txtKwota);
@@ -193,9 +215,9 @@
             this.ShowIcon = false;
             this.Text = "Naprawa";
             this.Load += new System.EventHandler(this.frmNaprawa_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.naprawaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +239,7 @@
         private System.Windows.Forms.BindingSource samoWybBindingSource;
         private WypoDataSetTableAdapters.SamoWybTableAdapter samoWybTableAdapter;
         private System.Windows.Forms.BindingSource naprawaBindingSource;
+        private System.Windows.Forms.TextBox txtOpis;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -63,7 +63,9 @@ namespace SamWypo
           //  this.wypModelTableAdapter.Fill(this.wypoDataSet.wypModel);
             // TODO: This line of code loads data into the 'wypoDataSet.wypMarka' table. You can move, or remove it, as needed.
             this.wypMarkaTableAdapter.Fill(this.wypoDataSet.wypMarka);
-            
+            cmbMarka.SelectedValue = samochod.IdMarka;
+            cmbModel.SelectedValue = samochod.IdModel;
+            cmbPaliwo.SelectedValue = samochod.IdPaliwa;
             
 
         }
@@ -77,6 +79,29 @@ namespace SamWypo
         private void cmbMarka_SelectedValueChanged(object sender, EventArgs e)
         {
            // frmDodSamo_Load(this, e);
+        }
+
+        private void txtRokProd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPoj_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+      (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

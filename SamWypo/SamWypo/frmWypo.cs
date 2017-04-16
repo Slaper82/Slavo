@@ -54,28 +54,57 @@ namespace SamWypo.Klasy
 
         private void btnZapisz_Click(object sender, EventArgs e)
         {
-            if (wypozycz != null)
+            if (txtStawka.Text != String.Empty&&dtpStart.Value<dtpStop.Value)
             {
-                wypozycz.IdKlient = (int)cmbKlient.SelectedValue;
-                wypozycz.IdSamo = (int)cmbSamo.SelectedValue;
-                wypozycz.DStart = dtpStart.Value;
-                wypozycz.DStop = dtpStop.Value;
-                wypozycz.Stawka = Convert.ToInt32(txtStawka.Text);
-                if (wypozycz.UsunTrans(dtpStart.Value, dtpStop.Value))
+                if (wypozycz != null)
                 {
-                    wypozycz.ZapiszTransakcje(dtpStart.Value, dtpStop.Value);
-                    wypozycz.ZapiszEdyt();
+                    wypozycz.IdKlient = (int)cmbKlient.SelectedValue;
+                    wypozycz.IdSamo = (int)cmbSamo.SelectedValue;
+                    wypozycz.DStart = dtpStart.Value;
+                    wypozycz.DStop = dtpStop.Value;
+                    wypozycz.Stawka = Convert.ToDecimal(txtStawka.Text);
+                    if (wypozycz.UsunTrans(wypozycz.IdWypo))
+                    {
+                        wypozycz.ZapiszTransakcje(dtpStart.Value, dtpStop.Value,wypozycz.IdWypo);
+                        wypozycz.ZapiszEdyt();
+                    }
+                    else MessageBox.Show("Wystąpiły błędy podczas edycji");
                 }
-                else MessageBox.Show("Wystąpiły błędy podczas edycji");
+                else
+                {
+                    Wypo nowy = new Wypo((int)cmbSamo.SelectedValue, (int)cmbKlient.SelectedValue, dtpStart.Value, dtpStop.Value, Convert.ToDecimal(txtStawka.Text), 0);
+                    nowy.ZapiszNowe();
+                    int IdWypo = nowy.PokazIdWypo(); 
+                    nowy.ZapiszTransakcje(dtpStart.Value, dtpStop.Value,IdWypo);
+                }
+                if (dodano != null) dodano(this, e);
+                this.Close();
             }
             else
             {
-                Wypo nowy = new Wypo((int)cmbSamo.SelectedValue,(int)cmbKlient.SelectedValue,dtpStart.Value,dtpStop.Value,Convert.ToDecimal(txtStawka.Text),0);
-                nowy.ZapiszNowe();
-                nowy.ZapiszTransakcje(dtpStart.Value, dtpStop.Value);
+                if(txtStawka.Text==String.Empty)
+                MessageBox.Show("Należy podać stawkę.", "Podaj Stawkę", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("Data Od nie może być większa niż data Do", "Błędy daty", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if (dodano != null) dodano(this, e);
-            this.Close();
+        }
+
+        private void txtStawka_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnZapisz.PerformClick();
+            }
         }
     }
 }

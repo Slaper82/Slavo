@@ -16,6 +16,7 @@ namespace SamWypo
         public DateTime DStart { get; set; }
         public DateTime DStop { get; set; }
         public double Kwota { get; set; }
+        public string Opis { get; set; }
         wypNaprawaTableAdapter nowa;
         wypNaprawaTableAdapter edyt;
         
@@ -27,20 +28,22 @@ namespace SamWypo
         }
         
 
-        public Naprawa(int idnapr,int idsamo, DateTime dstart, DateTime dstop, double kwota):this()
+        public Naprawa(int idnapr,int idsamo, DateTime dstart, DateTime dstop, double kwota,string opis):this()
         {
             this.IdNapr = idnapr;
             this.IdSamo = idsamo;
             this.DStart = dstart;
             this.DStop = dstop;
             this.Kwota = kwota;
+            this.Opis = opis;
         }
-        public Naprawa(int idsamo,DateTime dstart,DateTime dstop, double kwota):this()
+        public Naprawa(int idsamo,DateTime dstart,DateTime dstop, double kwota,string opis):this()
         {
             this.IdSamo = idsamo;
             this.DStart = dstart;
             this.DStop = dstop;
-            this.Kwota = kwota; 
+            this.Kwota = kwota;
+            this.Opis = opis;
         }
         public Naprawa(DataRow row)
         {
@@ -52,6 +55,7 @@ namespace SamWypo
             tmp = row.Field<decimal>("Kwota").ToString();
             tmp.Replace(".", ",");
             this.Kwota = Convert.ToDouble(tmp);
+            this.Opis = row.Field<string>("Opis");
 
         }
         public bool Sprawdz()
@@ -70,7 +74,7 @@ namespace SamWypo
         {
             try
             {
-                edyt.UpdateNapr(IdSamo, DStart, DStop, Convert.ToDecimal(Kwota), IdNapr);
+                edyt.UpdateNapr(IdSamo, DStart, DStop, Convert.ToDecimal(Kwota), Opis,IdNapr);
             }
             catch(Exception ex)
             {
@@ -82,7 +86,7 @@ namespace SamWypo
         {
             try
             { 
-            nowa.Insert(IdSamo, DStart, DStop, Convert.ToDecimal(Kwota));
+            nowa.Insert(IdSamo, DStart, DStop, Convert.ToDecimal(Kwota),Opis);
             }
             catch(Exception ex)
             {

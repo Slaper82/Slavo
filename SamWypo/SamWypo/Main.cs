@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using AutoMapper;
 using SamWypo.WypoDataSetTableAdapters;
 using SamWypo.Klasy;
+using SamWypo.Raporty;
 
 namespace SamWypo
 {
@@ -72,7 +73,6 @@ namespace SamWypo
         {
             dgvKlient.Columns[0].Visible = false;
         }
-        
 
         private void btnESamo_Click(object sender, EventArgs e)
         {
@@ -103,7 +103,7 @@ namespace SamWypo
         }
 
         private void btnNEdytuj_Click(object sender, EventArgs e)
-        {
+      {
             DataTable g = dgvNaprawa.DataSource as DataTable;
             DataRow row = ((DataRowView)dgvNaprawa.SelectedRows[0].DataBoundItem).Row;
             Naprawa napr = new Naprawa(row);
@@ -131,7 +131,21 @@ namespace SamWypo
             Wyp.dodano += Main_Load;
             Wyp.ShowDialog();
         }
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+            int Id = 0;
+            DataTable g = dgvWypo.DataSource as DataTable;
+            DataRow row = ((DataRowView)dgvWypo.SelectedRows[0].DataBoundItem).Row;
+            Id = row.Field<int>("IdWypo");
+            DataTable wyp = wypWypozyczTableAdapter1.GetDataBy(Id);
+            Wypo del = new Wypo(wyp);
+            del.Usun();
+            Main_Load(this, e);
+        }
+        private void btnUSamo_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btnFiltruj_Click(object sender, EventArgs e)
         {
             Main_Load(this, e);
@@ -157,10 +171,44 @@ namespace SamWypo
 
         private void btnPokaz_Click(object sender, EventArgs e)
         {
-            dgvRaport.DataSource = null;
-            Mapowanie.WyczyscListy();
-            RaportKlient nowy = new RaportKlient();  
-            nowy.PokazDane(dgvRaport, dtpRaportStr.Value, dtpRaportStp.Value);
+            if (rdbKlient.Checked)
+            {
+                dgvRaport.DataSource = null;
+                Mapowanie.WyczyscListy();
+                RaportKlient raport = new RaportKlient();
+                raport.PokazDane(dgvRaport, dtpRaportStr.Value, dtpRaportStp.Value);
+            }
+            else if (rdbSamo.Checked)
+            {
+                dgvRaport.DataSource = null;
+                Mapowanie.WyczyscListy();
+                RaportSamochod raport = new RaportSamochod();
+                raport.PokazDane(dgvRaport, dtpRaportStr.Value, dtpRaportStp.Value);
+            }
+            else if (rdbNaprawy.Checked)
+            {
+                dgvRaport.DataSource = null;
+                Mapowanie.WyczyscListy();
+                RaportNaprawa raport = new RaportNaprawa();
+                raport.PokazDane(dgvRaport, dtpRaportStr.Value, dtpRaportStp.Value);
+            }
+            else if(rdbWypo.Checked)
+            {
+                dgvRaport.DataSource = null;
+                Mapowanie.WyczyscListy();
+                RaportWypo raport = new RaportWypo();
+                raport.PokazDane(dgvRaport, dtpRaportStr.Value, dtpRaportStp.Value);
+            }
         }
+
+        private void rdbWypo_CheckedChanged(object sender, EventArgs e)
+        {
+            //if (rdbKlient.Checked)
+            //{
+                
+            //}
+        }
+
+   
     }
 }

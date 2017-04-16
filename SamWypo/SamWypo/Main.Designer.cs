@@ -62,20 +62,21 @@
             this.btnEKlient = new System.Windows.Forms.Button();
             this.btnDklient = new System.Windows.Forms.Button();
             this.dgvKlient = new System.Windows.Forms.DataGridView();
-            this.tpRaport = new System.Windows.Forms.TabPage();
-            this.rdbNaprawy = new System.Windows.Forms.RadioButton();
-            this.rdbWypo = new System.Windows.Forms.RadioButton();
-            this.rdbSamo = new System.Windows.Forms.RadioButton();
-            this.rdbKlient = new System.Windows.Forms.RadioButton();
             this.tpNaprawa = new System.Windows.Forms.TabPage();
             this.btnNUsun = new System.Windows.Forms.Button();
             this.btnNEdytuj = new System.Windows.Forms.Button();
             this.btnNNapr = new System.Windows.Forms.Button();
             this.dgvNaprawa = new System.Windows.Forms.DataGridView();
-            this.cmbSelect = new System.Windows.Forms.ComboBox();
-            this.dtpRaportStr = new System.Windows.Forms.DateTimePicker();
-            this.dtpRaportStp = new System.Windows.Forms.DateTimePicker();
+            this.tpRaport = new System.Windows.Forms.TabPage();
+            this.dgvRaport = new System.Windows.Forms.DataGridView();
             this.btnPokaz = new System.Windows.Forms.Button();
+            this.dtpRaportStp = new System.Windows.Forms.DateTimePicker();
+            this.dtpRaportStr = new System.Windows.Forms.DateTimePicker();
+            this.cmbSelect = new System.Windows.Forms.ComboBox();
+            this.rdbNaprawy = new System.Windows.Forms.RadioButton();
+            this.rdbWypo = new System.Windows.Forms.RadioButton();
+            this.rdbSamo = new System.Windows.Forms.RadioButton();
+            this.rdbKlient = new System.Windows.Forms.RadioButton();
             this.idWypoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSamoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idKlientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,12 +102,6 @@
             this.osobaKontDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wypKlientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypoDataSet = new SamWypo.WypoDataSet();
-            this.nazwaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dStopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kwotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idNaprDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.napListaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.samoListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypSamochodBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -116,7 +111,13 @@
             this.napListaViewTableAdapter = new SamWypo.WypoDataSetTableAdapters.NapListaViewTableAdapter();
             this.wypWypoFullTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypWypoFullTableAdapter();
             this.wypWypozyczTableAdapter1 = new SamWypo.WypoDataSetTableAdapters.wypWypozyczTableAdapter();
-            this.dgvRaport = new System.Windows.Forms.DataGridView();
+            this.nazwaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStopDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kwotaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idNaprDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSamoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpWypo.SuspendLayout();
@@ -125,9 +126,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).BeginInit();
             this.tpKlient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).BeginInit();
-            this.tpRaport.SuspendLayout();
             this.tpNaprawa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaprawa)).BeginInit();
+            this.tpRaport.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRaport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).BeginInit();
@@ -136,17 +138,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRaport)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.samochódToolStripMenuItem,
             this.markiSamochodówToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(963, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1339, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -177,10 +179,11 @@
             this.tabControl.Controls.Add(this.tpKlient);
             this.tabControl.Controls.Add(this.tpNaprawa);
             this.tabControl.Controls.Add(this.tpRaport);
-            this.tabControl.Location = new System.Drawing.Point(12, 27);
+            this.tabControl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabControl.Location = new System.Drawing.Point(0, 27);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(899, 328);
+            this.tabControl.Size = new System.Drawing.Size(1269, 634);
             this.tabControl.TabIndex = 1;
             // 
             // tpWypo
@@ -196,10 +199,10 @@
             this.tpWypo.Controls.Add(this.dtpStop);
             this.tpWypo.Controls.Add(this.dtpStart);
             this.tpWypo.Controls.Add(this.btnDodaj);
-            this.tpWypo.Location = new System.Drawing.Point(4, 22);
+            this.tpWypo.Location = new System.Drawing.Point(4, 30);
             this.tpWypo.Name = "tpWypo";
             this.tpWypo.Padding = new System.Windows.Forms.Padding(3);
-            this.tpWypo.Size = new System.Drawing.Size(891, 302);
+            this.tpWypo.Size = new System.Drawing.Size(1261, 600);
             this.tpWypo.TabIndex = 0;
             this.tpWypo.Text = "Wypożyczenia";
             this.tpWypo.UseVisualStyleBackColor = true;
@@ -218,7 +221,7 @@
             // 
             this.btnEdycja.BackColor = System.Drawing.Color.White;
             this.btnEdycja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdycja.Location = new System.Drawing.Point(586, 117);
+            this.btnEdycja.Location = new System.Drawing.Point(1058, 119);
             this.btnEdycja.Name = "btnEdycja";
             this.btnEdycja.Size = new System.Drawing.Size(83, 39);
             this.btnEdycja.TabIndex = 9;
@@ -229,18 +232,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(639, 219);
+            this.label4.Location = new System.Drawing.Point(1111, 221);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(71, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "10000 zł";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(589, 219);
+            this.label3.Location = new System.Drawing.Point(1061, 221);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 7;
             this.label3.Text = "Wartość:";
             // 
@@ -261,11 +264,14 @@
             this.stawkaDataGridViewTextBoxColumn,
             this.sumaDataGridViewTextBoxColumn});
             this.dgvWypo.DataSource = this.wypWypoFullBindingSource;
+            this.dgvWypo.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvWypo.Location = new System.Drawing.Point(9, 70);
             this.dgvWypo.Name = "dgvWypo";
             this.dgvWypo.ReadOnly = true;
+            this.dgvWypo.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvWypo.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.dgvWypo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWypo.Size = new System.Drawing.Size(571, 226);
+            this.dgvWypo.Size = new System.Drawing.Size(1043, 482);
             this.dgvWypo.TabIndex = 6;
             // 
             // Samochód
@@ -285,19 +291,20 @@
             // btnUsun
             // 
             this.btnUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsun.Location = new System.Drawing.Point(586, 165);
+            this.btnUsun.Location = new System.Drawing.Point(1058, 167);
             this.btnUsun.Name = "btnUsun";
             this.btnUsun.Size = new System.Drawing.Size(83, 39);
             this.btnUsun.TabIndex = 5;
             this.btnUsun.Text = "Usuń";
             this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(201, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 13);
+            this.label2.Size = new System.Drawing.Size(31, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Do";
             // 
@@ -306,7 +313,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.Size = new System.Drawing.Size(32, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Od";
             // 
@@ -314,25 +321,25 @@
             // 
             this.dtpStop.Location = new System.Drawing.Point(228, 17);
             this.dtpStop.Name = "dtpStop";
-            this.dtpStop.Size = new System.Drawing.Size(140, 20);
+            this.dtpStop.Size = new System.Drawing.Size(140, 29);
             this.dtpStop.TabIndex = 2;
             // 
             // dtpStart
             // 
             this.dtpStart.Location = new System.Drawing.Point(33, 16);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(141, 20);
+            this.dtpStart.Size = new System.Drawing.Size(141, 29);
             this.dtpStart.TabIndex = 1;
             // 
             // btnDodaj
             // 
             this.btnDodaj.BackColor = System.Drawing.Color.White;
             this.btnDodaj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDodaj.Location = new System.Drawing.Point(586, 68);
+            this.btnDodaj.Location = new System.Drawing.Point(1058, 70);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(83, 39);
             this.btnDodaj.TabIndex = 0;
-            this.btnDodaj.Text = "Dodaj Wypo";
+            this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = false;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
@@ -342,10 +349,10 @@
             this.tpSamoch.Controls.Add(this.btnESamo);
             this.tpSamoch.Controls.Add(this.btnDodSam);
             this.tpSamoch.Controls.Add(this.dgvSamo);
-            this.tpSamoch.Location = new System.Drawing.Point(4, 22);
+            this.tpSamoch.Location = new System.Drawing.Point(4, 30);
             this.tpSamoch.Name = "tpSamoch";
             this.tpSamoch.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSamoch.Size = new System.Drawing.Size(891, 302);
+            this.tpSamoch.Size = new System.Drawing.Size(1261, 600);
             this.tpSamoch.TabIndex = 1;
             this.tpSamoch.Text = "Samochody";
             this.tpSamoch.UseVisualStyleBackColor = true;
@@ -359,6 +366,7 @@
             this.btnUSamo.TabIndex = 3;
             this.btnUSamo.Text = "Usuń";
             this.btnUSamo.UseVisualStyleBackColor = true;
+            this.btnUSamo.Click += new System.EventHandler(this.btnUSamo_Click);
             // 
             // btnESamo
             // 
@@ -400,7 +408,8 @@
             this.dgvSamo.Location = new System.Drawing.Point(6, 64);
             this.dgvSamo.Name = "dgvSamo";
             this.dgvSamo.ReadOnly = true;
-            this.dgvSamo.Size = new System.Drawing.Size(889, 221);
+            this.dgvSamo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSamo.Size = new System.Drawing.Size(1269, 551);
             this.dgvSamo.TabIndex = 0;
             // 
             // Marka
@@ -437,10 +446,10 @@
             this.tpKlient.Controls.Add(this.btnEKlient);
             this.tpKlient.Controls.Add(this.btnDklient);
             this.tpKlient.Controls.Add(this.dgvKlient);
-            this.tpKlient.Location = new System.Drawing.Point(4, 22);
+            this.tpKlient.Location = new System.Drawing.Point(4, 30);
             this.tpKlient.Name = "tpKlient";
             this.tpKlient.Padding = new System.Windows.Forms.Padding(3);
-            this.tpKlient.Size = new System.Drawing.Size(891, 302);
+            this.tpKlient.Size = new System.Drawing.Size(1261, 600);
             this.tpKlient.TabIndex = 2;
             this.tpKlient.Text = "Klienci";
             this.tpKlient.UseVisualStyleBackColor = true;
@@ -448,7 +457,7 @@
             // btnUKlient
             // 
             this.btnUKlient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUKlient.Location = new System.Drawing.Point(208, 24);
+            this.btnUKlient.Location = new System.Drawing.Point(212, 25);
             this.btnUKlient.Name = "btnUKlient";
             this.btnUKlient.Size = new System.Drawing.Size(79, 33);
             this.btnUKlient.TabIndex = 4;
@@ -458,7 +467,7 @@
             // btnEKlient
             // 
             this.btnEKlient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEKlient.Location = new System.Drawing.Point(107, 24);
+            this.btnEKlient.Location = new System.Drawing.Point(109, 25);
             this.btnEKlient.Name = "btnEKlient";
             this.btnEKlient.Size = new System.Drawing.Size(79, 33);
             this.btnEKlient.TabIndex = 3;
@@ -469,7 +478,7 @@
             // btnDklient
             // 
             this.btnDklient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDklient.Location = new System.Drawing.Point(6, 24);
+            this.btnDklient.Location = new System.Drawing.Point(6, 25);
             this.btnDklient.Name = "btnDklient";
             this.btnDklient.Size = new System.Drawing.Size(79, 33);
             this.btnDklient.TabIndex = 2;
@@ -499,72 +508,9 @@
             this.dgvKlient.Name = "dgvKlient";
             this.dgvKlient.ReadOnly = true;
             this.dgvKlient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvKlient.Size = new System.Drawing.Size(866, 221);
+            this.dgvKlient.Size = new System.Drawing.Size(1269, 551);
             this.dgvKlient.TabIndex = 1;
             this.dgvKlient.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvKlient_DataBindingComplete);
-            // 
-            // tpRaport
-            // 
-            this.tpRaport.Controls.Add(this.dgvRaport);
-            this.tpRaport.Controls.Add(this.btnPokaz);
-            this.tpRaport.Controls.Add(this.dtpRaportStp);
-            this.tpRaport.Controls.Add(this.dtpRaportStr);
-            this.tpRaport.Controls.Add(this.cmbSelect);
-            this.tpRaport.Controls.Add(this.rdbNaprawy);
-            this.tpRaport.Controls.Add(this.rdbWypo);
-            this.tpRaport.Controls.Add(this.rdbSamo);
-            this.tpRaport.Controls.Add(this.rdbKlient);
-            this.tpRaport.Location = new System.Drawing.Point(4, 22);
-            this.tpRaport.Name = "tpRaport";
-            this.tpRaport.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRaport.Size = new System.Drawing.Size(891, 302);
-            this.tpRaport.TabIndex = 3;
-            this.tpRaport.Text = "Raporty";
-            this.tpRaport.UseVisualStyleBackColor = true;
-            // 
-            // rdbNaprawy
-            // 
-            this.rdbNaprawy.AutoSize = true;
-            this.rdbNaprawy.Location = new System.Drawing.Point(134, 45);
-            this.rdbNaprawy.Name = "rdbNaprawy";
-            this.rdbNaprawy.Size = new System.Drawing.Size(67, 17);
-            this.rdbNaprawy.TabIndex = 5;
-            this.rdbNaprawy.TabStop = true;
-            this.rdbNaprawy.Text = "Naprawy";
-            this.rdbNaprawy.UseVisualStyleBackColor = true;
-            // 
-            // rdbWypo
-            // 
-            this.rdbWypo.AutoSize = true;
-            this.rdbWypo.Location = new System.Drawing.Point(134, 15);
-            this.rdbWypo.Name = "rdbWypo";
-            this.rdbWypo.Size = new System.Drawing.Size(94, 17);
-            this.rdbWypo.TabIndex = 4;
-            this.rdbWypo.TabStop = true;
-            this.rdbWypo.Text = "Wypożyczenia";
-            this.rdbWypo.UseVisualStyleBackColor = true;
-            // 
-            // rdbSamo
-            // 
-            this.rdbSamo.AutoSize = true;
-            this.rdbSamo.Location = new System.Drawing.Point(20, 45);
-            this.rdbSamo.Name = "rdbSamo";
-            this.rdbSamo.Size = new System.Drawing.Size(76, 17);
-            this.rdbSamo.TabIndex = 3;
-            this.rdbSamo.TabStop = true;
-            this.rdbSamo.Text = "Samochód";
-            this.rdbSamo.UseVisualStyleBackColor = true;
-            // 
-            // rdbKlient
-            // 
-            this.rdbKlient.AutoSize = true;
-            this.rdbKlient.Location = new System.Drawing.Point(20, 15);
-            this.rdbKlient.Name = "rdbKlient";
-            this.rdbKlient.Size = new System.Drawing.Size(51, 17);
-            this.rdbKlient.TabIndex = 2;
-            this.rdbKlient.TabStop = true;
-            this.rdbKlient.Text = "Klient";
-            this.rdbKlient.UseVisualStyleBackColor = true;
             // 
             // tpNaprawa
             // 
@@ -572,10 +518,10 @@
             this.tpNaprawa.Controls.Add(this.btnNEdytuj);
             this.tpNaprawa.Controls.Add(this.btnNNapr);
             this.tpNaprawa.Controls.Add(this.dgvNaprawa);
-            this.tpNaprawa.Location = new System.Drawing.Point(4, 22);
+            this.tpNaprawa.Location = new System.Drawing.Point(4, 30);
             this.tpNaprawa.Name = "tpNaprawa";
             this.tpNaprawa.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNaprawa.Size = new System.Drawing.Size(891, 302);
+            this.tpNaprawa.Size = new System.Drawing.Size(1261, 600);
             this.tpNaprawa.TabIndex = 4;
             this.tpNaprawa.Text = "Naprawy";
             this.tpNaprawa.UseVisualStyleBackColor = true;
@@ -583,7 +529,7 @@
             // btnNUsun
             // 
             this.btnNUsun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNUsun.Location = new System.Drawing.Point(208, 29);
+            this.btnNUsun.Location = new System.Drawing.Point(212, 25);
             this.btnNUsun.Name = "btnNUsun";
             this.btnNUsun.Size = new System.Drawing.Size(79, 33);
             this.btnNUsun.TabIndex = 6;
@@ -593,7 +539,7 @@
             // btnNEdytuj
             // 
             this.btnNEdytuj.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNEdytuj.Location = new System.Drawing.Point(107, 29);
+            this.btnNEdytuj.Location = new System.Drawing.Point(109, 25);
             this.btnNEdytuj.Name = "btnNEdytuj";
             this.btnNEdytuj.Size = new System.Drawing.Size(79, 33);
             this.btnNEdytuj.TabIndex = 5;
@@ -604,7 +550,7 @@
             // btnNNapr
             // 
             this.btnNNapr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNNapr.Location = new System.Drawing.Point(6, 29);
+            this.btnNNapr.Location = new System.Drawing.Point(6, 25);
             this.btnNNapr.Name = "btnNNapr";
             this.btnNNapr.Size = new System.Drawing.Size(79, 33);
             this.btnNNapr.TabIndex = 4;
@@ -623,47 +569,124 @@
             this.dStartDataGridViewTextBoxColumn,
             this.dStopDataGridViewTextBoxColumn,
             this.kwotaDataGridViewTextBoxColumn,
+            this.Opis,
             this.idNaprDataGridViewTextBoxColumn,
             this.idSamoDataGridViewTextBoxColumn});
             this.dgvNaprawa.DataSource = this.napListaViewBindingSource;
-            this.dgvNaprawa.Location = new System.Drawing.Point(6, 68);
+            this.dgvNaprawa.Location = new System.Drawing.Point(6, 63);
             this.dgvNaprawa.Name = "dgvNaprawa";
             this.dgvNaprawa.ReadOnly = true;
-            this.dgvNaprawa.Size = new System.Drawing.Size(644, 221);
+            this.dgvNaprawa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNaprawa.Size = new System.Drawing.Size(1269, 551);
             this.dgvNaprawa.TabIndex = 3;
             this.dgvNaprawa.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvNaprawa_DataBindingComplete);
             // 
-            // cmbSelect
+            // tpRaport
             // 
-            this.cmbSelect.FormattingEnabled = true;
-            this.cmbSelect.Location = new System.Drawing.Point(240, 29);
-            this.cmbSelect.Name = "cmbSelect";
-            this.cmbSelect.Size = new System.Drawing.Size(154, 21);
-            this.cmbSelect.TabIndex = 6;
+            this.tpRaport.Controls.Add(this.dgvRaport);
+            this.tpRaport.Controls.Add(this.btnPokaz);
+            this.tpRaport.Controls.Add(this.dtpRaportStp);
+            this.tpRaport.Controls.Add(this.dtpRaportStr);
+            this.tpRaport.Controls.Add(this.cmbSelect);
+            this.tpRaport.Controls.Add(this.rdbNaprawy);
+            this.tpRaport.Controls.Add(this.rdbWypo);
+            this.tpRaport.Controls.Add(this.rdbSamo);
+            this.tpRaport.Controls.Add(this.rdbKlient);
+            this.tpRaport.Location = new System.Drawing.Point(4, 30);
+            this.tpRaport.Name = "tpRaport";
+            this.tpRaport.Padding = new System.Windows.Forms.Padding(3);
+            this.tpRaport.Size = new System.Drawing.Size(1261, 600);
+            this.tpRaport.TabIndex = 3;
+            this.tpRaport.Text = "Raporty";
+            this.tpRaport.UseVisualStyleBackColor = true;
             // 
-            // dtpRaportStr
+            // dgvRaport
             // 
-            this.dtpRaportStr.Location = new System.Drawing.Point(430, 30);
-            this.dtpRaportStr.Name = "dtpRaportStr";
-            this.dtpRaportStr.Size = new System.Drawing.Size(200, 20);
-            this.dtpRaportStr.TabIndex = 7;
-            // 
-            // dtpRaportStp
-            // 
-            this.dtpRaportStp.Location = new System.Drawing.Point(660, 30);
-            this.dtpRaportStp.Name = "dtpRaportStp";
-            this.dtpRaportStp.Size = new System.Drawing.Size(200, 20);
-            this.dtpRaportStp.TabIndex = 8;
+            this.dgvRaport.AllowUserToAddRows = false;
+            this.dgvRaport.AllowUserToDeleteRows = false;
+            this.dgvRaport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRaport.Location = new System.Drawing.Point(20, 124);
+            this.dgvRaport.Name = "dgvRaport";
+            this.dgvRaport.ReadOnly = true;
+            this.dgvRaport.Size = new System.Drawing.Size(840, 172);
+            this.dgvRaport.TabIndex = 10;
             // 
             // btnPokaz
             // 
-            this.btnPokaz.Location = new System.Drawing.Point(660, 77);
+            this.btnPokaz.Location = new System.Drawing.Point(721, 77);
             this.btnPokaz.Name = "btnPokaz";
             this.btnPokaz.Size = new System.Drawing.Size(141, 37);
             this.btnPokaz.TabIndex = 9;
             this.btnPokaz.Text = "Pokaż";
             this.btnPokaz.UseVisualStyleBackColor = true;
             this.btnPokaz.Click += new System.EventHandler(this.btnPokaz_Click);
+            // 
+            // dtpRaportStp
+            // 
+            this.dtpRaportStp.Location = new System.Drawing.Point(721, 30);
+            this.dtpRaportStp.Name = "dtpRaportStp";
+            this.dtpRaportStp.Size = new System.Drawing.Size(200, 29);
+            this.dtpRaportStp.TabIndex = 8;
+            this.dtpRaportStp.Value = new System.DateTime(2017, 4, 20, 19, 35, 0, 0);
+            // 
+            // dtpRaportStr
+            // 
+            this.dtpRaportStr.Location = new System.Drawing.Point(491, 30);
+            this.dtpRaportStr.Name = "dtpRaportStr";
+            this.dtpRaportStr.Size = new System.Drawing.Size(200, 29);
+            this.dtpRaportStr.TabIndex = 7;
+            this.dtpRaportStr.Value = new System.DateTime(2017, 4, 1, 19, 35, 0, 0);
+            // 
+            // cmbSelect
+            // 
+            this.cmbSelect.FormattingEnabled = true;
+            this.cmbSelect.Location = new System.Drawing.Point(301, 29);
+            this.cmbSelect.Name = "cmbSelect";
+            this.cmbSelect.Size = new System.Drawing.Size(154, 29);
+            this.cmbSelect.TabIndex = 6;
+            // 
+            // rdbNaprawy
+            // 
+            this.rdbNaprawy.AutoSize = true;
+            this.rdbNaprawy.Location = new System.Drawing.Point(134, 45);
+            this.rdbNaprawy.Name = "rdbNaprawy";
+            this.rdbNaprawy.Size = new System.Drawing.Size(92, 25);
+            this.rdbNaprawy.TabIndex = 5;
+            this.rdbNaprawy.Text = "Naprawy";
+            this.rdbNaprawy.UseVisualStyleBackColor = true;
+            // 
+            // rdbWypo
+            // 
+            this.rdbWypo.AutoSize = true;
+            this.rdbWypo.Location = new System.Drawing.Point(134, 15);
+            this.rdbWypo.Name = "rdbWypo";
+            this.rdbWypo.Size = new System.Drawing.Size(131, 25);
+            this.rdbWypo.TabIndex = 4;
+            this.rdbWypo.Text = "Wypożyczenia";
+            this.rdbWypo.UseVisualStyleBackColor = true;
+            this.rdbWypo.CheckedChanged += new System.EventHandler(this.rdbWypo_CheckedChanged);
+            // 
+            // rdbSamo
+            // 
+            this.rdbSamo.AutoSize = true;
+            this.rdbSamo.Location = new System.Drawing.Point(20, 45);
+            this.rdbSamo.Name = "rdbSamo";
+            this.rdbSamo.Size = new System.Drawing.Size(106, 25);
+            this.rdbSamo.TabIndex = 3;
+            this.rdbSamo.Text = "Samochód";
+            this.rdbSamo.UseVisualStyleBackColor = true;
+            // 
+            // rdbKlient
+            // 
+            this.rdbKlient.AutoSize = true;
+            this.rdbKlient.Checked = true;
+            this.rdbKlient.Location = new System.Drawing.Point(20, 15);
+            this.rdbKlient.Name = "rdbKlient";
+            this.rdbKlient.Size = new System.Drawing.Size(70, 25);
+            this.rdbKlient.TabIndex = 2;
+            this.rdbKlient.TabStop = true;
+            this.rdbKlient.Text = "Klient";
+            this.rdbKlient.UseVisualStyleBackColor = true;
             // 
             // idWypoDataGridViewTextBoxColumn
             // 
@@ -834,50 +857,6 @@
             this.wypoDataSet.DataSetName = "WypoDataSet";
             this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nazwaDataGridViewTextBoxColumn1
-            // 
-            this.nazwaDataGridViewTextBoxColumn1.DataPropertyName = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn1.HeaderText = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn1.Name = "nazwaDataGridViewTextBoxColumn1";
-            this.nazwaDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dStartDataGridViewTextBoxColumn
-            // 
-            this.dStartDataGridViewTextBoxColumn.DataPropertyName = "DStart";
-            this.dStartDataGridViewTextBoxColumn.HeaderText = "DStart";
-            this.dStartDataGridViewTextBoxColumn.Name = "dStartDataGridViewTextBoxColumn";
-            this.dStartDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dStopDataGridViewTextBoxColumn
-            // 
-            this.dStopDataGridViewTextBoxColumn.DataPropertyName = "DStop";
-            this.dStopDataGridViewTextBoxColumn.HeaderText = "DStop";
-            this.dStopDataGridViewTextBoxColumn.Name = "dStopDataGridViewTextBoxColumn";
-            this.dStopDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kwotaDataGridViewTextBoxColumn
-            // 
-            this.kwotaDataGridViewTextBoxColumn.DataPropertyName = "Kwota";
-            this.kwotaDataGridViewTextBoxColumn.HeaderText = "Kwota";
-            this.kwotaDataGridViewTextBoxColumn.Name = "kwotaDataGridViewTextBoxColumn";
-            this.kwotaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idNaprDataGridViewTextBoxColumn
-            // 
-            this.idNaprDataGridViewTextBoxColumn.DataPropertyName = "IdNapr";
-            this.idNaprDataGridViewTextBoxColumn.HeaderText = "IdNapr";
-            this.idNaprDataGridViewTextBoxColumn.Name = "idNaprDataGridViewTextBoxColumn";
-            this.idNaprDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idNaprDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // idSamoDataGridViewTextBoxColumn
-            // 
-            this.idSamoDataGridViewTextBoxColumn.DataPropertyName = "IdSamo";
-            this.idSamoDataGridViewTextBoxColumn.HeaderText = "IdSamo";
-            this.idSamoDataGridViewTextBoxColumn.Name = "idSamoDataGridViewTextBoxColumn";
-            this.idSamoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSamoDataGridViewTextBoxColumn.Visible = false;
-            // 
             // napListaViewBindingSource
             // 
             this.napListaViewBindingSource.DataMember = "NapListaView";
@@ -917,19 +896,63 @@
             // 
             this.wypWypozyczTableAdapter1.ClearBeforeFill = true;
             // 
-            // dgvRaport
+            // nazwaDataGridViewTextBoxColumn1
             // 
-            this.dgvRaport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRaport.Location = new System.Drawing.Point(20, 124);
-            this.dgvRaport.Name = "dgvRaport";
-            this.dgvRaport.Size = new System.Drawing.Size(840, 172);
-            this.dgvRaport.TabIndex = 10;
+            this.nazwaDataGridViewTextBoxColumn1.DataPropertyName = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn1.HeaderText = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn1.Name = "nazwaDataGridViewTextBoxColumn1";
+            this.nazwaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dStartDataGridViewTextBoxColumn
+            // 
+            this.dStartDataGridViewTextBoxColumn.DataPropertyName = "DStart";
+            this.dStartDataGridViewTextBoxColumn.HeaderText = "DStart";
+            this.dStartDataGridViewTextBoxColumn.Name = "dStartDataGridViewTextBoxColumn";
+            this.dStartDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dStopDataGridViewTextBoxColumn
+            // 
+            this.dStopDataGridViewTextBoxColumn.DataPropertyName = "DStop";
+            this.dStopDataGridViewTextBoxColumn.HeaderText = "DStop";
+            this.dStopDataGridViewTextBoxColumn.Name = "dStopDataGridViewTextBoxColumn";
+            this.dStopDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kwotaDataGridViewTextBoxColumn
+            // 
+            this.kwotaDataGridViewTextBoxColumn.DataPropertyName = "Kwota";
+            this.kwotaDataGridViewTextBoxColumn.HeaderText = "Kwota";
+            this.kwotaDataGridViewTextBoxColumn.Name = "kwotaDataGridViewTextBoxColumn";
+            this.kwotaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Opis
+            // 
+            this.Opis.DataPropertyName = "Opis";
+            this.Opis.HeaderText = "Opis";
+            this.Opis.Name = "Opis";
+            this.Opis.ReadOnly = true;
+            // 
+            // idNaprDataGridViewTextBoxColumn
+            // 
+            this.idNaprDataGridViewTextBoxColumn.DataPropertyName = "IdNapr";
+            this.idNaprDataGridViewTextBoxColumn.HeaderText = "IdNapr";
+            this.idNaprDataGridViewTextBoxColumn.Name = "idNaprDataGridViewTextBoxColumn";
+            this.idNaprDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idNaprDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // idSamoDataGridViewTextBoxColumn
+            // 
+            this.idSamoDataGridViewTextBoxColumn.DataPropertyName = "IdSamo";
+            this.idSamoDataGridViewTextBoxColumn.HeaderText = "IdSamo";
+            this.idSamoDataGridViewTextBoxColumn.Name = "idSamoDataGridViewTextBoxColumn";
+            this.idSamoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSamoDataGridViewTextBoxColumn.Visible = false;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 380);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1339, 686);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -946,10 +969,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).EndInit();
             this.tpKlient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).EndInit();
-            this.tpRaport.ResumeLayout(false);
-            this.tpRaport.PerformLayout();
             this.tpNaprawa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaprawa)).EndInit();
+            this.tpRaport.ResumeLayout(false);
+            this.tpRaport.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRaport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).EndInit();
@@ -958,7 +982,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRaport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1025,12 +1048,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdSam;
         private System.Windows.Forms.BindingSource napListaViewBindingSource;
         private WypoDataSetTableAdapters.NapListaViewTableAdapter napListaViewTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dStartDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dStopDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kwotaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idNaprDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSamoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnEdycja;
         private System.Windows.Forms.BindingSource wypWypoFullBindingSource;
         private WypoDataSetTableAdapters.wypWypoFullTableAdapter wypWypoFullTableAdapter;
@@ -1054,6 +1071,13 @@
         private System.Windows.Forms.DateTimePicker dtpRaportStr;
         private System.Windows.Forms.ComboBox cmbSelect;
         private System.Windows.Forms.DataGridView dgvRaport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dStartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dStopDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kwotaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Opis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idNaprDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSamoDataGridViewTextBoxColumn;
     }
 }
 

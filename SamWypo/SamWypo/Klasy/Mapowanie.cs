@@ -13,6 +13,7 @@ namespace SamWypo.Klasy
         static List<RaportKlient> listaKlientRap = new List<RaportKlient>();
         static List<RaportSamochod> listaSamochodRap = new List<RaportSamochod>();
         static List<RaportNaprawa> listaNaprawRap = new List<RaportNaprawa>();
+        static List<RaportWypo> listaWypoRap = new List<RaportWypo>();
         #region GetData
         public static List<RaportKlient>KlientGetData(String sql)
         {
@@ -62,6 +63,22 @@ namespace SamWypo.Klasy
             }
             return listaNaprawRap;
         }
+        public static List<RaportWypo> WypoGetData(String sql)
+        {
+            //  SqlConnection
+            SqlConnection Connection = new SqlConnection();
+            Connection.ConnectionString = Properties.Settings.Default.SlaWypoConnectionString;
+            Connection.Open();
+            SqlCommand command = new SqlCommand(sql, Connection);
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    listaWypoRap.Add(WypoMapowaniePol(reader));
+                }
+            }
+            return listaWypoRap;
+        }
         #endregion
         #region Mapowanie pol
         private static RaportKlient KlientMapowaniePol(SqlDataReader reader)
@@ -74,8 +91,9 @@ namespace SamWypo.Klasy
         private static RaportSamochod SamochodMapowaniePol(SqlDataReader reader)
         {
             RaportSamochod entity = new RaportSamochod();
-            entity.Nazwa = reader.GetString(reader.GetOrdinal("Nazwa"));
-            entity.Kwota = reader.GetDecimal(reader.GetOrdinal("Kwota"));
+            entity.Nazwa = reader.GetString(reader.GetOrdinal("NazwaSamo"));
+            entity.TablRej = reader.GetString(reader.GetOrdinal("TablRej"));
+            entity.Kwota = reader.GetDecimal(reader.GetOrdinal("KwotaSuma"));
             return entity;
 
         }
@@ -83,8 +101,18 @@ namespace SamWypo.Klasy
         {
             RaportNaprawa entity = new RaportNaprawa();
             entity.NazwaSamo = reader.GetString(reader.GetOrdinal("Nazwa"));
-            entity.Kwota = reader.GetDecimal(reader.GetOrdinal("Kwota"));
-            entity.IloscNapraw = reader.GetInt32(reader.GetOrdinal("Ilosc"));
+            entity.Tablica = reader.GetString(reader.GetOrdinal("Tabl"));
+            entity.IloscNaprawa = reader.GetInt32(reader.GetOrdinal("ilNapr"));
+            entity.Zapl = reader.GetDecimal(reader.GetOrdinal("Kwota"));
+            return entity;
+        }
+        private static RaportWypo WypoMapowaniePol(SqlDataReader reader)
+        {
+            RaportWypo entity = new RaportWypo();
+            entity.Nazwa =reader.GetString(reader.GetOrdinal("WR"));
+                //reader.GetString(reader.GetOrdinal());
+            entity.Zaplata = reader.GetDecimal(reader.GetOrdinal("suma"));
+            //entity.IloscNapraw = reader.GetInt32(reader.GetOrdinal("Ilosc"));
             return entity;
         }
         #endregion
@@ -94,6 +122,7 @@ namespace SamWypo.Klasy
             listaKlientRap.Clear();
             listaNaprawRap.Clear();
             listaSamochodRap.Clear();
+            listaWypoRap.Clear();
         }
         #endregion
     }

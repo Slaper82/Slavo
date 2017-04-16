@@ -47,7 +47,7 @@ namespace SamWypo.Klasy
         private void btnZapisz_Click(object sender, EventArgs e)
         {
             bool DaneOk = false;
-            Naprawa nowa = new Naprawa(Convert.ToInt32(cmbSamo.SelectedValue.ToString()), dtpStart.Value, dtpStop.Value, Convert.ToDouble(txtKwota.Text));
+            Naprawa nowa = new Naprawa(Convert.ToInt32(cmbSamo.SelectedValue.ToString()), dtpStart.Value, dtpStop.Value, Convert.ToDouble(txtKwota.Text),txtOpis.Text);
             DaneOk = nowa.Sprawdz();
             if (DaneOk)
             {
@@ -74,6 +74,20 @@ namespace SamWypo.Klasy
                 MessageBox.Show("Wypełnij wszystkie pola!");
             }
             this.Close();
+        }
+
+        private void txtKwota_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

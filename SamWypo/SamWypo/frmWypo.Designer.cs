@@ -30,7 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.cmbSamo = new System.Windows.Forms.ComboBox();
+            this.samoWybBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wypoDataSet = new SamWypo.WypoDataSet();
             this.cmbKlient = new System.Windows.Forms.ComboBox();
+            this.wypKlientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.dtpStop = new System.Windows.Forms.DateTimePicker();
             this.txtStawka = new System.Windows.Forms.TextBox();
@@ -41,13 +44,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnZapisz = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
-            this.wypoDataSet = new SamWypo.WypoDataSet();
-            this.samoWybBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.samoWybTableAdapter = new SamWypo.WypoDataSetTableAdapters.SamoWybTableAdapter();
-            this.wypKlientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypKlientTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypKlientTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,16 @@
             this.cmbSamo.TabIndex = 0;
             this.cmbSamo.ValueMember = "IdSam";
             // 
+            // samoWybBindingSource
+            // 
+            this.samoWybBindingSource.DataMember = "SamoWyb";
+            this.samoWybBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // wypoDataSet
+            // 
+            this.wypoDataSet.DataSetName = "WypoDataSet";
+            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cmbKlient
             // 
             this.cmbKlient.DataSource = this.wypKlientBindingSource;
@@ -72,6 +82,11 @@
             this.cmbKlient.Size = new System.Drawing.Size(200, 21);
             this.cmbKlient.TabIndex = 1;
             this.cmbKlient.ValueMember = "IdKlient";
+            // 
+            // wypKlientBindingSource
+            // 
+            this.wypKlientBindingSource.DataMember = "wypKlient";
+            this.wypKlientBindingSource.DataSource = this.wypoDataSet;
             // 
             // dtpStart
             // 
@@ -93,6 +108,7 @@
             this.txtStawka.Name = "txtStawka";
             this.txtStawka.Size = new System.Drawing.Size(200, 20);
             this.txtStawka.TabIndex = 4;
+            this.txtStawka.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStawka_KeyPress);
             // 
             // label1
             // 
@@ -159,24 +175,9 @@
             this.btnAnuluj.UseVisualStyleBackColor = true;
             this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
             // 
-            // wypoDataSet
-            // 
-            this.wypoDataSet.DataSetName = "WypoDataSet";
-            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // samoWybBindingSource
-            // 
-            this.samoWybBindingSource.DataMember = "SamoWyb";
-            this.samoWybBindingSource.DataSource = this.wypoDataSet;
-            // 
             // samoWybTableAdapter
             // 
             this.samoWybTableAdapter.ClearBeforeFill = true;
-            // 
-            // wypKlientBindingSource
-            // 
-            this.wypKlientBindingSource.DataMember = "wypKlient";
-            this.wypKlientBindingSource.DataSource = this.wypoDataSet;
             // 
             // wypKlientTableAdapter
             // 
@@ -202,8 +203,8 @@
             this.Name = "frmWypo";
             this.Text = "frmWypo";
             this.Load += new System.EventHandler(this.frmWypo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoWybBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

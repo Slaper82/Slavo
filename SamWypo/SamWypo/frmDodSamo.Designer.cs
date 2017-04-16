@@ -120,6 +120,7 @@
             this.txtRokProd.Name = "txtRokProd";
             this.txtRokProd.Size = new System.Drawing.Size(180, 29);
             this.txtRokProd.TabIndex = 3;
+            this.txtRokProd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRokProd_KeyPress);
             // 
             // txtKolor
             // 
@@ -280,6 +281,7 @@
             this.txtPoj.Name = "txtPoj";
             this.txtPoj.Size = new System.Drawing.Size(180, 29);
             this.txtPoj.TabIndex = 15;
+            this.txtPoj.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPoj_KeyPress);
             // 
             // frmDodSamo
             // 

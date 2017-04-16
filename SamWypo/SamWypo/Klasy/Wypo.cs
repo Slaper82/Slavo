@@ -64,15 +64,16 @@ namespace SamWypo
 
         public void Usun()
         {
-            throw new NotImplementedException();
+            if (UsunTrans(IdWypo)) UsunWypo(IdWypo);
+            else MessageBox.Show("Nie udało się usunąć wypożyczenia");
         }
 
         public void ZapiszEdyt()
         {
             try
             {
-                Suma = Convert.ToDecimal((DStop - DStart).TotalDays) * Stawka;
-                wypozycz.Update(IdSamo, IdKlient, DStart, DStop, Stawka, Suma, IdWypo);
+                Suma = Math.Round(Convert.ToDecimal((DStop - DStart).TotalDays) * Stawka);
+                wypozycz.Update(IdSamo, IdKlient, DStart.Date, DStop.Date, Stawka, Suma, IdWypo);
             }
             catch(Exception ex)
             {
@@ -84,21 +85,23 @@ namespace SamWypo
         {
             try
             {
-                Suma = Convert.ToDecimal((DStop - DStart).TotalDays) * Stawka;
-                wypozycz.Insert(IdSamo, IdKlient, DStart, DStop, Stawka, Suma);
+                Suma = Math.Round(Convert.ToDecimal((DStop - DStart).TotalDays) * Stawka);
+                decimal t = Convert.ToDecimal((DStop - DStart).TotalDays) * Stawka;
+                wypozycz.Insert(IdSamo, IdKlient, DStart.Date, DStop.Date, Stawka, Suma);
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString(),"Błąd zapisu",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-        public void ZapiszTransakcje(DateTime Start,DateTime Stop)
+        public void ZapiszTransakcje(DateTime Start,DateTime Stop,int IdWypo)
         {
-            while ((Start - Stop).TotalDays!=0)
+            
+            while (Math.Round((Start - Stop).TotalDays)!=0)
             {
                 try
                 {
-                    wypodni.InsertWyp(IdSamo, IdKlient, Start.Date, Stawka);
+                    wypodni.InsertWyp(IdSamo, IdKlient, Start.Date.ToString(), Stawka,IdWypo);
                  Start= Start.AddDays(1);
                 }
                 catch(Exception ex)
@@ -107,15 +110,11 @@ namespace SamWypo
                 }
             }
         }
-        public bool UsunTrans(DateTime Start, DateTime Stop)
+        public bool UsunTrans(int IdWypo)
         {
             try
             {
-                while ((Start - Stop).TotalDays != 0)
-                {
-                    wypodni.DeleteWyp(IdSamo, IdKlient, Start.Date);
-                    Start = Start.AddDays(1);
-                }
+                    wypodni.DeleteWyp(IdWypo);
                 return true;
 
             }
@@ -123,6 +122,22 @@ namespace SamWypo
             {
                 return false; 
             }
+        }
+        public int PokazIdWypo()
+        {
+            int id;
+            string test = Convert.ToString(wypozycz.IdWypo(IdSamo, IdKlient, DStart.Date, DStop.Date, Stawka));
+            Int32.TryParse(test, out id);
+            return id;
+        }
+        public bool UsunWypo(int Id)
+        {
+            try
+            {
+                wypozycz.Delete(Id);
+                return true;
+            }
+            catch { return false; }
         }
     }
 }

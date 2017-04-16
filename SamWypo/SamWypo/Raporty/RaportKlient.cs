@@ -24,11 +24,9 @@ namespace SamWypo.Klasy
 
         public void PokazDane(DataGridView datagrid,DateTime Start,DateTime Stop)
         {
-            DgvConfig dane = new DgvConfig(datagrid);
-            //  this.dgv.Columns.Add(NazwaKlienta);
-            // this.dgv.Columns.Add(DoZaplaty);
-           dane.dgv.DataSource = Mapowanie.KlientGetData(SqlQuery.Klienci(Start,Stop));
-          // dane. dgv.Columns[0].Visible = false;
+           DgvConfig dane = new DgvConfig(datagrid);
+           dane.Klient();
+           dane.dgv.DataSource = Mapowanie.KlientGetData(SqlQuery.KlienciAll(Start,Stop));
         }
     }
    
