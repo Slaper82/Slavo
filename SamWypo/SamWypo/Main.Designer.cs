@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.samochódToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.markiSamochodówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajMarkęIModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dodajToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpWypo = new System.Windows.Forms.TabPage();
             this.btnFiltruj = new System.Windows.Forms.Button();
@@ -44,8 +49,8 @@
             this.lblWart = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvWypo = new System.Windows.Forms.DataGridView();
-            this.wypWypoFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.wypoDataSet1 = new SamWypo.WypoDataSet();
+            this.Samochód = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUsun = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,12 +62,44 @@
             this.btnESamo = new System.Windows.Forms.Button();
             this.btnDodSam = new System.Windows.Forms.Button();
             this.dgvSamo = new System.Windows.Forms.DataGridView();
-            this.samoListaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nazwa2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpKlient = new System.Windows.Forms.TabPage();
             this.btnUKlient = new System.Windows.Forms.Button();
             this.btnEKlient = new System.Windows.Forms.Button();
             this.btnDklient = new System.Windows.Forms.Button();
             this.dgvKlient = new System.Windows.Forms.DataGridView();
+            this.tpNaprawa = new System.Windows.Forms.TabPage();
+            this.btnNUsun = new System.Windows.Forms.Button();
+            this.btnNEdytuj = new System.Windows.Forms.Button();
+            this.btnNNapr = new System.Windows.Forms.Button();
+            this.dgvNaprawa = new System.Windows.Forms.DataGridView();
+            this.Opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tpRaport = new System.Windows.Forms.TabPage();
+            this.dgvRaport = new System.Windows.Forms.DataGridView();
+            this.btnPokaz = new System.Windows.Forms.Button();
+            this.dtpRaportStp = new System.Windows.Forms.DateTimePicker();
+            this.dtpRaportStr = new System.Windows.Forms.DateTimePicker();
+            this.cmbSelect = new System.Windows.Forms.ComboBox();
+            this.rdbNaprawy = new System.Windows.Forms.RadioButton();
+            this.rdbWypo = new System.Windows.Forms.RadioButton();
+            this.rdbSamo = new System.Windows.Forms.RadioButton();
+            this.rdbKlient = new System.Windows.Forms.RadioButton();
+            this.idWypoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSamoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idKlientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStartDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dStopDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stawkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wypWypoFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wypoDataSet1 = new SamWypo.WypoDataSet();
+            this.tablRejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rokProdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pojemnoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.samoListaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.idKlientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,22 +112,13 @@
             this.osobaKontDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wypKlientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypoDataSet = new SamWypo.WypoDataSet();
-            this.tpNaprawa = new System.Windows.Forms.TabPage();
-            this.btnNUsun = new System.Windows.Forms.Button();
-            this.btnNEdytuj = new System.Windows.Forms.Button();
-            this.btnNNapr = new System.Windows.Forms.Button();
-            this.dgvNaprawa = new System.Windows.Forms.DataGridView();
+            this.nazwaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.napListaViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tpRaport = new System.Windows.Forms.TabPage();
-            this.dgvRaport = new System.Windows.Forms.DataGridView();
-            this.btnPokaz = new System.Windows.Forms.Button();
-            this.dtpRaportStp = new System.Windows.Forms.DateTimePicker();
-            this.dtpRaportStr = new System.Windows.Forms.DateTimePicker();
-            this.cmbSelect = new System.Windows.Forms.ComboBox();
-            this.rdbNaprawy = new System.Windows.Forms.RadioButton();
-            this.rdbWypo = new System.Windows.Forms.RadioButton();
-            this.rdbSamo = new System.Windows.Forms.RadioButton();
-            this.rdbKlient = new System.Windows.Forms.RadioButton();
             this.samoListaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypSamochodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wypSamochodTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypSamochodTableAdapter();
@@ -99,48 +127,24 @@
             this.napListaViewTableAdapter = new SamWypo.WypoDataSetTableAdapters.NapListaViewTableAdapter();
             this.wypWypoFullTableAdapter = new SamWypo.WypoDataSetTableAdapters.wypWypoFullTableAdapter();
             this.wypWypozyczTableAdapter1 = new SamWypo.WypoDataSetTableAdapters.wypWypozyczTableAdapter();
-            this.nazwaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Opis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Marka = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwa1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tablRejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rokProdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwa2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pojemnoscDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdSam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idWypoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Samochód = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nazwa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSamoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idKlientDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dStartDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dStopDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stawkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dodajModelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpWypo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWypo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).BeginInit();
             this.tpSamoch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).BeginInit();
             this.tpKlient.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
             this.tpNaprawa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaprawa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).BeginInit();
             this.tpRaport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaport)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -162,6 +166,7 @@
             this.samochódToolStripMenuItem.Name = "samochódToolStripMenuItem";
             this.samochódToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.samochódToolStripMenuItem.Text = "Administrator";
+            this.samochódToolStripMenuItem.Click += new System.EventHandler(this.samochódToolStripMenuItem_Click);
             // 
             // markiSamochodówToolStripMenuItem
             // 
@@ -174,9 +179,49 @@
             // 
             // dodajMarkęIModelToolStripMenuItem
             // 
+            this.dodajMarkęIModelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajToolStripMenuItem,
+            this.usuńToolStripMenuItem});
             this.dodajMarkęIModelToolStripMenuItem.Name = "dodajMarkęIModelToolStripMenuItem";
             this.dodajMarkęIModelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dodajMarkęIModelToolStripMenuItem.Text = "Dodaj markę";
+            this.dodajMarkęIModelToolStripMenuItem.Text = "Marka";
+            // 
+            // dodajToolStripMenuItem
+            // 
+            this.dodajToolStripMenuItem.Name = "dodajToolStripMenuItem";
+            this.dodajToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dodajToolStripMenuItem.Text = "Dodaj";
+            this.dodajToolStripMenuItem.Click += new System.EventHandler(this.dodajToolStripMenuItem_Click);
+            // 
+            // usuńToolStripMenuItem
+            // 
+            this.usuńToolStripMenuItem.Name = "usuńToolStripMenuItem";
+            this.usuńToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuńToolStripMenuItem.Text = "Usuń";
+            this.usuńToolStripMenuItem.Click += new System.EventHandler(this.usuńToolStripMenuItem_Click);
+            // 
+            // dodajModelToolStripMenuItem
+            // 
+            this.dodajModelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dodajToolStripMenuItem1,
+            this.usuńToolStripMenuItem1});
+            this.dodajModelToolStripMenuItem.Name = "dodajModelToolStripMenuItem";
+            this.dodajModelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dodajModelToolStripMenuItem.Text = "Model";
+            // 
+            // dodajToolStripMenuItem1
+            // 
+            this.dodajToolStripMenuItem1.Name = "dodajToolStripMenuItem1";
+            this.dodajToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.dodajToolStripMenuItem1.Text = "Dodaj";
+            this.dodajToolStripMenuItem1.Click += new System.EventHandler(this.dodajToolStripMenuItem1_Click);
+            // 
+            // usuńToolStripMenuItem1
+            // 
+            this.usuńToolStripMenuItem1.Name = "usuńToolStripMenuItem1";
+            this.usuńToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.usuńToolStripMenuItem1.Text = "Usuń";
+            this.usuńToolStripMenuItem1.Click += new System.EventHandler(this.usuńToolStripMenuItem1_Click);
             // 
             // tabControl
             // 
@@ -258,9 +303,9 @@
             // 
             this.dgvWypo.AllowUserToAddRows = false;
             this.dgvWypo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dgvWypo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dgvWypo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvWypo.AutoGenerateColumns = false;
             this.dgvWypo.BackgroundColor = System.Drawing.Color.White;
             this.dgvWypo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -286,15 +331,21 @@
             this.dgvWypo.Size = new System.Drawing.Size(1043, 482);
             this.dgvWypo.TabIndex = 6;
             // 
-            // wypWypoFullBindingSource
+            // Samochód
             // 
-            this.wypWypoFullBindingSource.DataMember = "wypWypoFull";
-            this.wypWypoFullBindingSource.DataSource = this.wypoDataSet1;
+            this.Samochód.DataPropertyName = "Samochód";
+            this.Samochód.HeaderText = "Samochód";
+            this.Samochód.Name = "Samochód";
+            this.Samochód.ReadOnly = true;
+            this.Samochód.Width = 150;
             // 
-            // wypoDataSet1
+            // Nazwa
             // 
-            this.wypoDataSet1.DataSetName = "WypoDataSet";
-            this.wypoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Nazwa.DataPropertyName = "Nazwa";
+            this.Nazwa.HeaderText = "Klient";
+            this.Nazwa.Name = "Nazwa";
+            this.Nazwa.ReadOnly = true;
+            this.Nazwa.Width = 300;
             // 
             // btnUsun
             // 
@@ -402,8 +453,8 @@
             // 
             this.dgvSamo.AllowUserToAddRows = false;
             this.dgvSamo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightBlue;
-            this.dgvSamo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightBlue;
+            this.dgvSamo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvSamo.AutoGenerateColumns = false;
             this.dgvSamo.BackgroundColor = System.Drawing.Color.White;
             this.dgvSamo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -424,10 +475,34 @@
             this.dgvSamo.Size = new System.Drawing.Size(1269, 551);
             this.dgvSamo.TabIndex = 0;
             // 
-            // samoListaBindingSource1
+            // Marka
             // 
-            this.samoListaBindingSource1.DataMember = "SamoLista";
-            this.samoListaBindingSource1.DataSource = this.wypoDataSet1;
+            this.Marka.DataPropertyName = "Nazwa";
+            this.Marka.HeaderText = "Marka";
+            this.Marka.Name = "Marka";
+            this.Marka.ReadOnly = true;
+            // 
+            // Nazwa1
+            // 
+            this.Nazwa1.DataPropertyName = "Nazwa1";
+            this.Nazwa1.HeaderText = "Model";
+            this.Nazwa1.Name = "Nazwa1";
+            this.Nazwa1.ReadOnly = true;
+            // 
+            // Nazwa2
+            // 
+            this.Nazwa2.DataPropertyName = "Nazwa2";
+            this.Nazwa2.HeaderText = "Rodzaj paliwa";
+            this.Nazwa2.Name = "Nazwa2";
+            this.Nazwa2.ReadOnly = true;
+            this.Nazwa2.Width = 200;
+            // 
+            // IdSam
+            // 
+            this.IdSam.DataPropertyName = "IdSam";
+            this.IdSam.HeaderText = "IdSam";
+            this.IdSam.Name = "IdSam";
+            this.IdSam.ReadOnly = true;
             // 
             // tpKlient
             // 
@@ -479,9 +554,9 @@
             // 
             this.dgvKlient.AllowUserToAddRows = false;
             this.dgvKlient.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dgvKlient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.dgvKlient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvKlient.AutoGenerateColumns = false;
             this.dgvKlient.BackgroundColor = System.Drawing.Color.White;
             this.dgvKlient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -505,87 +580,6 @@
             this.dgvKlient.Size = new System.Drawing.Size(1269, 551);
             this.dgvKlient.TabIndex = 1;
             this.dgvKlient.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvKlient_DataBindingComplete);
-            // 
-            // idKlientDataGridViewTextBoxColumn
-            // 
-            this.idKlientDataGridViewTextBoxColumn.DataPropertyName = "IdKlient";
-            this.idKlientDataGridViewTextBoxColumn.HeaderText = "IdKlient";
-            this.idKlientDataGridViewTextBoxColumn.Name = "idKlientDataGridViewTextBoxColumn";
-            this.idKlientDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idKlientDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nazwaDataGridViewTextBoxColumn
-            // 
-            this.nazwaDataGridViewTextBoxColumn.DataPropertyName = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn.HeaderText = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn.Name = "nazwaDataGridViewTextBoxColumn";
-            this.nazwaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nIPDataGridViewTextBoxColumn
-            // 
-            this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
-            this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
-            this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
-            this.nIPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ulicaDataGridViewTextBoxColumn
-            // 
-            this.ulicaDataGridViewTextBoxColumn.DataPropertyName = "Ulica";
-            this.ulicaDataGridViewTextBoxColumn.HeaderText = "Ulica";
-            this.ulicaDataGridViewTextBoxColumn.Name = "ulicaDataGridViewTextBoxColumn";
-            this.ulicaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // miastoDataGridViewTextBoxColumn
-            // 
-            this.miastoDataGridViewTextBoxColumn.DataPropertyName = "Miasto";
-            this.miastoDataGridViewTextBoxColumn.HeaderText = "Miasto";
-            this.miastoDataGridViewTextBoxColumn.Name = "miastoDataGridViewTextBoxColumn";
-            this.miastoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nrDomuDataGridViewTextBoxColumn
-            // 
-            this.nrDomuDataGridViewTextBoxColumn.DataPropertyName = "NrDomu";
-            this.nrDomuDataGridViewTextBoxColumn.HeaderText = "NrDomu";
-            this.nrDomuDataGridViewTextBoxColumn.Name = "nrDomuDataGridViewTextBoxColumn";
-            this.nrDomuDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nrMieszkaniaDataGridViewTextBoxColumn
-            // 
-            this.nrMieszkaniaDataGridViewTextBoxColumn.DataPropertyName = "NrMieszkania";
-            this.nrMieszkaniaDataGridViewTextBoxColumn.HeaderText = "NrMieszkania";
-            this.nrMieszkaniaDataGridViewTextBoxColumn.Name = "nrMieszkaniaDataGridViewTextBoxColumn";
-            this.nrMieszkaniaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kodPoczDataGridViewTextBoxColumn
-            // 
-            this.kodPoczDataGridViewTextBoxColumn.DataPropertyName = "KodPocz";
-            this.kodPoczDataGridViewTextBoxColumn.HeaderText = "KodPocz";
-            this.kodPoczDataGridViewTextBoxColumn.Name = "kodPoczDataGridViewTextBoxColumn";
-            this.kodPoczDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telDataGridViewTextBoxColumn
-            // 
-            this.telDataGridViewTextBoxColumn.DataPropertyName = "Tel";
-            this.telDataGridViewTextBoxColumn.HeaderText = "Tel";
-            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
-            this.telDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // osobaKontDataGridViewTextBoxColumn
-            // 
-            this.osobaKontDataGridViewTextBoxColumn.DataPropertyName = "OsobaKont";
-            this.osobaKontDataGridViewTextBoxColumn.HeaderText = "OsobaKont";
-            this.osobaKontDataGridViewTextBoxColumn.Name = "osobaKontDataGridViewTextBoxColumn";
-            this.osobaKontDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wypKlientBindingSource
-            // 
-            this.wypKlientBindingSource.DataMember = "wypKlient";
-            this.wypKlientBindingSource.DataSource = this.wypoDataSet;
-            // 
-            // wypoDataSet
-            // 
-            this.wypoDataSet.DataSetName = "WypoDataSet";
-            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tpNaprawa
             // 
@@ -638,8 +632,8 @@
             // 
             this.dgvNaprawa.AllowUserToAddRows = false;
             this.dgvNaprawa.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightBlue;
-            this.dgvNaprawa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightBlue;
+            this.dgvNaprawa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvNaprawa.AutoGenerateColumns = false;
             this.dgvNaprawa.BackgroundColor = System.Drawing.Color.White;
             this.dgvNaprawa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -661,10 +655,13 @@
             this.dgvNaprawa.TabIndex = 3;
             this.dgvNaprawa.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvNaprawa_DataBindingComplete);
             // 
-            // napListaViewBindingSource
+            // Opis
             // 
-            this.napListaViewBindingSource.DataMember = "NapListaView";
-            this.napListaViewBindingSource.DataSource = this.wypoDataSet1;
+            this.Opis.DataPropertyName = "Opis";
+            this.Opis.HeaderText = "Opis";
+            this.Opis.Name = "Opis";
+            this.Opis.ReadOnly = true;
+            this.Opis.Width = 500;
             // 
             // tpRaport
             // 
@@ -774,144 +771,6 @@
             this.rdbKlient.Text = "Klient";
             this.rdbKlient.UseVisualStyleBackColor = true;
             // 
-            // samoListaBindingSource
-            // 
-            this.samoListaBindingSource.DataMember = "SamoLista";
-            this.samoListaBindingSource.DataSource = this.wypoDataSet;
-            // 
-            // wypSamochodBindingSource
-            // 
-            this.wypSamochodBindingSource.DataMember = "wypSamochod";
-            this.wypSamochodBindingSource.DataSource = this.wypoDataSet;
-            // 
-            // wypSamochodTableAdapter
-            // 
-            this.wypSamochodTableAdapter.ClearBeforeFill = true;
-            // 
-            // wypKlientTableAdapter
-            // 
-            this.wypKlientTableAdapter.ClearBeforeFill = true;
-            // 
-            // samoListaTableAdapter
-            // 
-            this.samoListaTableAdapter.ClearBeforeFill = true;
-            // 
-            // napListaViewTableAdapter
-            // 
-            this.napListaViewTableAdapter.ClearBeforeFill = true;
-            // 
-            // wypWypoFullTableAdapter
-            // 
-            this.wypWypoFullTableAdapter.ClearBeforeFill = true;
-            // 
-            // wypWypozyczTableAdapter1
-            // 
-            this.wypWypozyczTableAdapter1.ClearBeforeFill = true;
-            // 
-            // nazwaDataGridViewTextBoxColumn1
-            // 
-            this.nazwaDataGridViewTextBoxColumn1.DataPropertyName = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn1.HeaderText = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn1.Name = "nazwaDataGridViewTextBoxColumn1";
-            this.nazwaDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nazwaDataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "DStart";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Od";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DStop";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Do";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Kwota";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Kwota";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // Opis
-            // 
-            this.Opis.DataPropertyName = "Opis";
-            this.Opis.HeaderText = "Opis";
-            this.Opis.Name = "Opis";
-            this.Opis.ReadOnly = true;
-            this.Opis.Width = 500;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "IdNapr";
-            this.dataGridViewTextBoxColumn4.HeaderText = "IdNapr";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "IdSamo";
-            this.dataGridViewTextBoxColumn5.HeaderText = "IdSamo";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // Marka
-            // 
-            this.Marka.DataPropertyName = "Nazwa";
-            this.Marka.HeaderText = "Marka";
-            this.Marka.Name = "Marka";
-            this.Marka.ReadOnly = true;
-            // 
-            // Nazwa1
-            // 
-            this.Nazwa1.DataPropertyName = "Nazwa1";
-            this.Nazwa1.HeaderText = "Model";
-            this.Nazwa1.Name = "Nazwa1";
-            this.Nazwa1.ReadOnly = true;
-            // 
-            // tablRejDataGridViewTextBoxColumn
-            // 
-            this.tablRejDataGridViewTextBoxColumn.DataPropertyName = "TablRej";
-            this.tablRejDataGridViewTextBoxColumn.HeaderText = "Rejestracja";
-            this.tablRejDataGridViewTextBoxColumn.Name = "tablRejDataGridViewTextBoxColumn";
-            this.tablRejDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rokProdDataGridViewTextBoxColumn
-            // 
-            this.rokProdDataGridViewTextBoxColumn.DataPropertyName = "RokProd";
-            this.rokProdDataGridViewTextBoxColumn.HeaderText = "Rok Prod.";
-            this.rokProdDataGridViewTextBoxColumn.Name = "rokProdDataGridViewTextBoxColumn";
-            this.rokProdDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rokProdDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // Nazwa2
-            // 
-            this.Nazwa2.DataPropertyName = "Nazwa2";
-            this.Nazwa2.HeaderText = "Rodzaj paliwa";
-            this.Nazwa2.Name = "Nazwa2";
-            this.Nazwa2.ReadOnly = true;
-            this.Nazwa2.Width = 200;
-            // 
-            // pojemnoscDataGridViewTextBoxColumn
-            // 
-            this.pojemnoscDataGridViewTextBoxColumn.DataPropertyName = "Pojemnosc";
-            this.pojemnoscDataGridViewTextBoxColumn.HeaderText = "Pojemność";
-            this.pojemnoscDataGridViewTextBoxColumn.Name = "pojemnoscDataGridViewTextBoxColumn";
-            this.pojemnoscDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // IdSam
-            // 
-            this.IdSam.DataPropertyName = "IdSam";
-            this.IdSam.HeaderText = "IdSam";
-            this.IdSam.Name = "IdSam";
-            this.IdSam.ReadOnly = true;
-            // 
             // idWypoDataGridViewTextBoxColumn
             // 
             this.idWypoDataGridViewTextBoxColumn.DataPropertyName = "IdWypo";
@@ -919,22 +778,6 @@
             this.idWypoDataGridViewTextBoxColumn.Name = "idWypoDataGridViewTextBoxColumn";
             this.idWypoDataGridViewTextBoxColumn.ReadOnly = true;
             this.idWypoDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // Samochód
-            // 
-            this.Samochód.DataPropertyName = "Samochód";
-            this.Samochód.HeaderText = "Samochód";
-            this.Samochód.Name = "Samochód";
-            this.Samochód.ReadOnly = true;
-            this.Samochód.Width = 150;
-            // 
-            // Nazwa
-            // 
-            this.Nazwa.DataPropertyName = "Nazwa";
-            this.Nazwa.HeaderText = "Klient";
-            this.Nazwa.Name = "Nazwa";
-            this.Nazwa.ReadOnly = true;
-            this.Nazwa.Width = 300;
             // 
             // idSamoDataGridViewTextBoxColumn1
             // 
@@ -980,11 +823,207 @@
             this.sumaDataGridViewTextBoxColumn.Name = "sumaDataGridViewTextBoxColumn";
             this.sumaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dodajModelToolStripMenuItem
+            // wypWypoFullBindingSource
             // 
-            this.dodajModelToolStripMenuItem.Name = "dodajModelToolStripMenuItem";
-            this.dodajModelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.dodajModelToolStripMenuItem.Text = "Dodaj model";
+            this.wypWypoFullBindingSource.DataMember = "wypWypoFull";
+            this.wypWypoFullBindingSource.DataSource = this.wypoDataSet1;
+            // 
+            // wypoDataSet1
+            // 
+            this.wypoDataSet1.DataSetName = "WypoDataSet";
+            this.wypoDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tablRejDataGridViewTextBoxColumn
+            // 
+            this.tablRejDataGridViewTextBoxColumn.DataPropertyName = "TablRej";
+            this.tablRejDataGridViewTextBoxColumn.HeaderText = "Rejestracja";
+            this.tablRejDataGridViewTextBoxColumn.Name = "tablRejDataGridViewTextBoxColumn";
+            this.tablRejDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rokProdDataGridViewTextBoxColumn
+            // 
+            this.rokProdDataGridViewTextBoxColumn.DataPropertyName = "RokProd";
+            this.rokProdDataGridViewTextBoxColumn.HeaderText = "Rok Prod.";
+            this.rokProdDataGridViewTextBoxColumn.Name = "rokProdDataGridViewTextBoxColumn";
+            this.rokProdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rokProdDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // pojemnoscDataGridViewTextBoxColumn
+            // 
+            this.pojemnoscDataGridViewTextBoxColumn.DataPropertyName = "Pojemnosc";
+            this.pojemnoscDataGridViewTextBoxColumn.HeaderText = "Pojemność";
+            this.pojemnoscDataGridViewTextBoxColumn.Name = "pojemnoscDataGridViewTextBoxColumn";
+            this.pojemnoscDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // samoListaBindingSource1
+            // 
+            this.samoListaBindingSource1.DataMember = "SamoLista";
+            this.samoListaBindingSource1.DataSource = this.wypoDataSet1;
+            // 
+            // idKlientDataGridViewTextBoxColumn
+            // 
+            this.idKlientDataGridViewTextBoxColumn.DataPropertyName = "IdKlient";
+            this.idKlientDataGridViewTextBoxColumn.HeaderText = "IdKlient";
+            this.idKlientDataGridViewTextBoxColumn.Name = "idKlientDataGridViewTextBoxColumn";
+            this.idKlientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idKlientDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazwaDataGridViewTextBoxColumn
+            // 
+            this.nazwaDataGridViewTextBoxColumn.DataPropertyName = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn.HeaderText = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn.Name = "nazwaDataGridViewTextBoxColumn";
+            this.nazwaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nIPDataGridViewTextBoxColumn
+            // 
+            this.nIPDataGridViewTextBoxColumn.DataPropertyName = "NIP";
+            this.nIPDataGridViewTextBoxColumn.HeaderText = "NIP";
+            this.nIPDataGridViewTextBoxColumn.Name = "nIPDataGridViewTextBoxColumn";
+            this.nIPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ulicaDataGridViewTextBoxColumn
+            // 
+            this.ulicaDataGridViewTextBoxColumn.DataPropertyName = "Ulica";
+            this.ulicaDataGridViewTextBoxColumn.HeaderText = "Ulica";
+            this.ulicaDataGridViewTextBoxColumn.Name = "ulicaDataGridViewTextBoxColumn";
+            this.ulicaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // miastoDataGridViewTextBoxColumn
+            // 
+            this.miastoDataGridViewTextBoxColumn.DataPropertyName = "Miasto";
+            this.miastoDataGridViewTextBoxColumn.HeaderText = "Miasto";
+            this.miastoDataGridViewTextBoxColumn.Name = "miastoDataGridViewTextBoxColumn";
+            this.miastoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nrDomuDataGridViewTextBoxColumn
+            // 
+            this.nrDomuDataGridViewTextBoxColumn.DataPropertyName = "NrDomu";
+            this.nrDomuDataGridViewTextBoxColumn.HeaderText = "NrDomu";
+            this.nrDomuDataGridViewTextBoxColumn.Name = "nrDomuDataGridViewTextBoxColumn";
+            this.nrDomuDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nrMieszkaniaDataGridViewTextBoxColumn
+            // 
+            this.nrMieszkaniaDataGridViewTextBoxColumn.DataPropertyName = "NrMieszkania";
+            this.nrMieszkaniaDataGridViewTextBoxColumn.HeaderText = "NrMieszkania";
+            this.nrMieszkaniaDataGridViewTextBoxColumn.Name = "nrMieszkaniaDataGridViewTextBoxColumn";
+            this.nrMieszkaniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // kodPoczDataGridViewTextBoxColumn
+            // 
+            this.kodPoczDataGridViewTextBoxColumn.DataPropertyName = "KodPocz";
+            this.kodPoczDataGridViewTextBoxColumn.HeaderText = "KodPocz";
+            this.kodPoczDataGridViewTextBoxColumn.Name = "kodPoczDataGridViewTextBoxColumn";
+            this.kodPoczDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telDataGridViewTextBoxColumn
+            // 
+            this.telDataGridViewTextBoxColumn.DataPropertyName = "Tel";
+            this.telDataGridViewTextBoxColumn.HeaderText = "Tel";
+            this.telDataGridViewTextBoxColumn.Name = "telDataGridViewTextBoxColumn";
+            this.telDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // osobaKontDataGridViewTextBoxColumn
+            // 
+            this.osobaKontDataGridViewTextBoxColumn.DataPropertyName = "OsobaKont";
+            this.osobaKontDataGridViewTextBoxColumn.HeaderText = "OsobaKont";
+            this.osobaKontDataGridViewTextBoxColumn.Name = "osobaKontDataGridViewTextBoxColumn";
+            this.osobaKontDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wypKlientBindingSource
+            // 
+            this.wypKlientBindingSource.DataMember = "wypKlient";
+            this.wypKlientBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // wypoDataSet
+            // 
+            this.wypoDataSet.DataSetName = "WypoDataSet";
+            this.wypoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nazwaDataGridViewTextBoxColumn1
+            // 
+            this.nazwaDataGridViewTextBoxColumn1.DataPropertyName = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn1.HeaderText = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn1.Name = "nazwaDataGridViewTextBoxColumn1";
+            this.nazwaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nazwaDataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "DStart";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Od";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DStop";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Do";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Kwota";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Kwota";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "IdNapr";
+            this.dataGridViewTextBoxColumn4.HeaderText = "IdNapr";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "IdSamo";
+            this.dataGridViewTextBoxColumn5.HeaderText = "IdSamo";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // napListaViewBindingSource
+            // 
+            this.napListaViewBindingSource.DataMember = "NapListaView";
+            this.napListaViewBindingSource.DataSource = this.wypoDataSet1;
+            // 
+            // samoListaBindingSource
+            // 
+            this.samoListaBindingSource.DataMember = "SamoLista";
+            this.samoListaBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // wypSamochodBindingSource
+            // 
+            this.wypSamochodBindingSource.DataMember = "wypSamochod";
+            this.wypSamochodBindingSource.DataSource = this.wypoDataSet;
+            // 
+            // wypSamochodTableAdapter
+            // 
+            this.wypSamochodTableAdapter.ClearBeforeFill = true;
+            // 
+            // wypKlientTableAdapter
+            // 
+            this.wypKlientTableAdapter.ClearBeforeFill = true;
+            // 
+            // samoListaTableAdapter
+            // 
+            this.samoListaTableAdapter.ClearBeforeFill = true;
+            // 
+            // napListaViewTableAdapter
+            // 
+            this.napListaViewTableAdapter.ClearBeforeFill = true;
+            // 
+            // wypWypoFullTableAdapter
+            // 
+            this.wypWypoFullTableAdapter.ClearBeforeFill = true;
+            // 
+            // wypWypozyczTableAdapter1
+            // 
+            this.wypWypozyczTableAdapter1.ClearBeforeFill = true;
             // 
             // Main
             // 
@@ -1004,21 +1043,21 @@
             this.tpWypo.ResumeLayout(false);
             this.tpWypo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWypo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).EndInit();
             this.tpSamoch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSamo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).EndInit();
             this.tpKlient.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKlient)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
             this.tpNaprawa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaprawa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).EndInit();
             this.tpRaport.ResumeLayout(false);
             this.tpRaport.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRaport)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypWypoFullBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypKlientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.napListaViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.samoListaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wypSamochodBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -1118,6 +1157,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stawkaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumaDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem dodajModelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dodajToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem usuńToolStripMenuItem1;
     }
 }
 

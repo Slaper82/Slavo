@@ -239,5 +239,35 @@ namespace SamWypo
                      break;
             }
         }
+
+        private void dodajToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarka nowa = new frmMarka();
+            nowa.ShowDialog();
+        }
+
+        private void usuńToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarkaUsun usun = new frmMarkaUsun();
+            usun.ShowDialog();
+        }
+
+        private void dodajToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmModel nowy = new frmModel();
+            nowy.ShowDialog();
+        }
+
+        private void usuńToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmModelUsun usun = new frmModelUsun();
+            usun.ShowDialog();
+        }
+
+        private void samochódToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDBConfig baza = new frmDBConfig();
+            baza.ShowDialog();
+        }
     }
 }

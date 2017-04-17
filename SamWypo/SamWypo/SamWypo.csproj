@@ -38,6 +38,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDBConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDBConfig.Designer.cs">
+      <DependentUpon>frmDBConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDodSamo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +75,24 @@
     <Compile Include="frmMarka.Designer.cs">
       <DependentUpon>frmMarka.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMarkaUsun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMarkaUsun.Designer.cs">
+      <DependentUpon>frmMarkaUsun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModel.Designer.cs">
+      <DependentUpon>frmModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModelUsun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModelUsun.Designer.cs">
+      <DependentUpon>frmModelUsun.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="IObsluga.cs" />
     <Compile Include="frmNaprawa.cs">
@@ -81,6 +106,12 @@
     </Compile>
     <Compile Include="frmWypo.Designer.cs">
       <DependentUpon>frmWypo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Klasy\Klient.cs" />
     <Compile Include="Klasy\Mapowanie.cs" />
@@ -110,6 +141,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WypoDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmDBConfig.resx">
+      <DependentUpon>frmDBConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDodSamo.resx">
       <DependentUpon>frmDodSamo.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,11 +153,23 @@
     <EmbeddedResource Include="frmMarka.resx">
       <DependentUpon>frmMarka.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMarkaUsun.resx">
+      <DependentUpon>frmMarkaUsun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModel.resx">
+      <DependentUpon>frmModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModelUsun.resx">
+      <DependentUpon>frmModelUsun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNaprawa.resx">
       <DependentUpon>frmNaprawa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWypo.resx">
       <DependentUpon>frmWypo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
