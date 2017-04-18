@@ -45,7 +45,7 @@ namespace SamWypo
         private void Main_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'wypoDataSet1.wypWypoFull' table. You can move, or remove it, as needed.
-            this.wypWypoFullTableAdapter.Fill(this.wypoDataSet1.wypWypoFull);
+            this.wypWypoFullTableAdapter.Fill(this.wypoDataSet1.wypWypoFull,dtpStart.Value,dtpStop.Value);
             // TODO: This line of code loads data into the 'wypoDataSet1.NapListaView' table. You can move, or remove it, as needed.
             this.napListaViewTableAdapter.Fill(this.wypoDataSet1.NapListaView);
             // TODO: This line of code loads data into the 'wypoDataSet1.SamoLista' table. You can move, or remove it, as needed.
@@ -164,7 +164,7 @@ namespace SamWypo
         private void btnFiltruj_Click(object sender, EventArgs e)
         {
             Main_Load(this, e);
-            Mapper();
+          //  Mapper();
         }
         private void Mapper()
         {
