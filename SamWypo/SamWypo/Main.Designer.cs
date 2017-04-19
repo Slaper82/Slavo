@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.samochódToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.markiSamochodówToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -302,9 +302,9 @@
             // 
             this.dgvWypo.AllowUserToAddRows = false;
             this.dgvWypo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.dgvWypo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dgvWypo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvWypo.AutoGenerateColumns = false;
             this.dgvWypo.BackgroundColor = System.Drawing.Color.White;
             this.dgvWypo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -514,8 +514,8 @@
             // 
             this.dgvSamo.AllowUserToAddRows = false;
             this.dgvSamo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightBlue;
-            this.dgvSamo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightBlue;
+            this.dgvSamo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSamo.AutoGenerateColumns = false;
             this.dgvSamo.BackgroundColor = System.Drawing.Color.White;
             this.dgvSamo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -642,9 +642,9 @@
             // 
             this.dgvKlient.AllowUserToAddRows = false;
             this.dgvKlient.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dgvKlient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.dgvKlient.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvKlient.AutoGenerateColumns = false;
             this.dgvKlient.BackgroundColor = System.Drawing.Color.White;
             this.dgvKlient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -801,8 +801,8 @@
             // 
             this.dgvNaprawa.AllowUserToAddRows = false;
             this.dgvNaprawa.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightBlue;
-            this.dgvNaprawa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
+            this.dgvNaprawa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNaprawa.AutoGenerateColumns = false;
             this.dgvNaprawa.BackgroundColor = System.Drawing.Color.White;
             this.dgvNaprawa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -909,6 +909,7 @@
             this.dgvRaport.Location = new System.Drawing.Point(20, 124);
             this.dgvRaport.Name = "dgvRaport";
             this.dgvRaport.ReadOnly = true;
+            this.dgvRaport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRaport.Size = new System.Drawing.Size(1128, 458);
             this.dgvRaport.TabIndex = 10;
             // 

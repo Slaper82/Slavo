@@ -24,7 +24,7 @@ namespace SamWypo.Klasy
         }
         public static string NaprawyAll(DateTime Start,DateTime Stop)
         {
-            string sql = String.Format(@"select m.Nazwa,s.TablRej as'Tabl',Sum(Kwota) as 'Kwota',count(s.IdSam) as 'ilNapr' from wypNaprawa as n
+            string sql = String.Format(@"select m.Nazwa,s.TablRej as'Tabl',Sum(Kwota) as 'Zapl',count(s.IdSam) as 'ilNapr' from wypNaprawa as n
                         inner join wypSamochod as s on n.IdSamo=s.IdSam
                         inner join wypModel as m on s.IdModel=m.IdModel
                         where DStop>'{0}' and DStop<'{1}'

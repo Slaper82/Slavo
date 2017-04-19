@@ -103,7 +103,7 @@ namespace SamWypo.Klasy
             entity.NazwaSamo = reader.GetString(reader.GetOrdinal("Nazwa"));
             entity.Tablica = reader.GetString(reader.GetOrdinal("Tabl"));
             entity.IloscNaprawa = reader.GetInt32(reader.GetOrdinal("ilNapr"));
-            entity.Zapl = reader.GetDecimal(reader.GetOrdinal("Kwota"));
+            entity.Zapl = reader.GetDecimal(reader.GetOrdinal("Zapl"));
             return entity;
         }
         private static RaportWypo WypoMapowaniePol(SqlDataReader reader)

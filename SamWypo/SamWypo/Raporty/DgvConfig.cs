@@ -109,11 +109,11 @@ namespace SamWypo.Raporty
             DoZaplaty.ReadOnly = true;
            
             DataGridViewColumn IloscNapraw = new DataGridViewTextBoxColumn();
-            DoZaplaty.Name = "columnNaprawy";
-            DoZaplaty.DataPropertyName = "IloscNaprawa";
-            DoZaplaty.HeaderText = "Ilość napraw";
-            DoZaplaty.Width = 300;
-            DoZaplaty.ReadOnly = true;
+            IloscNapraw.Name = "columnNaprawy";
+            IloscNapraw.DataPropertyName = "IloscNaprawa";
+            IloscNapraw.HeaderText = "Ilość napraw";
+            IloscNapraw.Width = 150;
+            IloscNapraw.ReadOnly = true;
 
             //
             dgv.Columns.Add(Napr);

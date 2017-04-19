@@ -25,6 +25,7 @@ namespace SamWypo
         public void OdczytajPolaczenie()
         {
             string sciezka = String.Format(Application.StartupPath.ToString() + @"\connection.txt");
+
             string con = File.ReadAllText(sciezka);
             this.Connection = con;
         }
