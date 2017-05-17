@@ -63,9 +63,13 @@ namespace SamWypo
           //  this.wypModelTableAdapter.Fill(this.wypoDataSet.wypModel);
             // TODO: This line of code loads data into the 'wypoDataSet.wypMarka' table. You can move, or remove it, as needed.
             this.wypMarkaTableAdapter.Fill(this.wypoDataSet.wypMarka);
-            cmbMarka.SelectedValue = samochod.IdMarka;
-            cmbModel.SelectedValue = samochod.IdModel;
-            cmbPaliwo.SelectedValue = samochod.IdPaliwa;
+            try
+            {
+                cmbMarka.SelectedValue = samochod.IdMarka;
+                cmbModel.SelectedValue = samochod.IdModel;
+                cmbPaliwo.SelectedValue = samochod.IdPaliwa;
+            }
+            catch { }
             
 
         }

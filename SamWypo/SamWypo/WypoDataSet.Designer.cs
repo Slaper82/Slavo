@@ -7477,7 +7477,7 @@ namespace SamWypo.WypoDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[wypKlient] WHERE (([IdKlient] = @Original_IdKlient) AND ([Nazwa] = @Original_Nazwa) AND ([NIP] = @Original_NIP) AND ([Ulica] = @Original_Ulica) AND ([Miasto] = @Original_Miasto) AND ([NrDomu] = @Original_NrDomu) AND ([NrMieszkania] = @Original_NrMieszkania) AND ([KodPocz] = @Original_KodPocz) AND ([Tel] = @Original_Tel) AND ([OsobaKont] = @Original_OsobaKont))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [wypKlient] WHERE (([IdKlient] = @Original_IdKlient) AND ([Nazwa] = @Original_Nazwa) AND ([NIP] = @Original_NIP) AND ([Ulica] = @Original_Ulica) AND ([Miasto] = @Original_Miasto) AND ([NrDomu] = @Original_NrDomu) AND ([NrMieszkania] = @Original_NrMieszkania) AND ([KodPocz] = @Original_KodPocz) AND ([Tel] = @Original_Tel) AND ([OsobaKont] = @Original_OsobaKont))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdKlient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdKlient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -7491,7 +7491,7 @@ namespace SamWypo.WypoDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OsobaKont", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OsobaKont", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[wypKlient] ([Nazwa], [NIP], [Ulica], [Miasto], [NrDomu], [NrMieszkania], [KodPocz], [Tel], [OsobaKont]) VALUES (@Nazwa, @NIP, @Ulica, @Miasto, @NrDomu, @NrMieszkania, @KodPocz, @Tel, @OsobaKont);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [wypKlient] ([Nazwa], [NIP], [Ulica], [Miasto], [NrDomu], [NrMieszkania], [KodPocz], [Tel], [OsobaKont]) VALUES (@Nazwa, @NIP, @Ulica, @Miasto, @NrDomu, @NrMieszkania, @KodPocz, @Tel, @OsobaKont);
 SELECT IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszkania, KodPocz, Tel, OsobaKont FROM wypKlient WHERE (IdKlient = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7505,7 +7505,7 @@ SELECT IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszkania, KodPocz, Tel, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OsobaKont", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OsobaKont", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[wypKlient] SET [Nazwa] = @Nazwa, [NIP] = @NIP, [Ulica] = @Ulica, [Miasto] = @Miasto, [NrDomu] = @NrDomu, [NrMieszkania] = @NrMieszkania, [KodPocz] = @KodPocz, [Tel] = @Tel, [OsobaKont] = @OsobaKont WHERE (([IdKlient] = @Original_IdKlient) AND ([Nazwa] = @Original_Nazwa) AND ([NIP] = @Original_NIP) AND ([Ulica] = @Original_Ulica) AND ([Miasto] = @Original_Miasto) AND ([NrDomu] = @Original_NrDomu) AND ([NrMieszkania] = @Original_NrMieszkania) AND ([KodPocz] = @Original_KodPocz) AND ([Tel] = @Original_Tel) AND ([OsobaKont] = @Original_OsobaKont));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [wypKlient] SET [Nazwa] = @Nazwa, [NIP] = @NIP, [Ulica] = @Ulica, [Miasto] = @Miasto, [NrDomu] = @NrDomu, [NrMieszkania] = @NrMieszkania, [KodPocz] = @KodPocz, [Tel] = @Tel, [OsobaKont] = @OsobaKont WHERE (([IdKlient] = @Original_IdKlient) AND ([Nazwa] = @Original_Nazwa) AND ([NIP] = @Original_NIP) AND ([Ulica] = @Original_Ulica) AND ([Miasto] = @Original_Miasto) AND ([NrDomu] = @Original_NrDomu) AND ([NrMieszkania] = @Original_NrMieszkania) AND ([KodPocz] = @Original_KodPocz) AND ([Tel] = @Original_Tel) AND ([OsobaKont] = @Original_OsobaKont));
 SELECT IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszkania, KodPocz, Tel, OsobaKont FROM wypKlient WHERE (IdKlient = @IdKlient)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7543,8 +7543,8 @@ SELECT IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszkania, KodPocz, Tel, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszkania, KodPocz, Tel, O" +
-                "sobaKont FROM dbo.wypKlient";
+            this._commandCollection[0].CommandText = "SELECT        IdKlient, Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszkania, KodPocz," +
+                " Tel, OsobaKont\r\nFROM            wypKlient\r\nWHERE        (Active = 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

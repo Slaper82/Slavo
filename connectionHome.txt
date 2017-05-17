@@ -1,0 +1,1 @@
+Data Source=brokerpatentowy1.home.pl:1443;Initial Catalog=10599267_cyber2;Persist Security Info=True;User ID=10599267_cyber2;Password=Alamakota1!@

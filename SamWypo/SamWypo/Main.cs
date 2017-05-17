@@ -84,7 +84,6 @@ namespace SamWypo
             DataRow row = ((DataRowView)dgvSamo.SelectedRows[0].DataBoundItem).Row;
             Id = row.Field<int>("IdSam");
             DataTable rr = wypSamochodTableAdapter.GetDataBy(Id);
-           // DataRow row = ((DataRowView)dgvSamo.SelectedRows[0].DataBoundItem).Row;
             Samochod SamoEdyt = new Samochod(rr);
             frmDodSamo SamEdyt = new frmDodSamo(SamoEdyt);
             SamEdyt.dodano += Main_Load;
@@ -178,9 +177,6 @@ namespace SamWypo
                 {
                   dgvWypo.Rows[row.Index].Visible = false;
                 }
-                //testuję filtry
-                //lista.IdKlient =Convert.ToInt32( row.Cells[0].Value.ToString());
-                //filtr.Add(lista);
             }
         }
 
@@ -215,15 +211,6 @@ namespace SamWypo
                 raport.PokazDane(dgvRaport, dtpRaportStr.Value, dtpRaportStp.Value);
             }
         }
-
-        private void rdbWypo_CheckedChanged(object sender, EventArgs e)
-        {
-            //if (rdbKlient.Checked)
-            //{
-                
-            //}
-        }
-
         private void btnNUsun_Click(object sender, EventArgs e)
         {
             DataTable g = dgvNaprawa.DataSource as DataTable;
@@ -268,6 +255,22 @@ namespace SamWypo
         {
             frmDBConfig baza = new frmDBConfig();
             baza.ShowDialog();
+        }
+
+        private void btnUKlient_Click(object sender, EventArgs e)
+        {
+            DataTable g = dgvKlient.DataSource as DataTable;
+            DataRow row = ((DataRowView)dgvKlient.SelectedRows[0].DataBoundItem).Row;
+            int Id = row.Field<int>("IdKlient");
+            Klient klient = new Klient(row);
+            DialogResult wynik = MessageBox.Show("Czy na pewno usunąć tego klienta?", "Usuwanie", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            switch (wynik)
+            {
+                case DialogResult.Yes:
+                    klient.Usun();
+                    Main_Load(this, e);
+                    break;
+            }
         }
     }
 }

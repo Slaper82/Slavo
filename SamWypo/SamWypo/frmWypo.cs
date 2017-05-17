@@ -46,9 +46,13 @@ namespace SamWypo.Klasy
             // TODO: This line of code loads data into the 'wypoDataSet.wypKlient' table. You can move, or remove it, as needed.
             this.wypKlientTableAdapter.Fill(this.wypoDataSet.wypKlient);
             // TODO: This line of code loads data into the 'wypoDataSet.SamoWyb' table. You can move, or remove it, as needed.
-            this.samoWybTableAdapter.Fill(this.wypoDataSet.SamoWyb);
-            this.cmbSamo.SelectedValue = wypozycz.IdSamo;
-            this.cmbKlient.SelectedValue = wypozycz.IdKlient;
+            try
+            {
+                this.samoWybTableAdapter.Fill(this.wypoDataSet.SamoWyb);
+                this.cmbSamo.SelectedValue = wypozycz.IdSamo;
+                this.cmbKlient.SelectedValue = wypozycz.IdKlient;
+            }
+            catch { }
 
         }
 

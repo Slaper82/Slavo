@@ -1,0 +1,25 @@
+USE [SlaWypo]
+GO
+
+/****** Object:  StoredProcedure [dbo].[UsunKlient]    Script Date: 2017-05-16 09:29:30 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER procedure [dbo].[UsunKlient](@id as int)
+as
+	begin
+		Update wypKlient
+		set Active =0
+		where IdKlient=@id;
+	end
+
+GO
+-----------------------------------------------
+ ALTER TABLE wypKlient
+  ADD Active bit NOT NULL
+  CONSTRAINT Kl_act Default(1)
+
+

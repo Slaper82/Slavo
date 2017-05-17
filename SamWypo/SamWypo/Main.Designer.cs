@@ -615,6 +615,7 @@
             this.btnUKlient.TabIndex = 4;
             this.btnUKlient.Text = "Usuń";
             this.btnUKlient.UseVisualStyleBackColor = true;
+            this.btnUKlient.Click += new System.EventHandler(this.btnUKlient_Click);
             // 
             // btnEKlient
             // 

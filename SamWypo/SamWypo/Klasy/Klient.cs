@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SamWypo.WypoDataSetTableAdapters;
 using System.Data;
 
 namespace SamWypo
 {
-  public class Klient:IObsluga
+    public class Klient:IObsluga
     {
         
         public int IdKlient { get; set; }
@@ -45,7 +41,7 @@ namespace SamWypo
             this.Tel2 = tel2;
             this.OsobaKont = osoba;
         }
-        public Klient(DataRow row)
+        public Klient(DataRow row):this()
         {
 
             this.IdKlient = row.Field<int>("IdKlient");
@@ -82,18 +78,33 @@ namespace SamWypo
                 MessageBox.Show("Nie można zapisać bo: \n"+ex.ToString());
             }
             
-         //   Dorobic zapis po edycji
+         //   Dorobic zapis po edycji??
         }
      
         public  void ZapiszNowe()
         {
-            nowy.Insert(Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszk, KodPoczt, Tel1, OsobaKont);
-            //throw new NotImplementedException();
+            try
+            {
+                nowy.Insert(Nazwa, NIP, Ulica, Miasto, NrDomu, NrMieszk, KodPoczt, Tel1, OsobaKont);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
-
+        /// <summary>
+        /// Usuwa procedura w SQL
+        /// </summary>
         public void Usun()
         {
-         //   throw new NotImplementedException();
+            try
+            {
+                edycja.UsunKlient(IdKlient);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
 
 
